@@ -1,0 +1,132 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---- Encoding & Fonts ----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+\usepackage{bm}
+
+% ---- Geometry & Layout ----
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+
+% ---- Tables & Figures ----
+\usepackage{graphicx}
+\usepackage{booktabs, multirow, array}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% ---- TikZ for diagrams ----
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, shapes, fit, calc, decorations.pathreplacing, trees, mindmap, backgrounds}
+\usepackage{tikz-cd}
+
+% ---- Algorithms ----
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ---- Bibliography ----
+\usepackage[numbers, sort&compress, square]{natbib}
+
+% ---- Hyperlinks & References ----
+\usepackage[colorlinks=true, linkcolor=blue!60!black, citecolor=teal!70!black, urlcolor=violet]{hyperref}
+\usepackage{cleveref}
+
+% ---- Theorem environments ----
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{assumption}{Assumption}[section]
+\theoremstyle{definition}
+\newtheorem{question}{Open Question}[section]
+\newtheorem{research}{Research Avenue}[section]
+\newtheorem{challenge}{Challenge}[section]
+
+\crefname{question}{Open Question}{Open Questions}
+\crefname{research}{Research Avenue}{Research Avenues}
+
+% ---- Custom commands ----
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\pershom}{\mathrm{PH}}
+\newcommand{\PHk}[1]{\mathrm{PH}_{#1}}
+\newcommand{\betti}{\beta}
+\newcommand{\causaleffect}{\mathrm{CE}}
+\newcommand{\Dgm}{\mathrm{Dgm}}
+\newcommand{\Dgmk}[1]{\mathrm{Dgm}_{#1}}
+\newcommand{\dB}{d_{\mathrm{B}}}
+\newcommand{\dW}{W_{\!\infty}}
+\newcommand{\Map}{\mathrm{Map}}
+\newcommand{\Reeb}{\mathrm{Reeb}}
+\newcommand{\Filt}{\mathcal{F}}
+\newcommand{\TCDA}{\mathrm{TCDA}}
+\newcommand{\SCM}{\mathrm{SCM}}
+\newcommand{\Mc}{\mathcal{M}}
+\newcommand{\Tc}{\mathcal{T}}
+\newcommand{\Cc}{\mathcal{C}}
+\newcommand{\Gc}{\mathcal{G}}
+\newcommand{\Xc}{\mathcal{X}}
+\newcommand{\Yc}{\mathcal{Y}}
+\newcommand{\Zc}{\mathcal{Z}}
+\newcommand{\doop}{\mathrm{do}}
+\newcommand{\ind}{\perp\!\!\!\!\perp}
+\newcommand{\given}{\,\vert\,}
+
+\DeclareMathOperator{\ATE}{ATE}
+\DeclareMathOperator{\TATE}{TATE}
+\DeclareMathOperator{\CATE}{CATE}
+\DeclareMathOperator{\GATE}{GATE}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Pa}{Pa}
+
+% ---- Title & Authors ----
+\title{\textbf{Topological Causal Data Analysis:\\
+A Framework for Integrating Persistent Homology\\
+with Causal Inference}}
+\author{Hugo Gobato Souto\thanks{Dell Technologies. ORCID: \href{https://orcid.org/0000-0002-7039-0572}{0000-0002-7039-0572}. Email: \href{mailto:hugo.souto@dell.com}{hugo.souto@dell.com}} \and Ioannis Diamantis\thanks{Department of Data Analytics and Digitalisation, Maastricht University, Maastricht, The Netherlands. Email: \href{mailto:i.diamantis@maastrichtuniversity.nl}{i.diamantis@maastrichtuniversity.nl}}}
+\date{May 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+% Hook
+Causal inference enables learning of intervention effects from data, yet modern scientific outcomes are increasingly complex, high-dimensional, and non-Euclidean, undermining the parametric and structural assumptions on which classical causal methods rely. Topological data analysis (TDA) studies the multi-scale shape of data through persistent homology and related functorial constructions, offering descriptors that are provably stable under perturbation but lacking native causal semantics.
+% Gap
+Despite a growing body of work at their interface---ranging from topologies on the space of structural causal models, to topology-aware treatment-effect estimators, to causal discovery via Hodge decomposition and topological orderings---no unified framework currently organizes these contributions.
+% Contribution
+This paper proposes \emph{Topological Causal Data Analysis} (TCDA) as a coherent research domain at the intersection of TDA and causal inference. We provide (i) a formal definition of a TCDA problem as a tuple linking a topological space of observations, a causal graph, a topological functor, and a causal query, together with foundational stability and identifiability propositions; (ii) a taxonomy organising existing and prospective work into four domains---topological causal representation, topological robustness in causal inference, causal interpretation of topological features, and methodological applications; (iii) a structured literature review and a suite of five proof-of-concept case studies that instantiate the framework on biomedical imaging, multivariate time series, confounding diagnostics, Mapper-based abstractions, and climate attribution; and (iv) a research agenda comprising eleven formal open questions, fourteen research avenues, and four computational challenges that span theory, computation, applications, and industrial implementation.
+% Scope
+The paper is designed to be self-contained for researchers from either TDA or causal inference, and aims to catalyse a decade of interdisciplinary work across statistics, machine learning, and the application domains where the shape of data and the structure of cause are intertwined.
+\end{abstract}
+
+% Section inputs are activated as each phase is completed.
+% See Planning_Phases.md for the build order (Phase 2 onwards).
+\IfFileExists{sections/introduction.tex}{\input{sections/introduction}}{}
+\IfFileExists{sections/preliminaries.tex}{\input{sections/preliminaries}}{}
+\IfFileExists{sections/framework.tex}{\input{sections/framework}}{}
+\IfFileExists{sections/literature_review.tex}{\input{sections/literature_review}}{}
+\IfFileExists{sections/case_studies.tex}{\input{sections/case_studies}}{}
+\IfFileExists{sections/research_agenda.tex}{\input{sections/research_agenda}}{}
+\IfFileExists{sections/conclusion.tex}{\input{sections/conclusion}}{}
+
+\bibliographystyle{plainnat}
+\bibliography{bibliography}
+
+\end{document}

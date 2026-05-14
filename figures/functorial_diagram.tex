@@ -1,0 +1,31 @@
+% =====================================================================
+% Figure: Functorial commutative square for TCDA (Section 3.3 / 3.5)
+% Working draft -- the user will refine final visual styling.
+% =====================================================================
+\begin{figure}[t]
+\centering
+\begin{tikzcd}[column sep=large, row sep=large]
+P^{X = x}
+  \arrow[r, "\Tc"] \arrow[d, "\doop(x') / \doop(x)"', shift right=2pt]
+  \arrow[d, "T_{\!\Cc}"', shift left=10pt, dashed]
+  & \Tc(P^{X=x})
+  \arrow[d, "\Phi_{\Cc}", shift left=2pt]
+  \\
+P^{X = x'}
+  \arrow[r, "\Tc"']
+  & \Tc(P^{X=x'})
+\end{tikzcd}
+\caption{Functorial picture of a TCDA query. The horizontal arrows apply
+a topological functor $\Tc$ (e.g.\ $\PHk{k}$, $\Reeb$, $\Map$) to two
+interventional distributions. The left vertical arrow $\doop(x)\!\to\!\doop(x')$
+acts at the level of the causal model; the right vertical arrow $\Phi_{\Cc}$
+acts at the level of topological summaries. A TCDA solution requires either
+that the diagram \emph{commutes} -- so that the topological summary of a
+causal contrast equals the causal contrast of topological summaries -- or
+that the failure to commute is itself a quantifiable, interpretable causal
+object. Stability of $\Tc$ (cf.\ \Cref{eq:stability}) makes the right
+vertical arrow Lipschitz with respect to bottleneck distance; hence under
+commuting the left vertical arrow inherits a Lipschitz bound in the same
+metric.}
+\label{fig:functorial}
+\end{figure}

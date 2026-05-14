@@ -1,0 +1,1908 @@
+% =============================================================
+% Bibliography for "Topological Causal Data Analysis"
+% =============================================================
+% Organisation (informal -- BibTeX itself ignores section headers):
+%   1. TDA classics
+%   2. Persistent homology -- algorithms, stability, statistics
+%   3. Mapper, Reeb graphs, stratified spaces
+%   4. Causal inference -- classics
+%   5. Causal discovery and modern CI
+%   6. Topology-causal bridges (seed papers + neighbours)
+%   7. TDA + time series and dynamical systems
+%   8. Domain applications (neuro, bio, materials, climate, finance)
+%   9. Category theory, sheaves, topos for data
+%  10. Optimal transport, Wasserstein, functional data
+%  11. Topological deep learning and software
+% =============================================================
+
+% ----------- 1. TDA CLASSICS -------------------------------------------------
+
+@article{carlsson2009topology,
+  author  = {Carlsson, Gunnar},
+  title   = {Topology and data},
+  journal = {Bulletin of the American Mathematical Society},
+  volume  = {46},
+  number  = {2},
+  pages   = {255--308},
+  year    = {2009},
+  doi     = {10.1090/S0273-0979-09-01249-X}
+}
+
+@article{carlsson2020topological,
+  author  = {Carlsson, Gunnar},
+  title   = {Topological methods for data modelling},
+  journal = {Nature Reviews Physics},
+  volume  = {2},
+  number  = {12},
+  pages   = {697--708},
+  year    = {2020}
+}
+
+@book{edelsbrunner2010computational,
+  author    = {Edelsbrunner, Herbert and Harer, John},
+  title     = {Computational Topology: An Introduction},
+  publisher = {American Mathematical Society},
+  year      = {2010},
+  isbn      = {9780821849255}
+}
+
+@article{edelsbrunner2008persistent,
+  author  = {Edelsbrunner, Herbert and Harer, John},
+  title   = {Persistent homology---a survey},
+  journal = {Contemporary Mathematics},
+  volume  = {453},
+  pages   = {257--282},
+  year    = {2008},
+  doi     = {10.1090/conm/453/08802}
+}
+
+@article{edelsbrunner2002topological,
+  author  = {Edelsbrunner, Herbert and Letscher, David and Zomorodian, Afra},
+  title   = {Topological persistence and simplification},
+  journal = {Discrete \& Computational Geometry},
+  volume  = {28},
+  number  = {4},
+  pages   = {511--533},
+  year    = {2002}
+}
+
+@article{ghrist2008barcodes,
+  author  = {Ghrist, Robert},
+  title   = {Barcodes: The persistent topology of data},
+  journal = {Bulletin of the American Mathematical Society},
+  volume  = {45},
+  number  = {1},
+  pages   = {61--75},
+  year    = {2008},
+  doi     = {10.1090/S0273-0979-07-01191-3}
+}
+
+@book{hatcher2002algebraic,
+  author    = {Hatcher, Allen},
+  title     = {Algebraic Topology},
+  publisher = {Cambridge University Press},
+  year      = {2002},
+  isbn      = {9780521795401}
+}
+
+@book{munkres1984elements,
+  author    = {Munkres, James R.},
+  title     = {Elements of Algebraic Topology},
+  publisher = {Addison-Wesley},
+  year      = {1984}
+}
+
+@book{zomorodian2005topology,
+  author    = {Zomorodian, Afra J.},
+  title     = {Topology for Computing},
+  publisher = {Cambridge University Press},
+  year      = {2005}
+}
+
+@article{zomorodian2005computing,
+  author  = {Zomorodian, Afra and Carlsson, Gunnar},
+  title   = {Computing persistent homology},
+  journal = {Discrete \& Computational Geometry},
+  volume  = {33},
+  number  = {2},
+  pages   = {249--274},
+  year    = {2005}
+}
+
+@article{wasserman2018topological,
+  author  = {Wasserman, Larry},
+  title   = {Topological data analysis},
+  journal = {Annual Review of Statistics and Its Application},
+  volume  = {5},
+  pages   = {501--532},
+  year    = {2018},
+  doi     = {10.1146/annurev-statistics-031017-100045}
+}
+
+@article{chazal2021introduction,
+  author  = {Chazal, Fr{\'e}d{\'e}ric and Michel, Bertrand},
+  title   = {An introduction to topological data analysis: Fundamental and practical aspects for data scientists},
+  journal = {Frontiers in Artificial Intelligence},
+  volume  = {4},
+  pages   = {667963},
+  year    = {2021},
+  doi     = {10.3389/frai.2021.667963}
+}
+
+@article{otter2017roadmap,
+  author  = {Otter, Nina and Porter, Mason A. and Tillmann, Ulrike and Grindrod, Peter and Harrington, Heather A.},
+  title   = {A roadmap for the computation of persistent homology},
+  journal = {EPJ Data Science},
+  volume  = {6},
+  number  = {1},
+  pages   = {17},
+  year    = {2017}
+}
+
+% ----------- 2. PERSISTENT HOMOLOGY -- STABILITY, ALGORITHMS, STATISTICS -----
+
+@article{cohen2007stability,
+  author  = {Cohen-Steiner, David and Edelsbrunner, Herbert and Harer, John},
+  title   = {Stability of persistence diagrams},
+  journal = {Discrete \& Computational Geometry},
+  volume  = {37},
+  number  = {1},
+  pages   = {103--120},
+  year    = {2007}
+}
+
+@book{chazal2016structure,
+  author    = {Chazal, Fr{\'e}d{\'e}ric and de Silva, Vin and Glisse, Marc and Oudot, Steve},
+  title     = {The Structure and Stability of Persistence Modules},
+  publisher = {Springer},
+  series    = {SpringerBriefs in Mathematics},
+  year      = {2016}
+}
+
+@article{bubenik2015statistical,
+  author  = {Bubenik, Peter},
+  title   = {Statistical topological data analysis using persistence landscapes},
+  journal = {Journal of Machine Learning Research},
+  volume  = {16},
+  number  = {1},
+  pages   = {77--102},
+  year    = {2015}
+}
+
+@inproceedings{chazal2014stochastic,
+  author    = {Chazal, Fr{\'e}d{\'e}ric and Fasy, Brittany Terese and Lecci, Fabrizio and Rinaldo, Alessandro and Wasserman, Larry},
+  title     = {Stochastic convergence of persistence landscapes and silhouettes},
+  booktitle = {Proceedings of the 30th Annual Symposium on Computational Geometry},
+  pages     = {474--483},
+  year      = {2014}
+}
+
+@article{adams2017persistence,
+  author  = {Adams, Henry and Emerson, Tegan and Kirby, Michael and Neville, Rachel and Peterson, Chris and Shipman, Patrick and Chepushtanova, Sofya and Hanson, Eric and Motta, Francis and Ziegelmeier, Lori},
+  title   = {Persistence images: A stable vector representation of persistent homology},
+  journal = {Journal of Machine Learning Research},
+  volume  = {18},
+  number  = {8},
+  pages   = {1--35},
+  year    = {2017}
+}
+
+@article{turner2014persistent,
+  author  = {Turner, Katharine and Mukherjee, Sayan and Boyer, Doug M.},
+  title   = {Persistent homology transform for modeling shapes and surfaces},
+  journal = {Information and Inference: A Journal of the IMA},
+  volume  = {3},
+  number  = {4},
+  pages   = {310--344},
+  year    = {2014}
+}
+
+@article{turner2014frechet,
+  author  = {Turner, Katharine and Mileyko, Yuriy and Mukherjee, Sayan and Harer, John},
+  title   = {Fr{\'e}chet means for distributions of persistence diagrams},
+  journal = {Discrete \& Computational Geometry},
+  volume  = {52},
+  number  = {1},
+  pages   = {44--70},
+  year    = {2014}
+}
+
+@article{mileyko2011probability,
+  author  = {Mileyko, Yuriy and Mukherjee, Sayan and Harer, John},
+  title   = {Probability measures on the space of persistence diagrams},
+  journal = {Inverse Problems},
+  volume  = {27},
+  number  = {12},
+  pages   = {124007},
+  year    = {2011}
+}
+
+@article{fasy2014confidence,
+  author  = {Fasy, Brittany Terese and Lecci, Fabrizio and Rinaldo, Alessandro and Wasserman, Larry and Balakrishnan, Sivaraman and Singh, Aarti},
+  title   = {Confidence sets for persistence diagrams},
+  journal = {Annals of Statistics},
+  volume  = {42},
+  number  = {6},
+  pages   = {2301--2339},
+  year    = {2014}
+}
+
+@article{chazal2013bootstrap,
+  author  = {Chazal, Fr{\'e}d{\'e}ric and Fasy, Brittany Terese and Lecci, Fabrizio and Rinaldo, Alessandro and Singh, Aarti and Wasserman, Larry},
+  title   = {On the bootstrap for persistence diagrams and landscapes},
+  journal = {arXiv preprint arXiv:1311.0376},
+  year    = {2013}
+}
+
+@article{chazal2015optimal,
+  author  = {Chazal, Fr{\'e}d{\'e}ric and Glisse, Marc and Labrue{\`r}e, Catherine and Michel, Bertrand},
+  title   = {Optimal rates of convergence for persistence diagrams in topological data analysis},
+  journal = {arXiv preprint arXiv:1305.6239},
+  year    = {2013}
+}
+
+@article{chazal2010geometric,
+  author  = {Chazal, Fr{\'e}d{\'e}ric and Cohen-Steiner, David and M{\'e}rigot, Quentin},
+  title   = {Geometric inference for measures based on distance functions},
+  journal = {Foundations of Computational Mathematics},
+  volume  = {11},
+  number  = {6},
+  pages   = {733--751},
+  year    = {2011}
+}
+
+@article{blumberg2014persistent,
+  author  = {Blumberg, Andrew J. and Gal, Itamar and Mandell, Michael A. and Pancia, Matthew},
+  title   = {Robust statistics, hypothesis testing, and confidence intervals for persistent homology on metric measure spaces},
+  journal = {Foundations of Computational Mathematics},
+  volume  = {14},
+  number  = {4},
+  pages   = {745--789},
+  year    = {2014}
+}
+
+@inproceedings{chen2011output,
+  author    = {Chen, Chao and Kerber, Michael},
+  title     = {An output-sensitive algorithm for persistent homology},
+  booktitle = {Proceedings of the 27th Annual Symposium on Computational Geometry},
+  pages     = {207--216},
+  year      = {2011}
+}
+
+@article{gholizadeh2018short,
+  author    = {Gholizadeh, Shafie and Zadrozny, Wlodek},
+  title     = {A short survey of topological data analysis in time series and systems analysis},
+  journal   = {arXiv preprint},
+  note      = {arXiv:1809.10745},
+  year      = {2018}
+}
+
+@misc{gudhi2021,
+  author       = {{The GUDHI Project}},
+  title        = {{GUDHI} User and Reference Manual},
+  edition      = {3.4.1},
+  year         = {2021},
+  howpublished = {\url{https://gudhi.inria.fr/doc/3.4.1/}}
+}
+
+% ----------- 3. MAPPER, REEB GRAPHS, STRATIFIED SPACES -----------------------
+
+@inproceedings{singh2007mapper,
+  author    = {Singh, Gurjeet and M{\'e}moli, Facundo and Carlsson, Gunnar},
+  title     = {Topological methods for the analysis of high dimensional data sets and 3D object recognition},
+  booktitle = {Eurographics Symposium on Point-Based Graphics},
+  year      = {2007}
+}
+
+@article{biasotti2008reeb,
+  author  = {Biasotti, Silvia and Giorgi, Daniela and Spagnuolo, Michela and Falcidieno, Bianca},
+  title   = {Reeb graphs for shape analysis and applications},
+  journal = {Theoretical Computer Science},
+  volume  = {392},
+  number  = {1},
+  pages   = {5--22},
+  year    = {2008}
+}
+
+@article{bauer2013measuring,
+  author  = {Bauer, Ulrich and Ge, Xiaoyin and Wang, Yusu},
+  title   = {Measuring distance between Reeb graphs},
+  journal = {arXiv preprint arXiv:1307.2839},
+  year    = {2013}
+}
+
+@inproceedings{morozov2013interleaving,
+  author    = {Morozov, Dmitriy and Beketayev, Kenes and Weber, Gunther},
+  title     = {Interleaving distance between merge trees},
+  booktitle = {Workshop on Topological Methods in Data Analysis and Visualization (TopoInVis)},
+  year      = {2013}
+}
+
+@article{madukpe2026mapper,
+  author  = {Madukpe, V. N. and Ugoala, B. C. and Zulkepli, N. F. S.},
+  title   = {A comprehensive review of the Mapper algorithm and its applications across various fields (2007--2025)},
+  journal = {Journal of Data Science and Analytics},
+  year    = {2026}
+}
+
+@article{dlotko2019ball,
+  author  = {D{\l}otko, Pawe{\l}},
+  title   = {Ball Mapper: A shape summary for topological data analysis},
+  journal = {arXiv preprint arXiv:1901.07410},
+  year    = {2019}
+}
+
+% ----------- 4. CAUSAL INFERENCE -- CLASSICS ---------------------------------
+
+@book{pearl2009causality,
+  author    = {Pearl, Judea},
+  title     = {Causality: Models, Reasoning, and Inference},
+  edition   = {2},
+  publisher = {Cambridge University Press},
+  year      = {2009}
+}
+
+@article{pearl1995causal,
+  author  = {Pearl, Judea},
+  title   = {Causal diagrams for empirical research},
+  journal = {Biometrika},
+  volume  = {82},
+  number  = {4},
+  pages   = {669--710},
+  year    = {1995}
+}
+
+@article{pearl2009surveys,
+  author  = {Pearl, Judea},
+  title   = {Causal inference in statistics: An overview},
+  journal = {Statistics Surveys},
+  volume  = {3},
+  pages   = {96--146},
+  year    = {2009}
+}
+
+@article{pearl1999probabilities,
+  author  = {Pearl, Judea},
+  title   = {Probabilities of causation: Three counterfactual interpretations and their identification},
+  journal = {Synthese},
+  volume  = {121},
+  number  = {1},
+  pages   = {93--149},
+  year    = {1999}
+}
+
+@book{pearl2018book,
+  author    = {Pearl, Judea and Mackenzie, Dana},
+  title     = {The Book of Why: The New Science of Cause and Effect},
+  publisher = {Basic Books},
+  year      = {2018}
+}
+
+@article{rubin1974estimating,
+  author  = {Rubin, Donald B.},
+  title   = {Estimating causal effects of treatments in randomized and nonrandomized studies},
+  journal = {Journal of Educational Psychology},
+  volume  = {66},
+  number  = {5},
+  pages   = {688--701},
+  year    = {1974}
+}
+
+@article{rubin2005causal,
+  author  = {Rubin, Donald B.},
+  title   = {Causal inference using potential outcomes: Design, modeling, decisions},
+  journal = {Journal of the American Statistical Association},
+  volume  = {100},
+  number  = {469},
+  pages   = {322--330},
+  year    = {2005}
+}
+
+@article{rosenbaum1983central,
+  author  = {Rosenbaum, Paul R. and Rubin, Donald B.},
+  title   = {The central role of the propensity score in observational studies for causal effects},
+  journal = {Biometrika},
+  volume  = {70},
+  number  = {1},
+  pages   = {41--55},
+  year    = {1983}
+}
+
+@book{imbens2015causal,
+  author    = {Imbens, Guido W. and Rubin, Donald B.},
+  title     = {Causal Inference for Statistics, Social, and Biomedical Sciences: An Introduction},
+  publisher = {Cambridge University Press},
+  year      = {2015}
+}
+
+@book{spirtes2001causation,
+  author    = {Spirtes, Peter and Glymour, Clark and Scheines, Richard},
+  title     = {Causation, Prediction, and Search},
+  edition   = {2},
+  publisher = {MIT Press},
+  year      = {2001}
+}
+
+@book{peters2017elements,
+  author    = {Peters, Jonas and Janzing, Dominik and Sch{\"o}lkopf, Bernhard},
+  title     = {Elements of Causal Inference: Foundations and Learning Algorithms},
+  publisher = {MIT Press},
+  year      = {2017}
+}
+
+@article{galles1998axiomatic,
+  author  = {Galles, David and Pearl, Judea},
+  title   = {An axiomatic characterization of causal counterfactuals},
+  journal = {Foundations of Science},
+  volume  = {3},
+  number  = {1},
+  pages   = {151--182},
+  year    = {1998}
+}
+
+@inproceedings{tian2002general,
+  author    = {Tian, Jin and Pearl, Judea},
+  title     = {A general identification condition for causal effects},
+  booktitle = {Proceedings of AAAI},
+  year      = {2002}
+}
+
+@article{tian2000probabilities,
+  author  = {Tian, Jin and Pearl, Judea},
+  title   = {Probabilities of causation: Bounds and identification},
+  journal = {Annals of Mathematics and Artificial Intelligence},
+  volume  = {28},
+  number  = {1},
+  pages   = {287--313},
+  year    = {2000}
+}
+
+@inproceedings{avin2005identifiability,
+  author    = {Avin, Chen and Shpitser, Ilya and Pearl, Judea},
+  title     = {Identifiability of path-specific effects},
+  booktitle = {Proceedings of IJCAI},
+  year      = {2005}
+}
+
+@inproceedings{lee2019general,
+  author    = {Lee, Sanghack and Correa, Juan and Bareinboim, Elias},
+  title     = {General identifiability with arbitrary surrogate experiments},
+  booktitle = {Proceedings of UAI},
+  year      = {2019}
+}
+
+@techreport{bareinboim2020pearls,
+  author      = {Bareinboim, Elias and Correa, Juan D. and Ibeling, Duligur and Icard, Thomas},
+  title       = {On Pearl's hierarchy and the foundations of causal inference},
+  institution = {Causal AI Lab, Columbia University},
+  number      = {R-60},
+  year        = {2020}
+}
+
+@article{robins1989probability,
+  author  = {Robins, James and Greenland, Sander},
+  title   = {The probability of causation under a stochastic model for individual risk},
+  journal = {Biometrics},
+  volume  = {45},
+  number  = {4},
+  pages   = {1125--1138},
+  year    = {1989}
+}
+
+% ----------- 5. CAUSAL DISCOVERY AND MODERN CI -------------------------------
+
+@article{shimizu2006lingam,
+  author  = {Shimizu, Shohei and Hoyer, Patrik O. and Hyv{\"a}rinen, Aapo and Kerminen, Antti},
+  title   = {A linear non-{G}aussian acyclic model for causal discovery},
+  journal = {Journal of Machine Learning Research},
+  volume  = {7},
+  pages   = {2003--2030},
+  year    = {2006}
+}
+
+@article{peters2014causal,
+  author  = {Peters, Jonas and Mooij, Joris M. and Janzing, Dominik and Sch{\"o}lkopf, Bernhard},
+  title   = {Causal discovery with continuous additive noise models},
+  journal = {Journal of Machine Learning Research},
+  volume  = {15},
+  number  = {1},
+  pages   = {2009--2053},
+  year    = {2014}
+}
+
+@article{chernozhukov2018double,
+  author  = {Chernozhukov, Victor and Chetverikov, Denis and Demirer, Mert and Duflo, Esther and Hansen, Christian and Newey, Whitney and Robins, James},
+  title   = {Double/debiased machine learning for treatment and structural parameters},
+  journal = {The Econometrics Journal},
+  volume  = {21},
+  number  = {1},
+  pages   = {C1--C68},
+  year    = {2018}
+}
+
+@article{scholkopf2021toward,
+  author  = {Sch{\"o}lkopf, Bernhard and Locatello, Francesco and Bauer, Stefan and Ke, Nan Rosemary and Kalchbrenner, Nal and Goyal, Anirudh and Bengio, Yoshua},
+  title   = {Toward causal representation learning},
+  journal = {Proceedings of the IEEE},
+  volume  = {109},
+  number  = {5},
+  pages   = {612--634},
+  year    = {2021}
+}
+
+@inproceedings{ahuja2023interventional,
+  author    = {Ahuja, Kartik and Wang, Yixin and Mahajan, Divyat and Bengio, Yoshua},
+  title     = {Interventional causal representation learning},
+  booktitle = {Proceedings of the 40th International Conference on Machine Learning (ICML)},
+  year      = {2023}
+}
+
+@inproceedings{eberhardt2005number,
+  author    = {Eberhardt, Frederick and Glymour, Clark and Scheines, Richard},
+  title     = {On the number of experiments sufficient and in the worst case necessary to identify all causal relations among $n$ variables},
+  booktitle = {Proceedings of UAI},
+  pages     = {178--184},
+  year      = {2005}
+}
+
+@article{drton2011global,
+  author  = {Drton, Mathias and Foygel, Rina and Sullivant, Seth},
+  title   = {Global identifiability of linear structural equation models},
+  journal = {Annals of Statistics},
+  volume  = {39},
+  number  = {2},
+  pages   = {865--886},
+  year    = {2011}
+}
+
+@article{uhler2013geometry,
+  author  = {Uhler, Caroline and Raskutti, Garvesh and B{\"u}hlmann, Peter and Yu, Bin},
+  title   = {Geometry of the faithfulness assumption in causal inference},
+  journal = {Annals of Statistics},
+  volume  = {41},
+  number  = {2},
+  pages   = {436--463},
+  year    = {2013}
+}
+
+@article{bongers2021foundations,
+  author  = {Bongers, Stephan and Forr{\'e}, Patrick and Peters, Jonas and Mooij, Joris M.},
+  title   = {Foundations of structural causal models with cycles and latent variables},
+  journal = {Annals of Statistics},
+  volume  = {49},
+  number  = {5},
+  pages   = {2885--2915},
+  year    = {2021}
+}
+
+@inproceedings{lin2020learning,
+  author    = {Lin, Hanti and Zhang, Jiji},
+  title     = {On learning causal structures from non-experimental data without any faithfulness assumption},
+  booktitle = {Proceedings of ALT},
+  pages     = {554--582},
+  year      = {2020}
+}
+
+@inproceedings{meek1995strong,
+  author    = {Meek, Christopher},
+  title     = {Strong completeness and faithfulness in {B}ayesian networks},
+  booktitle = {Proceedings of UAI},
+  pages     = {411--418},
+  year      = {1995}
+}
+
+@article{athey2017state,
+  author  = {Athey, Susan and Imbens, Guido W.},
+  title   = {The state of applied econometrics: Causality and policy evaluation},
+  journal = {Journal of Economic Perspectives},
+  volume  = {31},
+  number  = {2},
+  pages   = {3--32},
+  year    = {2017}
+}
+
+@article{kennedy2019nonparametric,
+  author  = {Kennedy, Edward H.},
+  title   = {Nonparametric causal effects based on incremental propensity score interventions},
+  journal = {Journal of the American Statistical Association},
+  volume  = {114},
+  number  = {526},
+  pages   = {645--656},
+  year    = {2019}
+}
+
+@article{kennedy2023towards,
+  author  = {Kennedy, Edward H.},
+  title   = {Towards optimal doubly robust estimation of heterogeneous causal effects},
+  journal = {Electronic Journal of Statistics},
+  volume  = {17},
+  number  = {2},
+  pages   = {3008--3049},
+  year    = {2023}
+}
+
+@article{kennedy2024semiparametric,
+  author  = {Kennedy, Edward H.},
+  title   = {Semiparametric doubly robust targeted double machine learning: A review},
+  journal = {Handbook of Statistical Methods for Precision Medicine},
+  pages   = {207--236},
+  year    = {2024}
+}
+
+@article{kennedy2016semiparametric,
+  author  = {Kennedy, Edward H.},
+  title   = {Semiparametric theory and empirical processes in causal inference},
+  journal = {Statistical Causal Inferences and Their Applications in Public Health Research},
+  pages   = {141--167},
+  year    = {2016}
+}
+
+@article{kennedy2023counterfactual,
+  author  = {Kennedy, Edward H. and Balakrishnan, Sivaraman and Wasserman, Larry A.},
+  title   = {Semiparametric counterfactual density estimation},
+  journal = {Biometrika},
+  volume  = {110},
+  number  = {4},
+  pages   = {875--896},
+  year    = {2023}
+}
+
+@inproceedings{dudik2011doubly,
+  author    = {Dud{\'\i}k, Miroslav and Langford, John and Li, Lihong},
+  title     = {Doubly robust policy evaluation and learning},
+  booktitle = {Proceedings of the 28th International Conference on Machine Learning (ICML)},
+  pages     = {1097--1104},
+  year      = {2011}
+}
+
+@article{newey2018cross,
+  author  = {Newey, Whitney K. and Robins, James R.},
+  title   = {Cross-fitting and fast remainder rates for semiparametric estimation},
+  journal = {arXiv preprint arXiv:1801.09138},
+  year    = {2018}
+}
+
+@article{ecker2024causal,
+  author  = {Ecker, Kreske and de Luna, Xavier and Schelin, Lina},
+  title   = {Causal inference with a functional outcome},
+  journal = {Journal of the Royal Statistical Society Series C},
+  volume  = {73},
+  number  = {1},
+  pages   = {221--240},
+  year    = {2024}
+}
+
+@article{testa2025doubly,
+  author  = {Testa, Lorenzo and Boschi, Tobia and Chiaromonte, Francesca and Kennedy, Edward H. and Reimherr, Matthew},
+  title   = {Doubly-robust functional average treatment effect estimation},
+  journal = {arXiv preprint arXiv:2501.06024},
+  year    = {2025}
+}
+
+@inproceedings{ibeling2019open,
+  author    = {Ibeling, Duligur and Icard, Thomas},
+  title     = {On open-universe causal reasoning},
+  booktitle = {Proceedings of UAI},
+  year      = {2019}
+}
+
+@inproceedings{ibeling2020probabilistic,
+  author    = {Ibeling, Duligur and Icard, Thomas},
+  title     = {Probabilistic reasoning across the causal hierarchy},
+  booktitle = {Proceedings of AAAI},
+  year      = {2020}
+}
+
+@inproceedings{tavares2021language,
+  author    = {Tavares, Zenna and Koppel, James and Zhang, Xin and Das, Rajesh and Lezama, Armando Solar},
+  title     = {A language for counterfactual generative models},
+  booktitle = {Proceedings of ICML},
+  year      = {2021}
+}
+
+@inproceedings{xu2025information,
+  author    = {Xu, Shaohan and Mameche, Sahar and Vreeken, Jilles},
+  title     = {Information-theoretic causal discovery in topological order ({TOPIC})},
+  booktitle = {Proceedings of the 28th International Conference on Artificial Intelligence and Statistics (AISTATS)},
+  year      = {2025}
+}
+
+@article{tran2024constraining,
+  author  = {Tran, Quang-Duy and Nguyen, Phong and Duong, Bao and Nguyen, Thin},
+  title   = {Constraining acyclicity of differentiable {B}ayesian structure learning with topological ordering},
+  journal = {Knowledge and Information Systems},
+  volume  = {66},
+  pages   = {5605--5630},
+  year    = {2024}
+}
+
+@article{barroso2024inference,
+  author  = {Barroso, Filipe and Gomes, Diogo and Baxter, Gareth J.},
+  title   = {Inference of causal networks using a topological threshold},
+  journal = {arXiv preprint arXiv:2404.14460},
+  year    = {2024}
+}
+
+@article{wu2026optimization,
+  author  = {Wu, Renjie and Xie, Hao},
+  title   = {Optimization-free topological sort for causal discovery via the {S}chur complement of score {J}acobians},
+  journal = {arXiv preprint arXiv:2604.25295},
+  year    = {2026}
+}
+
+@inproceedings{li2024s2gcsl,
+  author    = {Li, Xueyan and Cao, Yifan and Liu, Bo},
+  title     = {{S2GCSL}: Causal structure learning on event sequences with topological networks},
+  booktitle = {NeurIPS Workshop on Causality and Time Series},
+  year      = {2024}
+}
+
+@article{harnack2017causal,
+  author  = {Harnack, Daniel and Laminski, Erik and Sch{\"u}lke, Marcel and Pawelzik, Klaus},
+  title   = {Topological causality in dynamical systems},
+  journal = {Physical Review Letters},
+  volume  = {119},
+  number  = {9},
+  pages   = {098301},
+  year    = {2017}
+}
+
+@article{causaldisco2023survey,
+  author  = {Vowels, Matthew J. and Camgoz, Necati Cihan and Bowden, Richard},
+  title   = {{D'ya} like {DAG}s? A survey on structure learning and causal discovery},
+  journal = {ACM Computing Surveys},
+  volume  = {55},
+  number  = {4},
+  pages   = {1--36},
+  year    = {2022}
+}
+
+@inproceedings{timeseriescd2023,
+  author    = {Assaad, Charles K. and Devijver, Emilie and Gaussier, Eric},
+  title     = {Survey and evaluation of causal discovery methods for time series},
+  booktitle = {Proceedings of the 31st International Joint Conference on Artificial Intelligence (IJCAI)},
+  year      = {2023}
+}
+
+% ----------- 6. TOPOLOGY-CAUSAL BRIDGES (SEED + NEIGHBOURS) ------------------
+
+% Seed paper 1: Ibeling & Icard 2021
+@inproceedings{ibeling2021topological,
+  author    = {Ibeling, Duligur and Icard, Thomas},
+  title     = {A topological perspective on causal inference},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume    = {34},
+  year      = {2021}
+}
+
+% Seed paper 2: Kim & Lee 2026
+@article{kim2026topological,
+  author  = {Kim, Kwangho and Lee, Hajin},
+  title   = {Topological causal effects},
+  journal = {arXiv preprint arXiv:2603.02289},
+  year    = {2026}
+}
+
+% Seed paper 3: Lecci 2014 (PhD Thesis Proposal)
+@phdthesis{lecci2014statistical,
+  author  = {Lecci, Fabrizio},
+  title   = {Statistical Inference for Topological Data Analysis},
+  school  = {Department of Statistics, Carnegie Mellon University},
+  year    = {2014},
+  note    = {PhD Thesis Proposal}
+}
+
+% Seed paper 4: El-Yaagoubi, Chung, Ombao 2023
+@article{elyaagoubi2023statistical,
+  author  = {El-Yaagoubi, Anass B. and Chung, Moo K. and Ombao, Hernando},
+  title   = {Statistical inference for dependence networks in topological data analysis},
+  journal = {Frontiers in Artificial Intelligence},
+  volume  = {6},
+  pages   = {1293504},
+  year    = {2023},
+  doi     = {10.3389/frai.2023.1293504}
+}
+
+@article{elyaagoubi2023topological,
+  author  = {El-Yaagoubi, Anass B. and Chung, Moo K. and Ombao, Hernando},
+  title   = {Topological data analysis for multivariate time series data},
+  journal = {Entropy},
+  volume  = {25},
+  number  = {11},
+  pages   = {1509},
+  year    = {2023},
+  doi     = {10.3390/e25111509}
+}
+
+% Topological-causal bridge: persistent-homology ignorability
+@article{saki2026beyond,
+  author  = {Saki, Amir and Faghihi, Usef},
+  title   = {Beyond means: Topological causal effects under persistent-homology ignorability},
+  journal = {arXiv preprint arXiv:2603.14169},
+  year    = {2026}
+}
+
+% Topological causality in empirical dynamical systems
+@article{bando2022causal,
+  author  = {Bando, Hideki and Kaji, Shizuo and Yaguchi, Takaharu},
+  title   = {Causal inference for empirical dynamical systems based on persistent homology},
+  journal = {JSIAM Letters},
+  volume  = {14},
+  pages   = {69--72},
+  year    = {2022}
+}
+
+% Topology-aware causal representation balancing
+@inproceedings{farzam2025topology,
+  author    = {Farzam, Amirhossein and Aloui, Ahmed and Tarokh, Vahid and Sapiro, Guillermo},
+  title     = {Topology-aware robust representation balancing for estimating causal effects},
+  booktitle = {NeurIPS High-dimensional Learning Dynamics Workshop},
+  year      = {2025}
+}
+
+% Bivariate causal direction via 0D persistent homology
+@article{elbouchattaoui2026topological,
+  author  = {El~Bouchattaoui, Mouad},
+  title   = {Topological residual asymmetry for bivariate causal direction},
+  journal = {arXiv preprint arXiv:2602.00427},
+  year    = {2026}
+}
+
+% Geodesic causal inference
+@article{kurisu2024geodesic,
+  author  = {Kurisu, Daisuke and Hu, Yifei and Otsu, Taisuke and Vuong, Quang-Hung},
+  title   = {Geodesic causal inference},
+  journal = {arXiv preprint arXiv:2406.19604},
+  year    = {2024}
+}
+
+% Sheaf / topos causal models
+@inproceedings{mahadevan2025sheaf,
+  author    = {Mahadevan, Sridhar},
+  title     = {Sheaf and topos-theoretic causal models},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2025}
+}
+
+% Causal homotopy via Alexandroff topologies
+@article{mahadevan2021causal,
+  author  = {Mahadevan, Sridhar},
+  title   = {Causal homotopy},
+  journal = {arXiv preprint arXiv:2112.01847},
+  year    = {2021}
+}
+
+@article{mahadevan2022universal,
+  author  = {Mahadevan, Sridhar},
+  title   = {Universal causality},
+  journal = {arXiv preprint arXiv:2207.04937},
+  year    = {2022}
+}
+
+% Persistent homology for causal time series featurisation
+@article{kim2018time,
+  author  = {Kim, Kwangho and Kim, Jisu and Rinaldo, Alessandro},
+  title   = {Time series featurization via topological data analysis},
+  journal = {arXiv preprint arXiv:1812.02987},
+  year    = {2018}
+}
+
+@inproceedings{kim2020pllay,
+  author    = {Kim, Kwangho and Kim, Jisu and Zaheer, Manzil and Kim, Joon and Chazal, Fr{\'e}d{\'e}ric and Wasserman, Larry},
+  title     = {{PLLay}: Efficient topological layer based on persistence landscapes},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume    = {33},
+  pages     = {15965--15977},
+  year      = {2020}
+}
+
+@inproceedings{carriere2020perslay,
+  author    = {Carri{\`e}re, Mathieu and Cuturi, Marco and Oudot, Steve},
+  title     = {{PersLay}: A neural network layer for persistence diagrams and new graph topological signatures},
+  booktitle = {Proceedings of the International Conference on Artificial Intelligence and Statistics (AISTATS)},
+  pages     = {2786--2796},
+  year      = {2020}
+}
+
+@inproceedings{carriere2021optimizing,
+  author    = {Carri{\`e}re, Mathieu and Bauer, Ulrich and Oudot, Steve},
+  title     = {Optimizing persistence diagrams using differentiable topological layers},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  year      = {2021}
+}
+
+@inproceedings{smith2025harnessing,
+  author    = {Smith, Alex and Daoutidis, Prodromos},
+  title     = {Harnessing topology and causal discovery for particulate gel control},
+  booktitle = {Proceedings of the 2025 IEEE Conference on Decision and Control (CDC)},
+  year      = {2025}
+}
+
+@article{smith2025multiscale,
+  author  = {Smith, Alex and Limkul, Patiwet and Daoutidis, Prodromos},
+  title   = {Multi-scale causality in active matter},
+  journal = {Computers \& Chemical Engineering},
+  volume  = {197},
+  pages   = {109052},
+  year    = {2025}
+}
+
+@article{causalUncertainty2026,
+  author  = {Anonymous},
+  title   = {The causal uncertainty principle: Manifold tearing and the topological limits of counterfactual interventions},
+  journal = {arXiv preprint arXiv:2603.17385},
+  year    = {2026}
+}
+
+@article{krasnovsky2025causal,
+  author  = {Krasnovsky, Anton},
+  title   = {Causal emergence and topological coarse-graining},
+  journal = {arXiv preprint arXiv:2504.10210},
+  year    = {2025}
+}
+
+@article{hoel2013quantifying,
+  author  = {Hoel, Erik P. and Albantakis, Larissa and Tononi, Giulio},
+  title   = {Quantifying causal emergence shows that macro can beat micro},
+  journal = {Proceedings of the National Academy of Sciences},
+  volume  = {110},
+  number  = {49},
+  pages   = {19790--19795},
+  year    = {2013}
+}
+
+% ----------- 7. TDA + TIME SERIES AND DYNAMICAL SYSTEMS ----------------------
+
+@article{leykam2023topological,
+  author  = {Leykam, Daniel and Angelakis, Dimitris G.},
+  title   = {Topological data analysis and machine learning},
+  journal = {Advances in Physics: X},
+  volume  = {8},
+  number  = {1},
+  pages   = {2202331},
+  year    = {2023}
+}
+
+@article{umeda2017time,
+  author  = {Umeda, Yuhei},
+  title   = {Time series classification via topological data analysis},
+  journal = {Transactions of the Japanese Society for Artificial Intelligence},
+  volume  = {32},
+  number  = {3},
+  pages   = {D-G72\_1--12},
+  year    = {2017}
+}
+
+@article{motta2018topological,
+  author  = {Motta, Francis},
+  title   = {Topological data analysis: Developments and applications},
+  journal = {Springer Proceedings in Mathematics \& Statistics},
+  pages   = {369--391},
+  year    = {2018}
+}
+
+@article{xu2021topological,
+  author  = {Xu, Xiaofan and Drougard, Nicolas and Roy, Raphaelle N.},
+  title   = {Topological data analysis as a new tool for {EEG} processing},
+  journal = {Frontiers in Neuroscience},
+  volume  = {15},
+  pages   = {761703},
+  year    = {2021}
+}
+
+@article{kovacev2016using,
+  author  = {Kovacev-Nikolic, Violeta and Bubenik, Peter and Nikoli{\'c}, Dragan and Heo, Giseon},
+  title   = {Using persistent homology and dynamical distances to analyze protein binding},
+  journal = {Statistical Applications in Genetics and Molecular Biology},
+  volume  = {15},
+  number  = {1},
+  pages   = {19--38},
+  year    = {2016}
+}
+
+% ----------- 8. DOMAIN APPLICATIONS ----------------------------------------
+
+@article{sizemore2019importance,
+  author  = {Sizemore, Ann E. and Giusti, Chad and Bassett, Danielle S.},
+  title   = {The importance of the whole: Topological data analysis for the network neuroscientist},
+  journal = {Network Neuroscience},
+  volume  = {3},
+  number  = {3},
+  pages   = {656--673},
+  year    = {2019}
+}
+
+@article{bassett2009human,
+  author  = {Bassett, Danielle S. and Bullmore, Edward T.},
+  title   = {Human brain networks in health and disease},
+  journal = {Current Opinion in Neurology},
+  volume  = {22},
+  number  = {4},
+  pages   = {340--347},
+  year    = {2009}
+}
+
+@article{bullmore2009complex,
+  author  = {Bullmore, Edward T. and Sporns, Olaf},
+  title   = {Complex brain networks: Graph theoretical analysis of structural and functional systems},
+  journal = {Nature Reviews Neuroscience},
+  volume  = {10},
+  number  = {3},
+  pages   = {186--198},
+  year    = {2009}
+}
+
+@article{cang2018integration,
+  author  = {Cang, Zixuan and Wei, Guo-Wei},
+  title   = {Integration of element-specific persistent homology and machine learning for protein-ligand binding affinity prediction},
+  journal = {International Journal for Numerical Methods in Biomedical Engineering},
+  volume  = {34},
+  number  = {2},
+  pages   = {e2914},
+  year    = {2018}
+}
+
+@article{axelrod2022geom,
+  author  = {Axelrod, Simon and G{\'o}mez-Bombarelli, Rafael},
+  title   = {{GEOM}, energy-annotated molecular conformations for property prediction and molecular generation},
+  journal = {Scientific Data},
+  volume  = {9},
+  number  = {1},
+  pages   = {185},
+  year    = {2022}
+}
+
+@article{pachauri2011topology,
+  author  = {Pachauri, Deepti and Hinrichs, Chris and Chung, Moo K. and Johnson, Sterling C. and Singh, Vikas},
+  title   = {Topology-based kernels with application to inference problems in {A}lzheimer's disease},
+  journal = {IEEE Transactions on Medical Imaging},
+  volume  = {30},
+  number  = {10},
+  pages   = {1760--1770},
+  year    = {2011}
+}
+
+@inproceedings{chung2009persistence,
+  author    = {Chung, Moo K. and Bubenik, Peter and Kim, Peter T.},
+  title     = {Persistence diagrams of cortical surface data},
+  booktitle = {Information Processing in Medical Imaging (IPMI)},
+  pages     = {386--397},
+  year      = {2009}
+}
+
+@article{iqbal2025classification,
+  author  = {Iqbal, Sohail and Ahmed, Hafiz Fareed and Qaiser, Talha and Qureshi, Muhammad Imran and Rajpoot, Nasir},
+  title   = {Classification of {COVID-19} via homology of {CT}-scan},
+  journal = {Computers in Biology and Medicine},
+  volume  = {193},
+  pages   = {110226},
+  year    = {2025}
+}
+
+@article{soares2020sars,
+  author  = {Soares, Eduardo and Angelov, Plamen and Biaso, Sarah and Froes, Michele Higa and Abe, Daniel Kanda},
+  title   = {{SARS-CoV-2} {CT}-scan dataset},
+  journal = {medRxiv},
+  pages   = {2020.04},
+  year    = {2020}
+}
+
+@article{sousbie2011persistent,
+  author  = {Sousbie, Thierry},
+  title   = {The persistent cosmic web and its filamentary structure -- {I}. {T}heory and implementation},
+  journal = {Monthly Notices of the Royal Astronomical Society},
+  volume  = {414},
+  number  = {1},
+  pages   = {350--383},
+  year    = {2011}
+}
+
+@article{vandeweygaert2011alpha,
+  author  = {van~de~Weygaert, Rien and Vegter, Gert and Edelsbrunner, Herbert and Jones, Bernard J. T. and Pranav, Pratyush and Park, Changbom and Hellwing, Wojciech A. and Eldering, Bob and Kruithof, Nico and Bos, E. G. P. Patrick},
+  title   = {Alpha, {B}etti and the megaparsec universe: On the topology of the cosmic web},
+  journal = {Transactions on Computational Science XIV},
+  pages   = {60--101},
+  year    = {2011}
+}
+
+@article{kasson2007persistent,
+  author    = {Kasson, Peter M. and Zomorodian, Afra and Park, Sanghyun and Singhal, Nina and Guibas, Leonidas J. and Pande, Vijay S.},
+  title     = {Persistent voids: A new structural metric for membrane fusion},
+  journal   = {Bioinformatics},
+  volume    = {23},
+  number    = {14},
+  pages     = {1753--1759},
+  year      = {2007}
+}
+
+@article{desilva2007coverage,
+  author    = {de Silva, Vin and Ghrist, Robert},
+  title     = {Coverage in sensor networks via persistent homology},
+  journal   = {Algebraic \& Geometric Topology},
+  volume    = {7},
+  pages     = {339--358},
+  year      = {2007}
+}
+
+@article{gamble2010exploring,
+  author  = {Gamble, Jennifer and Heo, Giseon},
+  title   = {Exploring uses of persistent homology for statistical analysis of landmark-based shape data},
+  journal = {Journal of Multivariate Analysis},
+  volume  = {101},
+  number  = {9},
+  pages   = {2184--2199},
+  year    = {2010}
+}
+
+@article{cisewski2014nonparametric,
+  author  = {Cisewski, Jessi and Croft, Rupert A. C. and Freeman, Peter E. and Genovese, Christopher R. and Khandai, Nishikanta and Ozbek, Melih and Wasserman, Larry},
+  title   = {Nonparametric 3{D} map of the {IGM} using the {Lyman}-alpha forest},
+  journal = {Monthly Notices of the Royal Astronomical Society},
+  volume  = {440},
+  number  = {3},
+  pages   = {2599--2609},
+  year    = {2014}
+}
+
+@article{fathian2022trend,
+  author  = {Fathian, Ali and Jamali, Yousef and Raoufy, Mohammad Reza},
+  title   = {The trend of disruption in the functional brain network topology of {A}lzheimer's disease},
+  journal = {Scientific Reports},
+  volume  = {12},
+  pages   = {14998},
+  year    = {2022}
+}
+
+@article{sporns2013structure,
+  author  = {Sporns, Olaf},
+  title   = {Structure and function of complex brain networks},
+  journal = {Dialogues in Clinical Neuroscience},
+  volume  = {15},
+  number  = {3},
+  pages   = {247--262},
+  year    = {2013}
+}
+
+@article{pessoa2014understanding,
+  author  = {Pessoa, Luiz},
+  title   = {Understanding brain networks and brain organization},
+  journal = {Physics of Life Reviews},
+  volume  = {11},
+  number  = {3},
+  pages   = {400--435},
+  year    = {2014}
+}
+
+@article{muldoon2016small,
+  author  = {Muldoon, Sarah F. and Bridgeford, Eric W. and Bassett, Danielle S.},
+  title   = {Small-world propensity and weighted brain networks},
+  journal = {Scientific Reports},
+  volume  = {6},
+  pages   = {22057},
+  year    = {2016}
+}
+
+@article{henry2020bridging,
+  author  = {Henry, Teague R. and Duffy, Karen A. and Rudolph, Marc D. and Nebel, Mary Beth and Mostofsky, Stewart H. and Cohen, Jessica R.},
+  title   = {Bridging global and local topology in whole-brain networks using the network statistic jackknife},
+  journal = {Network Neuroscience},
+  volume  = {4},
+  number  = {1},
+  pages   = {70--88},
+  year    = {2020}
+}
+
+@article{friston2011functional,
+  author  = {Friston, Karl J.},
+  title   = {Functional and effective connectivity: A review},
+  journal = {Brain Connectivity},
+  volume  = {1},
+  number  = {1},
+  pages   = {13--36},
+  year    = {2011}
+}
+
+@article{corcoran2023topological,
+  author  = {Corcoran, Padraig and Jones, Christopher B.},
+  title   = {Topological data analysis for geographical information science using persistent homology},
+  journal = {International Journal of Geographical Information Science},
+  volume  = {37},
+  number  = {1},
+  pages   = {120--143},
+  year    = {2023}
+}
+
+@article{tdabiomedicine2024,
+  author  = {Skaf, Yara and Laubenbacher, Reinhard},
+  title   = {Topological data analysis in biomedicine: A review},
+  journal = {Journal of Biomedical Informatics},
+  volume  = {130},
+  pages   = {104082},
+  year    = {2022}
+}
+
+@article{radiologyTDA2025,
+  author  = {Anonymous},
+  title   = {Unraveling the invisible: Topological data analysis as the new frontier in radiology's diagnostic arsenal},
+  journal = {PMC},
+  year    = {2025}
+}
+
+@article{tdaEngineEpi2026,
+  author  = {Anonymous},
+  title   = {{TDA Engine v2.1}: A computational framework for detecting structural voids in spatially censored epidemiological data},
+  journal = {medRxiv},
+  year    = {2026}
+}
+
+@article{causalTopologyRisk2024,
+  author  = {Anonymous},
+  title   = {Causal network topology analysis: Characterizing causal context for risk management},
+  journal = {Wiley Online Library},
+  year    = {2024}
+}
+
+@article{seizureTopological2024,
+  author  = {Anonymous},
+  title   = {Topological analysis of seizure-induced changes in brain hierarchy through effective connectivity},
+  journal = {arXiv},
+  year    = {2024}
+}
+
+@article{tdaPromisesPitfalls2021,
+  author  = {Anonymous},
+  title   = {Promises and pitfalls of topological data analysis for brain connectivity analysis},
+  journal = {bioRxiv},
+  year    = {2021}
+}
+
+@article{tdaSmartManufacturing2024,
+  author  = {Anonymous},
+  title   = {Topological data analysis in smart manufacturing: State of the art and future directions},
+  journal = {Journal of Manufacturing Systems},
+  year    = {2024}
+}
+
+@article{topologicalHawkes2022,
+  author  = {Anonymous},
+  title   = {Topological {H}awkes processes for causal event-sequence learning},
+  journal = {IEEE Xplore},
+  year    = {2022}
+}
+
+@article{cbtr2024,
+  author  = {Anonymous},
+  title   = {Causality-based topological ranking ({CBTR}) for brain networks},
+  journal = {arXiv},
+  year    = {2024}
+}
+
+@article{nocurl2024,
+  author  = {Jiang, Xinhe and Ling, Zhuangyan and Hu, Xiao and Zhou, Zhong},
+  title   = {{NOCURL}: A network optimization algorithm incorporating causal discovery via {H}odge decomposition},
+  journal = {arXiv preprint arXiv:2402.07020},
+  year    = {2024}
+}
+
+@article{topdeepReview2024,
+  author  = {Anonymous},
+  title   = {Topological deep learning: A review of an emerging paradigm},
+  journal = {Artificial Intelligence Review},
+  year    = {2024}
+}
+
+@book{ballester2026topological,
+  author    = {Ballester, Rub{\'e}n and Casacuberta, Carles and Escalera, Sergio},
+  title     = {Topological Data Analysis for Neural Networks},
+  publisher = {Springer},
+  series    = {SpringerBriefs in Computer Science},
+  year      = {2026}
+}
+
+@article{tdaSurveyAIR2025,
+  author  = {Su, Zhiyuan and Wang, Yusu},
+  title   = {Topological data analysis and topological deep learning: A survey},
+  journal = {Artificial Intelligence Review},
+  pages   = {1--38},
+  year    = {2025}
+}
+
+% ----------- 9. CATEGORY THEORY, SHEAVES, TOPOS FOR DATA ---------------------
+
+@book{maclane1998categories,
+  author    = {Mac~Lane, Saunders},
+  title     = {Categories for the Working Mathematician},
+  edition   = {2},
+  publisher = {Springer},
+  year      = {1998}
+}
+
+@book{bredon1997sheaf,
+  author    = {Bredon, Glen E.},
+  title     = {Sheaf Theory},
+  edition   = {2},
+  publisher = {Springer},
+  year      = {1997}
+}
+
+@book{robinson2014topological,
+  author    = {Robinson, Michael},
+  title     = {Topological Signal Processing},
+  publisher = {Springer},
+  year      = {2014}
+}
+
+@book{spivak2014category,
+  author    = {Spivak, David I.},
+  title     = {Category Theory for the Sciences},
+  publisher = {MIT Press},
+  year      = {2014}
+}
+
+@article{curry2014sheaves,
+  author  = {Curry, Justin},
+  title   = {Sheaves, cosheaves, and applications},
+  journal = {arXiv preprint arXiv:1303.3255},
+  year    = {2014}
+}
+
+@book{lawvere1997conceptual,
+  author    = {Lawvere, F. William and Schanuel, Stephen H.},
+  title     = {Conceptual Mathematics: A First Introduction to Categories},
+  publisher = {Cambridge University Press},
+  year      = {1997}
+}
+
+% ----------- 10. OPTIMAL TRANSPORT, WASSERSTEIN, FUNCTIONAL DATA -------------
+
+@article{peyre2019computational,
+  author  = {Peyr{\'e}, Gabriel and Cuturi, Marco},
+  title   = {Computational optimal transport: With applications to data science},
+  journal = {Foundations and Trends in Machine Learning},
+  volume  = {11},
+  number  = {5--6},
+  pages   = {355--607},
+  year    = {2019}
+}
+
+@book{villani2009optimal,
+  author    = {Villani, C{\'e}dric},
+  title     = {Optimal Transport: Old and New},
+  publisher = {Springer},
+  year      = {2009}
+}
+
+@article{liebl2023fast,
+  author  = {Liebl, Dominik and Reimherr, Matthew},
+  title   = {Fast and fair simultaneous confidence bands for functional parameters},
+  journal = {Journal of the Royal Statistical Society Series B},
+  volume  = {85},
+  number  = {3},
+  pages   = {842--868},
+  year    = {2023}
+}
+
+@article{pini2017interval,
+  author  = {Pini, Alessia and Vantini, Simone},
+  title   = {Interval-wise testing for functional data},
+  journal = {Journal of Nonparametric Statistics},
+  volume  = {29},
+  number  = {2},
+  pages   = {407--424},
+  year    = {2017}
+}
+
+@article{reiss2017methods,
+  author  = {Reiss, Philip T. and Goldsmith, Jeff and Shang, Han~Lin and Ogden, R. Todd},
+  title   = {Methods for scalar-on-function regression},
+  journal = {International Statistical Review},
+  volume  = {85},
+  number  = {2},
+  pages   = {228--249},
+  year    = {2017}
+}
+
+@article{vandervaart2002semiparametric,
+  author  = {van~der~Vaart, Aad W.},
+  title   = {Semiparametric statistics},
+  journal = {Lectures on Probability Theory and Statistics (Saint-Flour 1999)},
+  pages   = {331--457},
+  year    = {2002}
+}
+
+@book{vandervaartwellner1996weak,
+  author    = {van~der~Vaart, Aad W. and Wellner, Jon A.},
+  title     = {Weak Convergence and Empirical Processes},
+  publisher = {Springer},
+  year      = {1996}
+}
+
+@book{billingsley1999convergence,
+  author    = {Billingsley, Patrick},
+  title     = {Convergence of Probability Measures},
+  edition   = {2},
+  publisher = {Wiley},
+  year      = {1999}
+}
+
+@book{bogachev2007measure,
+  author    = {Bogachev, Vladimir I.},
+  title     = {Measure Theory},
+  publisher = {Springer},
+  year      = {2007}
+}
+
+% ----------- 11. TOPOLOGICAL DEEP LEARNING & SOFTWARE -----------------------
+
+@article{papamarkou2024position,
+  author  = {Papamarkou, Theodore and Birdal, Tolga and Bronstein, Michael M. and Carlsson, Gunnar and Curry, Justin and Gao, Yue and Hajij, Mustafa and Kwitt, Roland and Li{\`o}, Pietro and Di~Lorenzo, Paolo and others},
+  title   = {Position: Topological deep learning is the new frontier for relational learning},
+  journal = {Proceedings of the International Conference on Machine Learning (ICML)},
+  year    = {2024}
+}
+
+@article{hajij2023topological,
+  author  = {Hajij, Mustafa and Zamzmi, Ghada and Papamarkou, Theodore and Miolane, Nina and others},
+  title   = {Topological deep learning: Going beyond graph data},
+  journal = {arXiv preprint arXiv:2206.00606},
+  year    = {2023}
+}
+
+% ----------- 12. NO-FREE-LUNCH / STATISTICAL TOPOLOGY ------------------------
+
+@article{belot2020absolutely,
+  author  = {Belot, Gordon},
+  title   = {Absolutely no free lunches!},
+  journal = {Theoretical Computer Science},
+  volume  = {845},
+  pages   = {159--180},
+  year    = {2020}
+}
+
+@article{diaconis1986consistency,
+  author  = {Diaconis, Persi and Freedman, David},
+  title   = {On the consistency of {B}ayes estimates},
+  journal = {Annals of Statistics},
+  volume  = {14},
+  number  = {1},
+  pages   = {1--26},
+  year    = {1986}
+}
+
+@article{dembo1994topological,
+  author  = {Dembo, Amir and Peres, Yuval},
+  title   = {A topological criterion for hypothesis testing},
+  journal = {Annals of Statistics},
+  volume  = {22},
+  number  = {1},
+  pages   = {106--117},
+  year    = {1994}
+}
+
+@phdthesis{genin2018topology,
+  author  = {Genin, Konstantin},
+  title   = {The Topology of Statistical Inquiry},
+  school  = {Carnegie Mellon University},
+  year    = {2018}
+}
+
+@inproceedings{genin2021statistical,
+  author    = {Genin, Konstantin},
+  title     = {Statistical undecidability in linear, non-{G}aussian models in the presence of latent confounders},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2021}
+}
+
+@inproceedings{genin2017topology,
+  author    = {Genin, Konstantin and Kelly, Kevin},
+  title     = {The topology of statistical verifiability},
+  booktitle = {Proceedings of TARK},
+  pages     = {236--250},
+  year      = {2017}
+}
+
+@inproceedings{genin2020statistical,
+  author    = {Genin, Konstantin and Mayo-Wilson, Conor},
+  title     = {Statistical decidability in linear, non-{G}aussian models},
+  booktitle = {NeurIPS Workshop on Causal Discovery \& Causality-Inspired Machine Learning},
+  year      = {2020}
+}
+
+@book{kelley1975general,
+  author    = {Kelley, John L.},
+  title     = {General Topology},
+  publisher = {Springer},
+  year      = {1975}
+}
+
+@book{oxtoby1971measure,
+  author    = {Oxtoby, John C.},
+  title     = {Measure and Category},
+  publisher = {Springer},
+  year      = {1971}
+}
+
+@book{shalev2014understanding,
+  author    = {Shalev-Shwartz, Shai and Ben-David, Shai},
+  title     = {Understanding Machine Learning: From Theory to Algorithms},
+  publisher = {Cambridge University Press},
+  year      = {2014}
+}
+
+@article{cartwright1989natures,
+  author    = {Cartwright, Nancy},
+  title     = {Nature's Capacities and Their Measurement},
+  publisher = {Clarendon Press},
+  year      = {1989}
+}
+
+@article{freedman1997association,
+  author  = {Freedman, David},
+  title   = {From association to causation via regression},
+  journal = {Advances in Applied Mathematics},
+  volume  = {18},
+  pages   = {59--110},
+  year    = {1997}
+}
+
+% ----------- 13. SUPPORTING (other) -----------------------------------------
+
+@article{munch2017users,
+  author  = {Munch, Elizabeth},
+  title   = {A user's guide to topological data analysis},
+  journal = {Journal of Learning Analytics},
+  volume  = {4},
+  number  = {2},
+  pages   = {1--25},
+  year    = {2017}
+}
+
+@article{iniesta2022topological,
+  author  = {Iniesta, Raquel and West, Brendan L. and Thalamuthu, Anbupalam},
+  title   = {Topological data analysis: A comprehensive review and survey},
+  journal = {SORT: Statistics and Operations Research Transactions},
+  volume  = {46},
+  number  = {1},
+  pages   = {115--154},
+  year    = {2022}
+}
+
+@article{kim2018topological,
+  author  = {Kim, Peter T. and Richards, Donald and Sangalli, Laura M.},
+  title   = {Topological data analysis in medical imaging},
+  journal = {Computational Biology and Medicine},
+  volume  = {100},
+  pages   = {97--116},
+  year    = {2018}
+}
+
+@misc{deepcausalitytopology2026,
+  author       = {Anonymous},
+  title        = {{deep\_causality\_topology}: A {R}ust crate for topological causal modelling},
+  howpublished = {\url{https://lib.rs/crates/deep_causality_topology}},
+  year         = {2026}
+}
+
+@article{guan2025causal,
+  author  = {Guan, Yu},
+  title   = {Causal inferences and representation of causal machine learning},
+  journal = {Proceedings of the ACM on Human-Computer Interaction},
+  volume  = {9},
+  number  = {CSCW1},
+  pages   = {1--25},
+  year    = {2025}
+}
+
+@article{vonkugelgen2021self,
+  author  = {von~K{\"u}gelgen, Julius and Sharma, Yash and Gresele, Luigi and Brendel, Wieland and Sch{\"o}lkopf, Bernhard and Besserve, Michel and Locatello, Francesco},
+  title   = {Self-supervised learning with data augmentations provably isolates content from style},
+  journal = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year    = {2021}
+}
+
+@article{ombao2022spectral,
+  author  = {Ombao, Hernando and Pinto, Marco},
+  title   = {Spectral dependence},
+  journal = {Econometrics and Statistics},
+  year    = {2022}
+}
+
+@article{hausmann2016vietoris,
+  author  = {Hausmann, Jean-Claude},
+  title   = {On the {V}ietoris--{R}ips complexes and a cohomology theory for metric spaces},
+  journal = {Annals of Mathematics Studies},
+  publisher = {Princeton University Press},
+  year    = {2016}
+}
+
+@book{shumway2017time,
+  author    = {Shumway, Robert H. and Stoffer, David S.},
+  title     = {Time Series Analysis and Its Applications},
+  publisher = {Springer},
+  year      = {2017}
+}
+
+@article{gorrostieta2018time,
+  author  = {Gorrostieta, Cristina and Ombao, Hernando and von~Sachs, Rainer},
+  title   = {Time-dependent dual frequency coherence in multivariate non-stationary time series},
+  journal = {Journal of Time Series Analysis},
+  volume  = {40},
+  number  = {1},
+  pages   = {3--22},
+  year    = {2018}
+}
+
+@misc{ma2025causal,
+  author       = {Ma, Mengjie},
+  title        = {Causal inference as topological reconstruction in deep manifolds},
+  year         = {2025},
+  howpublished = {Online essay}
+}
+
+@article{rinaldo2010generalized,
+  author  = {Rinaldo, Alessandro and Wasserman, Larry},
+  title   = {Generalized density clustering},
+  journal = {Annals of Statistics},
+  volume  = {38},
+  number  = {5},
+  pages   = {2678--2722},
+  year    = {2010}
+}
+
+@article{rinaldo2012stability,
+  author  = {Rinaldo, Alessandro and Singh, Aarti and Nugent, Rebecca and Wasserman, Larry},
+  title   = {Stability of density-based clustering},
+  journal = {Journal of Machine Learning Research},
+  volume  = {13},
+  pages   = {905--948},
+  year    = {2012}
+}
+
+@inproceedings{chaudhuri2010rates,
+  author    = {Chaudhuri, Kamalika and Dasgupta, Sanjoy},
+  title     = {Rates of convergence for the cluster tree},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  pages     = {343--351},
+  year      = {2010}
+}
+
+@article{stuetzle2010generalized,
+  author  = {Stuetzle, Werner and Nugent, Rebecca},
+  title   = {A generalized single linkage method for estimating the cluster tree of a density},
+  journal = {Journal of Computational and Graphical Statistics},
+  volume  = {19},
+  number  = {2},
+  pages   = {397--418},
+  year    = {2010}
+}
+
+@article{azzalini2007clustering,
+  author  = {Azzalini, Adelchi and Torelli, Nicola},
+  title   = {Clustering via nonparametric density estimation},
+  journal = {Statistics and Computing},
+  volume  = {17},
+  number  = {1},
+  pages   = {71--80},
+  year    = {2007}
+}
+
+@article{robinson2014hypothesis,
+  author  = {Robinson, Andrew and Turner, Katharine},
+  title   = {Hypothesis testing for topological data analysis},
+  journal = {Journal of Applied and Computational Topology},
+  volume  = {1},
+  pages   = {241--261},
+  year    = {2017}
+}
+
+@article{rosenbaum2005exact,
+  author  = {Rosenbaum, Paul R.},
+  title   = {An exact distribution-free test comparing two multivariate distributions based on adjacency},
+  journal = {Journal of the Royal Statistical Society: Series B},
+  volume  = {67},
+  number  = {4},
+  pages   = {515--530},
+  year    = {2005}
+}
+
+@article{gretton2012kernel,
+  author  = {Gretton, Arthur and Borgwardt, Karsten M. and Rasch, Malte J. and Sch{\"o}lkopf, Bernhard and Smola, Alexander},
+  title   = {A kernel two-sample test},
+  journal = {Journal of Machine Learning Research},
+  volume  = {13},
+  pages   = {723--773},
+  year    = {2012}
+}
+
+% =====================================================================
+% Section 14: Additional anchors cited in framework / case-studies / agenda
+% =====================================================================
+
+@inproceedings{munch2016convergence,
+  author    = {Munch, Elizabeth and Wang, Bei},
+  title     = {Convergence between categorical representations of {Reeb} space and {Mapper}},
+  booktitle = {32nd International Symposium on Computational Geometry (SoCG 2016)},
+  series    = {LIPIcs},
+  volume    = {51},
+  pages     = {53:1--53:16},
+  year      = {2016}
+}
+
+@article{sizemore2018cliques,
+  author  = {Sizemore, Ann E. and Giusti, Chad and Kahn, Ari and Vettel, Jean M. and Betzel, Richard F. and Bassett, Danielle S.},
+  title   = {Cliques and cavities in the human connectome},
+  journal = {Journal of Computational Neuroscience},
+  volume  = {44},
+  number  = {1},
+  pages   = {115--145},
+  year    = {2018}
+}
+
+@article{bauer2021ripser,
+  author  = {Bauer, Ulrich},
+  title   = {Ripser: efficient computation of {Vietoris--Rips} persistence barcodes},
+  journal = {Journal of Applied and Computational Topology},
+  volume  = {5},
+  pages   = {391--423},
+  year    = {2021}
+}
+
+@article{tauzin2021giotto,
+  author  = {Tauzin, Guillaume and Lupo, Umberto and Tunstall, Lewis and P{\'e}rez, Julian Burella and Caorsi, Matteo and Medina-Mardones, Anibal M. and Dassatti, Alberto and Hess, Kathryn},
+  title   = {giotto-tda: A topological data analysis toolkit for machine learning and data exploration},
+  journal = {Journal of Machine Learning Research},
+  volume  = {22},
+  number  = {39},
+  pages   = {1--6},
+  year    = {2021}
+}
+
+@inproceedings{rolland2022score,
+  author    = {Rolland, Paul and Cevher, Volkan and Kleindessner, Matth{\"a}us and Russell, Chris and Janzing, Dominik and Sch{\"o}lkopf, Bernhard and Locatello, Francesco},
+  title     = {Score matching enables causal discovery of nonlinear additive noise models},
+  booktitle = {Proceedings of the 39th International Conference on Machine Learning (ICML)},
+  pages     = {18741--18753},
+  year      = {2022}
+}
+
+@inproceedings{bruel2018topological,
+  author    = {Bruel-Gabrielsson, Rickard and Carlsson, Gunnar},
+  title     = {Exposition and interpretation of the topology of neural networks},
+  booktitle = {2019 18th IEEE International Conference on Machine Learning and Applications (ICMLA)},
+  pages     = {1069--1076},
+  year      = {2019}
+}
+
+@article{nigmetov2022topological,
+  author  = {Nigmetov, Arnur and Morozov, Dmitriy},
+  title   = {Topological optimization with big steps},
+  journal = {Discrete \& Computational Geometry},
+  year    = {2024},
+  note    = {Earlier preprint: arXiv:2203.16748, 2022}
+}
+
+@article{willig2025alexandroff,
+  author  = {Willig, Moritz and Zec{\v{e}}vi{\'c}, Matej and Dhami, Devendra Singh and Kersting, Kristian},
+  title   = {Causality from a topological perspective: an {Alexandroff} approach},
+  journal = {arXiv preprint},
+  note    = {arXiv:2501.13886},
+  year    = {2025}
+}
+
+@book{hughes2004stratified,
+  author    = {Hughes, Bruce and Weinberger, Shmuel},
+  title     = {Surgery and stratified spaces},
+  publisher = {Princeton University Press},
+  series    = {Annals of Mathematics Studies},
+  year      = {2004}
+}
+
+@book{banagl2007topological,
+  author    = {Banagl, Markus},
+  title     = {Topological invariants of stratified spaces},
+  publisher = {Springer},
+  series    = {Springer Monographs in Mathematics},
+  year      = {2007}
+}
+
+@article{chazal2013persistence,
+  author  = {Chazal, Fr{\'e}d{\'e}ric and Guibas, Leonidas J. and Oudot, Steve Y. and Skraba, Primoz},
+  title   = {Persistence-based clustering in {Riemannian} manifolds},
+  journal = {Journal of the ACM},
+  volume  = {60},
+  number  = {6},
+  pages   = {41:1--41:38},
+  year    = {2013}
+}
+
+@book{kaczynski2004computational,
+  author    = {Kaczynski, Tomasz and Mischaikow, Konstantin and Mrozek, Marian},
+  title     = {Computational homology},
+  publisher = {Springer},
+  series    = {Applied Mathematical Sciences},
+  volume    = {157},
+  year      = {2004}
+}
+
+@article{gidea2018topological,
+  author  = {Gidea, Marian and Katz, Yuri},
+  title   = {Topological data analysis of financial time series: landscapes of crashes},
+  journal = {Physica A: Statistical Mechanics and its Applications},
+  volume  = {491},
+  pages   = {820--834},
+  year    = {2018}
+}
+
+@article{ismail2022early,
+  author  = {Ismail, Mohd Sabri and Hussain, Saiful Izzuan and Noorani, Mohd Salmi Md},
+  title   = {Detecting early warning signals of major financial crashes in {Bitcoin} using persistent homology},
+  journal = {IEEE Access},
+  volume  = {8},
+  pages   = {202042--202057},
+  year    = {2020}
+}
+
+@article{strommen2025topological,
+  author  = {Strommen, Kristian and Chantry, Matthew and Dorrington, Joshua and Otter, Nina},
+  title   = {A topological perspective on weather regimes},
+  journal = {Climate Dynamics},
+  year    = {2023},
+  note    = {Earlier version: arXiv:2104.03196}
+}
+
+@article{carriere2018statistical,
+  author  = {Carri{\`e}re, Mathieu and Michel, Bertrand and Oudot, Steve},
+  title   = {Statistical analysis and parameter selection for {Mapper}},
+  journal = {Journal of Machine Learning Research},
+  volume  = {19},
+  number  = {12},
+  pages   = {1--39},
+  year    = {2018}
+}
+
+@article{balke1997probabilistic,
+  author  = {Balke, Alexander and Pearl, Judea},
+  title   = {Probabilities of causation: Bounds and identification},
+  journal = {Annals of Mathematics and Artificial Intelligence},
+  volume  = {28},
+  number  = {1--4},
+  pages   = {287--313},
+  year    = {1997}
+}
+
+@article{carlsson2009theory,
+  author  = {Carlsson, Gunnar and Zomorodian, Afra},
+  title   = {The theory of multidimensional persistence},
+  journal = {Discrete \& Computational Geometry},
+  volume  = {42},
+  number  = {1},
+  pages   = {71--93},
+  year    = {2009}
+}
+
+@article{lesnick2015interactive,
+  author  = {Lesnick, Michael and Wright, Matthew},
+  title   = {Interactive visualization of 2-{D} persistence modules},
+  journal = {arXiv preprint arXiv:1512.00180},
+  year    = {2015}
+}
+
+@article{maroulas2020bayesian,
+  author  = {Maroulas, Vasileios and Nasrin, Farzana and Oballe, Christopher},
+  title   = {A {Bayesian} framework for persistent homology},
+  journal = {SIAM Journal on Mathematics of Data Science},
+  volume  = {2},
+  number  = {1},
+  pages   = {48--74},
+  year    = {2020}
+}
+
+@article{pearl2014external,
+  author  = {Pearl, Judea and Bareinboim, Elias},
+  title   = {External validity: From do-calculus to transportability across populations},
+  journal = {Statistical Science},
+  volume  = {29},
+  number  = {4},
+  pages   = {579--595},
+  year    = {2014}
+}

@@ -1,0 +1,273 @@
+\section{Introduction}\label{sec:introduction}
+
+Topological data analysis (TDA) and causal inference (CI) are the two
+mathematical languages in which the modern data-analytic enterprise
+speaks most precisely about \emph{shape} and about \emph{consequence}.
+TDA, developed since the late 1990s, supplies a multi-scale,
+functorial, and provably stable grammar for the geometric structure of
+data \citep{edelsbrunner2002topological,carlsson2009topology,
+edelsbrunner2010computational,wasserman2018topological,
+chazal2021introduction}. Causal inference, developed in parallel since
+the 1970s, supplies a complete calculus for the interventional and
+counterfactual content of probabilistic models
+\citep{rubin1974estimating,pearl1995causal,pearl2009causality,
+imbens2015causal,peters2017elements,bareinboim2020pearls}. Both fields
+have reached methodological maturity; both have generated their own
+journals, their own statistical scaffolding, and their own
+implementation ecosystems; and both have been applied to many of the
+same empirical objects---networks, dynamical systems, biomedical
+images, spatiotemporal fields---without explicitly meeting.
+
+The thesis of this paper is that the absence of an explicit meeting
+between the two is no longer tenable. Modern scientific data are
+increasingly complex, high-dimensional, and non-Euclidean, in ways
+that undermine the parametric and structural assumptions on which
+classical causal estimators depend; and topological data analysis,
+having absorbed a decade of statistical inference results, is now
+positioned to deliver not merely descriptive summaries but
+\emph{causal} estimators with calibrated uncertainty. A small but
+growing body of work---the four seed papers
+\citep{ibeling2021topological,kim2026topological,lecci2014statistical,
+elyaagoubi2023statistical} that we will treat as the anchors of the
+field, together with the sheaf-theoretic causal-inference programme
+\citep{mahadevan2021causal,mahadevan2022universal,mahadevan2025sheaf}
+and the topological-ordering family of causal-discovery algorithms
+\citep{rolland2022score,tran2024constraining,xu2025information,
+nocurl2024,wu2026optimization}---has begun to formalise the
+connection. What is missing is the framework that organises these
+contributions into a single research domain.
+
+We propose such a framework. The remainder of this introduction
+positions the contribution: \Cref{sec:intro_parallel} traces the
+parallel evolution of TDA and CI; \Cref{sec:intro_why} argues for
+their integration; \Cref{sec:intro_limits} states the limitations of
+each tradition in isolation; and \Cref{sec:intro_contributions}
+enumerates the four contributions that we will make in the body of
+the paper.
+
+\subsection{The parallel evolution of two fields}\label{sec:intro_parallel}
+
+Topological data analysis crystallised as a discipline with the
+introduction of \emph{persistent homology}: the assignment, to a
+filtered simplicial complex, of a multi-set of birth--death pairs that
+record the appearance and disappearance of topological features at
+each scale \citep{edelsbrunner2002topological,zomorodian2005computing,
+edelsbrunner2008persistent}. The stability theorem of
+\citet{cohen2007stability}, refined by \citet{chazal2016structure},
+established that persistent homology is $1$-Lipschitz with respect to
+the bottleneck distance under $L^\infty$ perturbations of the filter,
+turning a previously qualitative summary into a calibrated descriptor.
+The decade that followed delivered the statistical inference
+programme---confidence sets, bootstrap, rates of convergence, and
+functional summaries (landscapes, silhouettes, images)---synthesised
+in \citet{lecci2014statistical} and consolidated by
+\citet{bubenik2015statistical,adams2017persistence,
+chazal2014stochastic}. \citet{carlsson2009topology}, the
+\citet{singh2007mapper} Mapper algorithm, and the categorical
+formalism of \citet{spivak2014category,curry2014sheaves} situated
+TDA within a broader functorial-data-analysis programme that
+emphasised composability and structure.
+
+Causal inference, in parallel, developed in two complementary
+traditions. \citet{rubin1974estimating} and the potential-outcomes
+school \citep{rubin2005causal,imbens2015causal} grounded the field in
+counterfactual contrasts and identification conditions
+(consistency, ignorability, positivity), and produced the
+doubly-robust efficient estimation machinery
+\citep{robins1989probability,kennedy2024semiparametric,
+chernozhukov2018double} that today underwrites empirical work in
+biomedicine, econometrics, and policy science. \citet{pearl1995causal,
+pearl2009causality,pearl2018book} introduced the structural-causal-
+model formalism and do-calculus, which axiomatised intervention as a
+syntactic operation on directed acyclic graphs and enabled
+\emph{causal discovery}: the recovery of $G$ itself from data via
+constraint-based \citep{spirtes2001causation}, score-based
+\citep{meek1995strong}, and functional \citep{shimizu2006lingam,
+peters2014causal} methods. \citet{bareinboim2020pearls,
+ibeling2021topological} crystallised the causal hierarchy
+(observational, interventional, counterfactual) into a single
+expressive ladder.
+
+\Cref{fig:timeline} in \Cref{sec:literature} traces the two
+trajectories side by side. Until $\sim$2020 there is essentially no
+crossing: a researcher could attend the major venues of either field
+for a decade without hearing the other's vocabulary. The crossings
+that began to appear thereafter---a topology on the space of SCMs
+\citep{ibeling2021topological}; topology-aware treatment-effect
+estimators \citep{kim2026topological}; simulation-based topological
+inference for multivariate time series
+\citep{elyaagoubi2023statistical}; sheaf-theoretic causal calculi
+\citep{mahadevan2021causal,mahadevan2022universal,mahadevan2025sheaf};
+and topological-ordering algorithms for causal discovery
+\citep{rolland2022score,tran2024constraining,xu2025information,
+nocurl2024,wu2026optimization}---are the methodological seeds of the
+field this paper proposes to name.
+
+\subsection{Why topology matters for causality}\label{sec:intro_why}
+
+Three properties of topology recommend it as a natural partner for
+causal inference, and each is reflected in one of the four domains of
+our framework (\Cref{fig:taxonomy}).
+
+\paragraph{Non-Euclidean data.}
+The classical average treatment effect, $\ATE = \E[Y^1 - Y^0]$,
+implicitly assumes that the difference $Y^1 - Y^0$ is well defined and
+scalar-valued. Modern outcomes routinely fail both assumptions: a CT
+scan, a molecular conformation, a brain connectivity graph, and a
+gridded climate field are all non-Euclidean objects on which
+``$Y^1 - Y^0$'' has no obvious meaning. Topological summaries of such
+objects---persistence diagrams, Reeb graphs, Mapper complexes---live
+in calibrated metric spaces (the Wasserstein space of diagrams, the
+interleaving space of Reeb graphs) on which causal contrasts are
+well defined \citep{kim2026topological,kurisu2024geodesic}. Sub-domain
+A3 of \Cref{sec:framework} (causal embeddings in persistence diagrams)
+makes this construction precise.
+
+\paragraph{Robustness through stability.}
+The stability theorem (\Cref{eq:stability}) is the operational core of
+the field: small perturbations in the data produce only small
+perturbations in the persistent invariants, with a constant of one.
+This is precisely the kind of bound that classical causal estimators
+typically lack and that practical deployment increasingly demands.
+\Cref{prop:stability-transfer} shows that any Lipschitz causal
+functional of a persistent invariant inherits the quantitative
+robustness of $\PHk{k}$, giving a TCDA estimator a tractable
+sensitivity guarantee with respect to Hausdorff-scale perturbations
+of the data support. Sub-domain B1 of \Cref{sec:framework} formalises
+this transfer.
+
+\paragraph{Hidden structure and confounding.}
+Unobserved confounders move observed variables along unobserved
+orbits and so deposit a topological signature in the joint support
+that no graphical or moment-based diagnostic detects. The
+worked example of \Cref{sec:cs_confounding}---a hidden circular
+confounder generating a persistent $1$-cycle in the residual support
+of an apparently null treatment effect---illustrates the principle,
+and \Cref{prop:confounding_signature} states it formally. Sub-domain
+B2 of \Cref{sec:framework} positions topological diagnostics as a
+complement to the meagre-set theorem of
+\citet{ibeling2021topological}: where the theorem tells us that
+assumption-free identification is impossible on almost all SCMs,
+topological diagnostics tell us \emph{which} SCMs have residual
+geometric structure consistent with hidden confounding.
+
+These three properties are sufficient to motivate the framework, but
+the case for TCDA also rests on a fourth, less elementary observation:
+much of modern causal discovery is \emph{already} doing topological
+data analysis, often without naming it as such.
+\citet{rolland2022score,tran2024constraining,xu2025information,
+nocurl2024,wu2026optimization} all extract a topological order from
+the data and then refine edges within that order; the order itself is
+an invariant of the joint distribution under the appropriate functor,
+and \Cref{prop:identifiability} formalises the corresponding
+identifiability question. Naming what is already implicit is a small
+contribution, but it is one that the field requires before it can
+begin to make explicit progress on the deeper questions.
+
+\subsection{Limitations of current approaches}\label{sec:intro_limits}
+
+The case against the status quo is symmetric. Classical causal
+inference, applied to non-Euclidean outcomes, must reduce them to
+scalar surrogates and so discards exactly the structure of interest;
+classical TDA, applied to data with a known causal-graph context,
+exposes geometric features but is silent on the question of which
+geometric feature carries an intervention's effect. Neither field, on
+its own, is equipped to handle a treatment whose outcome is a tumour
+shape, a folded protein, a brain network, or a precipitation cluster.
+
+A further limit is structural rather than technical.
+\citet{ibeling2021topological}'s topological causal hierarchy theorem
+shows that the set of SCMs on which assumption-free identification of
+$P(y \mid \doop(x))$ is possible is \emph{topologically meagre}---in
+the Baire-category sense, exceptional. This is the topological
+counterpart of measure-theoretic ``no-free-lunch'' results
+\citep{oxtoby1971measure,belot2020absolutely,genin2017topology,
+genin2018topology}, and it places a precise upper limit on what any
+purely observational causal procedure can hope to achieve. The
+theorem also identifies the structure that must be supplied to do
+better, namely a topology on the model space, and is one of the
+clearest demonstrations that the language of CI requires topological
+extension on its own terms. The complementary critique runs from CI
+back to TDA: a persistence diagram is the same whether the variables
+it summarises stand in a causal relationship or are mere coincident
+features, so without an intervention semantics overlay, a TDA
+descriptor cannot license a causal claim. \Cref{sec:lit_gaps}
+formalises five specific gaps that follow from this asymmetric
+maturity, and \Cref{sec:research} translates each into a concrete
+open problem.
+
+\subsection{Our contributions}\label{sec:intro_contributions}
+
+The paper makes four contributions.
+
+\begin{enumerate}[label=(\arabic*),leftmargin=2em]
+  \item \textbf{A formal framework.} We propose \emph{Topological
+        Causal Data Analysis} (TCDA) as a coherent research domain at
+        the intersection of TDA and CI, give a formal definition of a
+        TCDA problem as a tuple $(\Mc, G, \Tc, \Cc)$
+        (\Cref{def:tcda}), state two foundational propositions
+        (\Cref{prop:stability-transfer,prop:identifiability}) that
+        establish well-posedness, and defend a taxonomy of four
+        top-level domains and twelve sub-domains
+        (\Cref{fig:taxonomy}). This is the central intellectual
+        contribution and is the subject of \Cref{sec:framework}.
+
+  \item \textbf{A structured literature review.}
+        \Cref{sec:literature} synthesises the existing connections
+        between TDA and CI along the taxonomy of
+        \Cref{sec:framework}, organised across three eras
+        (\Cref{sec:lit_early,sec:lit_method,sec:lit_app}) and
+        closing with five concrete gaps (\Cref{sec:lit_gaps}). The
+        review establishes that every node of the taxonomy is
+        already anchored in published work, and that the missing
+        piece is the unifying framework we provide.
+
+  \item \textbf{A suite of proof-of-concept case studies.}
+        \Cref{sec:case_studies} instantiates the TCDA tuple in five
+        concrete settings---biomedical imaging and molecular
+        structure (\Cref{sec:cs_tate}), multivariate brain time
+        series (\Cref{sec:cs_cycles}), confounding diagnostics
+        (\Cref{sec:cs_confounding}), Mapper-based causal abstraction
+        with calibrated uncertainty (\Cref{sec:cs_mapper}), and
+        spatiotemporal climate attribution
+        (\Cref{sec:cs_climate})---together with a worked
+        confounding-signature proposition
+        (\Cref{prop:confounding_signature}) and a synthesis table
+        (\Cref{tab:cs_summary}) mapping each case study back to the
+        taxonomy.
+
+  \item \textbf{A research agenda.} \Cref{sec:research} formalises
+        eleven Open Questions (\Cref{q:causal-modules}--%
+        \Cref{q:topo-docalculus}), fourteen Research Avenues
+        (\Cref{r:causal-mapper}--\Cref{r:benchmarks}), and four
+        Computational Challenges (\Cref{c:scalable-ph}--%
+        \Cref{c:gpu-cubical}), organised into theoretical,
+        methodological, computational, domain-specific, and
+        industry-facing branches and summarised in the mind-map of
+        \Cref{fig:research_mindmap}. Each item is calibrated to be
+        specific enough to underwrite an individual research project
+        or grant proposal.
+\end{enumerate}
+
+\paragraph{What this paper is not.}
+TCDA is a proposal, not a theorem. We do not claim that every
+component of the framework is mature, that every open question is
+solvable, or that the taxonomy is final. Several of the propositions
+in \Cref{sec:framework,sec:case_studies} are stated as proof sketches
+rather than full theorems, and several of the open questions in
+\Cref{sec:research} are likely to be reformulated as the field
+matures. The contribution of the paper is to articulate the
+framework, locate the existing literature within it, and identify
+the questions whose answers will determine whether TCDA becomes a
+durable research domain or remains a useful but provisional
+re-organisation of work that already exists.
+
+\paragraph{Organisation.}
+\Cref{sec:preliminaries} collects the minimal TDA and CI background
+needed to read the rest of the paper.
+\Cref{sec:framework}~develops the TCDA framework and proves its
+foundational propositions. \Cref{sec:literature} surveys the existing
+state of the field. \Cref{sec:case_studies} presents five
+proof-of-concept case studies. \Cref{sec:research} states the
+research agenda. \Cref{sec:conclusion} closes with a call for
+interdisciplinary collaboration.

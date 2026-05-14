@@ -1,0 +1,94 @@
+\section{Conclusion}\label{sec:conclusion}
+
+We have proposed \emph{Topological Causal Data Analysis} as a
+coherent research domain at the intersection of two mature
+mathematical traditions. The case for the proposal rests on four
+elements that the body of the paper has developed in turn: a formal
+framework (\Cref{sec:framework}) anchored in the tuple
+$(\Mc, G, \Tc, \Cc)$ of \Cref{def:tcda} and the foundational
+propositions \Cref{prop:stability-transfer,prop:identifiability}; a
+structured literature review (\Cref{sec:literature}) showing that the
+methodological building blocks of TCDA are already in place but
+fragmented across five non-interacting threads
+(\Cref{sec:lit_gaps}); a suite of five case studies
+(\Cref{sec:case_studies}) demonstrating that the framework is
+non-vacuous and that each cell of its taxonomy admits an explicit
+instantiation; and a research agenda (\Cref{sec:research}) comprising
+eleven formal Open Questions, fourteen Research Avenues, and four
+Computational Challenges calibrated against the gaps and case-study
+limitations identified earlier.
+
+\paragraph{The four cornerstones of the field.}
+The argument of the paper is that the four seed works
+$\{$\citet{ibeling2021topological}, \citet{kim2026topological},
+\citet{lecci2014statistical},
+\citet{elyaagoubi2023statistical}$\}$, taken together, span the
+mathematical, statistical, and methodological corners of TCDA. The
+first supplies the topology of causal-model spaces and the
+no-free-lunch theorem that frames the field's negative results
+\citep{ibeling2021topological}; the second supplies the
+doubly-robust, stability-guaranteed estimator that converts a
+topological summary into a calibrated causal quantity
+\citep{kim2026topological}; the third supplies the statistical
+inference scaffolding---confidence sets, bootstrap, rates of
+convergence---without which the calibration of \emph{any} TCDA
+estimator would be void \citep{lecci2014statistical}; and the fourth
+supplies the simulation-based benchmark on which discovery procedures
+in time-series and dependence-network settings can be evaluated
+\citep{elyaagoubi2023statistical}. No single seed work is the field
+on its own, and a serious TCDA programme must draw on all four
+threads in parallel.
+
+\paragraph{What we have not done.}
+We have not claimed that the framework is final, that every
+proposition is fully proved, that every open question is solvable on
+its current statement, or that the taxonomy is mutually exclusive.
+Several arguments in \Cref{sec:framework,sec:case_studies} are
+proof sketches that demand fuller treatment, several research
+avenues in \Cref{sec:research} are likely to fragment or merge as
+the field matures, and the case studies of \Cref{sec:case_studies}
+sit at varying levels of methodological readiness---some are
+recapitulations of published work, others are concrete proposals
+awaiting implementation. The four contributions enumerated in
+\Cref{sec:intro_contributions} should therefore be understood as a
+proposal in the technical sense---a unified vocabulary, a
+taxonomy, a literature map, and an agenda---rather than as a
+declaration of completion.
+
+\paragraph{A call for interdisciplinary collaboration.}
+The community most likely to settle the open questions of
+\Cref{sec:research} does not yet exist. Its constituents---algebraic
+topologists, statisticians, machine-learning researchers, causal-
+inference theorists, computational scientists, and domain experts in
+biomedicine, climate, finance, neuroscience, and materials---are
+distributed across departments that historically have not shared
+seminars or journals. The contribution that TCDA can make beyond its
+internal technical agenda is to provide a vocabulary in which
+collaborations across these silos can be staged: a topologist can
+read \Cref{prop:stability-transfer} as a stability statement and
+contribute new admissible functors $\Tc$; a causal-inference theorist
+can read \Cref{prop:identifiability} as an identifiability question
+and contribute new classes $\mathcal{G}$; a domain scientist can read
+the case studies of \Cref{sec:case_studies} as templates and
+contribute new applications; a computational scientist can read
+\Cref{sec:research_compute} as a list of engineering targets. The
+challenges that result---the GPU cubical PH of
+\Cref{c:gpu-cubical}, the interoperable software of
+\Cref{c:software}, the benchmark suite of \Cref{r:benchmarks}, the
+validation standards of \Cref{r:validation-standards}---are
+themselves invitations to a kind of work that no single sub-community
+can complete in isolation. We hope this paper makes such invitations
+easier to extend and easier to accept.
+
+\paragraph{Closing.}
+The slogan we offer is simple: \emph{the shape of data has a causal
+story to tell}. Topology, on its own, recovers the shape; causal
+inference, on its own, recovers the story; and only together can they
+deliver, for the increasingly complex and increasingly non-Euclidean
+data of contemporary science, the calibrated and intervention-aware
+accounts that practical deployment demands. The four contributions of
+this paper---a framework, a literature, a case-study suite, and an
+agenda---are offered as the starting point of that joint enterprise,
+not its conclusion. The body of work that converts the proposal into
+a mature field remains to be done, and it is to that body of work
+that we hope this paper now invites the reader.

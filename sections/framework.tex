@@ -1,0 +1,474 @@
+\section{The TCDA Framework}\label{sec:framework}
+
+Building on the preliminaries of \Cref{sec:preliminaries}, we now propose
+\emph{Topological Causal Data Analysis} (TCDA) as a coherent research
+domain at the intersection of TDA and causal inference. Our exposition
+proceeds in five steps. \Cref{sec:formal-tcda} gives a formal definition
+of a TCDA problem as a tuple linking a topological space of observations
+to a causal graph through a functorial topological summary, together with
+two foundational propositions establishing well-posedness.
+\Cref{sec:domain-A,sec:domain-B,sec:domain-C,sec:domain-D} then defend a
+four-domain taxonomy: representation (A), robustness (B), interpretation
+(C), and methodology (D), each with three sub-domains. The taxonomy is
+summarised in \Cref{fig:taxonomy} and is the paper's primary intellectual
+contribution. Every sub-domain is anchored to at least one published
+work, ensuring that the framework is grounded rather than aspirational.
+
+\subsection{Formal definition of a TCDA problem}\label{sec:formal-tcda}
+
+The unifying intuition is that, in a TCDA problem, causal inference is
+performed not on raw observations but on \emph{topological summaries} of
+those observations, where the summary is computed by a functor that
+satisfies the stability and interpretability properties recalled in
+\Cref{sec:prelim_tda}. The causal question of interest is then either
+(i)~a query about the underlying causal structure that generated the
+observations, or (ii)~a contrast between topological summaries induced
+by different interventions, or (iii)~a robustness/identifiability
+statement about classical causal estimands whose validity is controlled
+by topological invariants.
+
+\begin{definition}[TCDA problem]\label{def:tcda}
+A \emph{topological causal data analysis problem} is a tuple
+\[
+\TCDA \;=\; (\Mc,\, G,\, \Tc,\, \Cc),
+\]
+whose components are:
+\begin{enumerate}[leftmargin=2em,label=(\roman*)]
+\item $\Mc$ is a (Polish) topological space of observations equipped with
+a metric or filtration parameter $\rho:\Mc\times\Mc\to\R_{\geq 0}$, on which
+probability measures and their interventional counterparts are well-defined;
+\item $G = (V,E)$ is a causal structure---typically a DAG or ADMG---whose
+vertices represent (possibly latent) random variables $X = (X_v)_{v\in V}$
+taking values in $\Mc$ and whose edges encode direct causal relationships
+in the SCM sense of \Cref{sec:prelim_ci};
+\item $\Tc \,:\, \mathbf{Filt}(\Mc) \,\to\, \mathbf{Pers}$ is a
+\emph{topological functor} from a category of filtered objects on $\Mc$
+to a category of persistence-like invariants. Canonical instances are
+$\Tc = \PHk{k}$ for $k\in\{0,1,2\}$, $\Tc = \Reeb_f$, $\Tc = \Map_f$,
+and their functional summaries $\Tc = \varphi(\cdot;\,r)$ (silhouettes)
+or $\Tc = \Lambda$ (landscapes). We require $\Tc$ to be stable with
+respect to some interleaving-type metric on $\mathbf{Filt}(\Mc)$;
+\item $\Cc$ is a \emph{causal query}---a functional of the
+interventional or counterfactual distribution induced by $G$ on $\Mc$.
+We allow $\Cc$ to act directly on raw outcomes ($\Cc = \ATE,\CATE,\TATE,
+P(y\mid \doop(x)),\ldots$) or on topological summaries
+($\Cc = W_p(\Dgmk{k}(P^{x}),\Dgmk{k}(P^{x'}))$, for example, as in
+\citet{kim2026topological}).
+\end{enumerate}
+A TCDA \emph{solution} is an estimator $\widehat\Cc_n$ together with
+calibrated uncertainty (confidence sets, hypothesis tests, posterior
+credible sets) for the population quantity $\Cc$, computed from a sample
+$\{X_i\}_{i=1}^n \subset \Mc$ using $\Tc$ as a (possibly sufficient)
+statistic.
+\end{definition}
+
+\Cref{def:tcda} is intentionally broad. The four components
+$(\Mc, G, \Tc, \Cc)$ play orthogonal roles: $\Mc$ specifies \emph{what
+the data is}, $G$ specifies \emph{which causal relationships are
+admitted}, $\Tc$ specifies \emph{how shape is summarised}, and $\Cc$
+specifies \emph{the scientific question}. Existing work occupies
+distinct corners of this space:
+\begin{itemize}[leftmargin=2em]
+\item \citet{ibeling2021topological} take $\Tc$ to be the identity and
+endow $\Mc = \mathfrak{M}$ (a space of SCMs) with a topology that controls
+the Pearl--Bareinboim causal hierarchy.
+\item \citet{kim2026topological} fix $\Cc$ to be a Wasserstein contrast
+between persistence diagrams of potential outcomes and develop AIPW
+estimators with $\sqrt n$-rates and weak-convergence guarantees.
+\item \citet{elyaagoubi2023statistical} fix $\Mc$ to be a space of
+multivariate time-series, $\Tc = \PHk{1}$ of a windowed dependence
+network, and $\Cc$ to be a hypothesis test about the number of cycles.
+\item \citet{lecci2014statistical} develops the calibrated statistical
+inference for $\Tc$ alone that any TCDA estimator must inherit.
+\end{itemize}
+Thus the four seed works of the field each fix three components of the
+TCDA tuple and study the remaining one. The TCDA programme is precisely
+the systematic study of the joint behaviour of all four.
+
+\input{figures/taxonomy_tikz}
+
+\paragraph{Requirements on $\Tc$.}
+For \Cref{def:tcda} to be useful in a causal context, the functor $\Tc$
+must satisfy three operating conditions:
+\begin{enumerate}[leftmargin=2em,label=(F\arabic*)]
+\item \emph{Stability.} Small perturbations of the input filtration
+should produce small perturbations of $\Tc(\cdot)$ in an interleaving-type
+metric. Persistent homology satisfies this with constant $1$ for the
+bottleneck distance (\Cref{eq:stability}). Mapper and Reeb functors
+admit weaker but useful stability properties under appropriate
+discretisation \citep{munch2016convergence,carriere2018statistical}.
+\item \emph{Interpretability.} The features of $\Tc(\cdot)$ should admit
+a substantive interpretation in the underlying scientific domain (e.g.,
+$1$-cycles in $\PHk{1}$ of a brain functional network correspond to
+re-entrant cortical loops; \citealp{elyaagoubi2023statistical,
+sizemore2018cliques}).
+\item \emph{Computability.} The functor must be computable in time
+polynomial in the sample size for the kind of data the application
+demands. Off-the-shelf libraries \texttt{Ripser}, \texttt{GUDHI},
+\texttt{giotto-tda} provide $O(n^3)$ persistent-homology computation up
+to dimension $2$ in practice; sparse and approximate variants extend
+this to $n \gtrsim 10^5$ \citep{bauer2021ripser,otter2017roadmap,
+tauzin2021giotto}.
+\end{enumerate}
+We refer to functors satisfying (F1)--(F3) as \emph{admissible} and
+restrict attention to admissible $\Tc$ in all that follows.
+
+We now state two propositions that establish the well-posedness of the
+TCDA tuple. The first transfers the celebrated stability of persistent
+homology to any Lipschitz causal query; the second pins down the
+informational condition under which a causal graph is identifiable from
+a topological functor alone. Both are stated for the canonical case
+$\Tc = \PHk{k}$ but extend immediately to silhouettes, landscapes, and
+other Lipschitz functional summaries.
+
+\begin{proposition}[Stability transfer]\label{prop:stability-transfer}
+Let $\TCDA = (\Mc, G, \Tc, \Cc)$ be a TCDA problem with $\Tc = \PHk{k}$
+applied to the Vietoris--Rips filtration of a compact subset of $\Mc$,
+and let
+\[
+  \Cc\bigl[\Tc(P), \Tc(Q)\bigr] \;=\; \phi\bigl(\Dgmk{k}(P),\,\Dgmk{k}(Q)\bigr)
+\]
+for some functional $\phi$ that is $L$-Lipschitz with respect to the
+$p$-Wasserstein distance on persistence diagrams. Then for any pair of
+distributions $P, P' \in \mathcal{P}(\Mc)$ with bounded support and any
+fixed $Q$,
+\[
+\bigl|\Cc[\Tc(P),\Tc(Q)] - \Cc[\Tc(P'),\Tc(Q)]\bigr|
+\;\leq\; L \cdot W_p\!\bigl(\Dgmk{k}(P),\,\Dgmk{k}(P')\bigr)
+\;\leq\; L \cdot d_H\!\bigl(\supp P,\, \supp P'\bigr),
+\]
+where $d_H$ denotes the Hausdorff distance between the supports of $P$
+and $P'$.
+\end{proposition}
+
+\begin{proof}[Sketch]
+The first inequality is the Lipschitz assumption on $\phi$; the second
+is the stability theorem for persistent homology
+(\Cref{eq:stability}; \citealp{cohen2007stability,chazal2016structure}).
+The constant is $1$ in the canonical bottleneck case and tracks the
+$p$-Wasserstein constant otherwise.
+\end{proof}
+
+\emph{Significance.} \Cref{prop:stability-transfer} says that any causal
+query expressible as a Lipschitz functional of persistence diagrams
+inherits the quantitative robustness of $\PHk{k}$: a small Hausdorff
+perturbation of the support---a much weaker requirement than convergence
+in any parametric metric---bounds the perturbation of the causal
+estimand. This delivers a robustness guarantee with no analogue in
+classical (parametric) causal inference. \citet{kim2026topological}
+exploit precisely this transfer to establish stability of their TATE
+estimator under the silhouette-based summary $\Tc = \varphi(\cdot;r)$.
+
+\begin{proposition}[Identifiability from a topological functor]
+\label{prop:identifiability}
+Let $G$ vary over a class $\mathcal{G}$ of DAGs over the random vector
+$X$, let $\mathcal{P}_G$ denote the observational distribution induced by
+$G$, and let $\Tc$ be an admissible topological functor. Then $G$ is
+identifiable from $\Tc(\mathcal{P}_G)$ alone---i.e., there is a function
+$\Psi$ such that $\Psi(\Tc(\mathcal{P}_G)) = G$ for all $G \in \mathcal{G}$
+\emph{if and only if} the assignment $G \mapsto \Tc(\mathcal{P}_G)$ is
+injective on $\mathcal{G}$.
+\end{proposition}
+
+\begin{proof}[Sketch]
+The ``only if'' direction is immediate: if the map is non-injective,
+then two distinct $G_1 \neq G_2$ produce identical $\Tc(\cdot)$, so no
+inverse $\Psi$ exists. The ``if'' direction is the definition of
+identifiability: an injective map admits a left inverse on its image,
+and any such left inverse plays the role of $\Psi$. Standard measurable
+selection (e.g., the Kuratowski--Ryll-Nardzewski theorem) supplies a
+measurable $\Psi$ when $\mathcal{G}$ is countable, as in the
+finite-DAG case.
+\end{proof}
+
+\emph{Significance.} \Cref{prop:identifiability} isolates the exact
+informational condition under which a topology-based discovery algorithm
+can hope to recover the underlying graph. It allows existing
+topology-based discovery procedures to be classified by what $\Tc$ they
+implicitly use: TOPIC \citep{tran2024constraining} uses the
+score-Jacobian functor, SSTS \citep{xu2025information} uses a mutual-
+information-based functor, and Hodge-decomposition methods
+\citep{nocurl2024} use the harmonic component of a $1$-chain. The
+proposition does not, of course, certify that the injectivity condition
+\emph{holds} for a given $\Tc$; we list this as
+\Cref{q:tcda-identifiability} in \Cref{sec:research}.
+
+\medskip
+Together, \Cref{prop:stability-transfer,prop:identifiability} establish
+that the TCDA tuple is non-vacuous: it inherits both the stability and
+the identifiability properties that motivate its definition. The
+remaining sections of this section show that the four domains of the
+taxonomy fall out naturally as the four ``faces'' of \Cref{def:tcda}---one
+for each of the components $\Tc$, $\Cc$ in their representational and
+robustness roles, plus one for the interpretive direction (reading
+causality \emph{out} of $\Tc$) and one for the methodological direction
+(applying TCDA in specific data modalities).
+
+\subsection{Domain A: Topological Causal Representation}\label{sec:domain-A}
+
+Domain A addresses the question: \emph{which topological structure best
+represents the causal content of high-dimensional, non-Euclidean data?}
+The role of $\Tc$ in \Cref{def:tcda} is here that of a sufficient
+statistic for the causal structure or for the interventional contrasts
+of interest. Three sub-domains arise.
+
+\subsubsection*{A1. Persistent homology for causal structure learning.}
+Persistent homology of a multivariate distribution or its empirical
+dependence graph can serve as a sufficient statistic for the underlying
+causal DAG. Two threads converge here. First, modern \emph{topological-
+ordering} approaches to causal discovery---e.g.\ TOPIC
+\citep{tran2024constraining}, SSTS \citep{xu2025information}, NoCurl-X
+\citep{nocurl2024}, OptiTopo \citep{wu2026optimization}, and CaPS
+\citep{rolland2022score}---use rank-based or information-theoretic
+functors to extract a topological order from the data and then refine
+edges within that order; the order itself is a topological invariant of
+the joint distribution. Second, persistent homology of the
+\emph{dependence network} of a multivariate time series identifies
+feedback cycles \citep{elyaagoubi2023statistical}; loops in
+$\PHk{1}$ correspond to directed feedback loops in the underlying
+Granger graph, and a generative simulation framework
+\citep{elyaagoubi2023statistical} now exists to test how well
+TDA-based discovery methods recover known cycle structure. In the
+language of \Cref{prop:identifiability}, sub-domain A1 chooses $\Tc$ to
+satisfy the injectivity condition for restricted classes of $G$ (e.g.\
+additive-noise models with non-Gaussian innovations).
+
+\subsubsection*{A2. Mapper and Reeb graphs for causal abstraction.}
+Where A1 produces a graph that approximates $G$, A2 produces a
+\emph{topological abstraction} of the underlying causal mechanism: a
+simplification of the data space along a filter function chosen to
+align with the causal structure. The Mapper algorithm
+\citep{singh2007mapper,carriere2018statistical} partitions $\Mc$ along
+level sets of a filter $f$ and glues the resulting clusters into a
+simplicial complex; under appropriate choices of $f$, the resulting
+complex captures coarse causal regimes (treatment-response strata,
+phase transitions, mechanism-shift points). Reeb graphs play the
+analogous role for continuous filters \citep{biasotti2008reeb,
+morozov2013interleaving}. The recent ball-mapper variant
+\citep{dlotko2019ball} is particularly attractive for causal abstraction
+because it bypasses the cover-selection problem and admits a stability
+guarantee. The statistical scaffolding of \citet{lecci2014statistical}
+applies directly: bootstrap confidence sets on cluster trees yield
+calibrated abstractions, which is essential when the abstraction is to
+serve as the carrier of a downstream causal query.
+
+\subsubsection*{A3. Causal embeddings in persistence diagrams.}
+Sub-domain A3 represents the \emph{causal effect itself} as a
+topological feature: each potential outcome distribution $P^a$ is
+summarised by a persistence diagram $\Dgmk{k}(P^a)$ (or its silhouette
+$\varphi(\cdot;P^a,r)$) and the causal contrast is a distance,
+hypothesis test, or learned mapping between these diagrams. This is
+exactly the formulation of \citet{kim2026topological}, who define the
+\emph{topological average treatment effect}
+\[
+\TATE = W_1\!\bigl(\Dgmk{k}(P^{a=1}),\,\Dgmk{k}(P^{a=0})\bigr),
+\]
+and provide an AIPW estimator with $\sqrt n$-rate. The same idea applies
+in non-Euclidean outcome spaces: the geodesic ATE of
+\citet{kurisu2024geodesic} for Riemannian-valued outcomes admits a
+topological generalisation in which the Fr\'echet mean is replaced by
+the persistence diagram. Sub-domain A3 thus exhibits the TCDA tuple in
+its most direct form: $\Tc$ converts outcomes to diagrams; $\Cc$ is a
+metric or test on those diagrams; the causal graph $G$ underwrites
+identifiability of the contrast.
+
+\subsection{Domain B: Topological Robustness in Causal Inference}\label{sec:domain-B}
+
+Domain B addresses the question: \emph{when can topological invariants
+\textbf{control} the sensitivity of causal estimates to perturbations of
+the data, the model, or the identifying assumptions?} Here the role of
+$\Tc$ is to deliver Lipschitz-type bounds that propagate to $\Cc$.
+
+\subsubsection*{B1. Stability of causal estimates under topological perturbations.}
+\Cref{prop:stability-transfer} is the prototype: any Lipschitz causal
+query whose primary statistic is a persistence diagram inherits a
+quantitative robustness bound from the bottleneck/Wasserstein stability
+of $\PHk{k}$. \citet{kim2026topological} exploit this in their stability
+theorem for the silhouette TATE; \citet{farzam2025topology} extend it to
+representation-learning settings where topological summaries serve as
+distributionally-robust losses. A complementary thread uses persistence
+landscapes \citep{bubenik2015statistical} as smooth, Hilbert-space-valued
+embeddings, which allows classical M-estimation rates to be transferred
+to TDA-based causal estimators. The statistical inference programme of
+\citet{lecci2014statistical}---confidence sets, bootstrap, rates of
+convergence on landscapes and diagrams---is the inferential backbone of
+all B1 work: a TCDA estimator that lacks calibrated uncertainty cannot
+deliver causal robustness, only descriptive plots.
+
+\subsubsection*{B2. Topological detection of unobserved confounding.}
+A persistent ``hole'' in the data manifold can betray the action of an
+unobserved variable: when an unobserved confounder $U$ moves an outcome
+along an orbit, the support of the observed distribution exhibits a
+non-trivial $\PHk{1}$ class that the observed graph cannot explain. This
+observation has been operationalised in two ways. First, \emph{anomaly
+scores} based on bottleneck or Wasserstein distance flag samples whose
+local persistence diagram differs from the population diagram
+\citep{bruel2018topological,nigmetov2022topological}; flagged samples
+are candidates for hidden-confounder action. Second, the topological
+hierarchy of \citet{ibeling2021topological} shows that the set of SCMs
+for which an assumption-free identification of $P(y\mid \doop(x))$ is
+possible is \emph{topologically meager}, formalising the intuition that
+confounders are ``everywhere dense.'' This puts a precise upper limit on
+what B2 detection methods can hope to achieve: they identify residual
+topology consistent with confounding but cannot, in general, certify the
+absence of confounding without further assumptions.
+
+\subsubsection*{B3. Functorial causal inference.}
+Sub-domain B3 asks for the categorical analogue of \Cref{def:tcda}: a
+formal description of how causal inference and topological filtration
+interact as composable functors. The commutative square of
+\Cref{fig:functorial} captures the ideal case: applying $\Tc$ to a pair
+of interventional distributions and then taking a topological contrast
+should yield the same answer as taking the causal contrast at the level
+of distributions and then applying $\Tc$. \citet{mahadevan2025sheaf,
+mahadevan2021causal,mahadevan2022universal} have developed a sheaf-
+theoretic framework in which causal inference is presented as a
+universal construction in a topos of sheaves over a base category of
+contexts; do-calculus is recovered through the subobject classifier.
+This programme can be read as a B3 formalisation of TCDA when $\Tc$ is
+chosen to be the global-section functor of an appropriate sheaf. The
+Alexandroff-topology approaches of \citet{willig2025alexandroff}
+provide a more elementary entry point.
+
+\input{figures/functorial_diagram}
+
+\subsection{Domain C: Causal Interpretation of Topological Features}\label{sec:domain-C}
+
+Domain C inverts the direction of arrows: rather than using topology to
+build or stabilise causal estimates, it reads \emph{causal stories} off
+topological features that have already been computed. The role of $\Tc$
+remains as before, but the role of $\Cc$ is now that of an interpretive
+overlay---a translation of a topological summary into the language of
+mechanisms, mediators, and heterogeneity.
+
+\subsubsection*{C1. Betti numbers as causal explanations.}
+A persistent $k$-cycle is an invariant; whether it admits a causal
+interpretation depends on the data-generating process. In multivariate
+time-series neuroscience, a robust $1$-cycle in the Granger-network
+filtration of a healthy brain corresponds to a re-entrant cortical loop
+that the disease modifies \citep{sizemore2018cliques,
+fathian2022trend,elyaagoubi2023statistical}. In gene-regulation,
+$1$-cycles in correlation-network filtrations have been linked to
+feedback motifs whose perturbation alters phenotype
+\citep{kovacev2016using,cang2018integration}. In each case, the
+topological feature is a candidate causal mechanism whose validity is
+adjudicated by intervention. Sub-domain C1 develops the principled
+language for these moves: when is a persistent cycle ``causal'' rather
+than ``spurious''?
+
+\subsubsection*{C2. Persistent cohomology for mediation analysis.}
+Cohomology is more naturally suited to decomposition than is homology:
+a coboundary represents the action of a potential function on a chain,
+and the Hodge decomposition of a flow on a simplicial complex separates
+the gradient (direct), curl (feedback), and harmonic (global)
+components \citep{nocurl2024,desilva2007coverage}. We argue that this
+decomposition is the right topological tool for \emph{mediation
+analysis}: the total causal effect of an exposure $A$ on an outcome $Y$
+through mediators $M$ decomposes naturally into a gradient component
+(direct effect), a curl component (cyclic feedback through $M$), and a
+harmonic component (effects not attributable to any local mediator).
+\Cref{q:cohomology-mediation} in \Cref{sec:research} states the
+corresponding open problem.
+
+\subsubsection*{C3. Stratified spaces and causal heterogeneity.}
+Real causal effects are often heterogeneous across strata defined not
+by explicit covariates but by latent topological features: disease
+subtypes are connected components of a phenotype manifold; phase
+transitions are codimension-$1$ singularities. The theory of stratified
+spaces \citep{hughes2004stratified,banagl2007topological} provides a
+framework for causal effects that vary across topological strata,
+generalising the conditional ATE to a stratum-conditional ATE indexed
+by a topological feature. The cluster-tree statistical inference of
+\citet{lecci2014statistical} and the topological clustering theory of
+\citet{chazal2013persistence} provide the inferential machinery; the
+causal content remains to be developed and is one of the main open
+avenues we identify in \Cref{sec:research}.
+
+\subsection{Domain D: Methodology and Applications}\label{sec:domain-D}
+
+Domain D is the applied face of TCDA. It does not introduce new
+mathematical primitives---these are supplied by Domains A--C---but it
+identifies the data modalities and substantive areas in which the
+TCDA tuple is most readily instantiated. Each application sub-domain
+specialises the tuple $(\Mc, G, \Tc, \Cc)$ to a class of problems.
+
+\subsubsection*{D1. TCDA for time-series causality.}
+Time-series data are the natural habitat for sub-domain D1. The space
+$\Mc$ is a phase-space reconstruction (Takens embedding) of one or more
+observed series; $G$ encodes temporal directed causality (Granger or
+its generalisations); $\Tc = \PHk{1}$ of the reconstructed phase-space
+detects periodicity and feedback structure; $\Cc$ is a hypothesis test
+or estimation of dynamical causality. \citet{bando2022causal} combine
+persistent homology of Takens embeddings with convergent cross mapping;
+\citet{harnack2017causal,gholizadeh2018short} use persistence to
+augment Granger-type tests. \citet{elyaagoubi2023statistical} provide a
+simulation framework on which D1 methods can be benchmarked, with
+prescribed numbers of cycles serving as ground truth.
+
+\subsubsection*{D2. TCDA for spatial and spatiotemporal causality.}
+The space $\Mc$ is a manifold ($\R^2$, $\R^3$, a sphere) or a
+spatio-temporal product; $G$ encodes spatially-distributed causal
+mechanisms (e.g.\ teleconnections in climate, propagation in epidemics);
+$\Tc$ is typically cubical persistent homology
+\citep{kaczynski2004computational} on a gridded scalar field. The
+cosmological literature \citep{sousbie2011persistent,
+vandeweygaert2011alpha,cisewski2014nonparametric} provides a mature
+template for descriptive TCDA on cosmic-web data; sub-domain D2 is the
+research programme that adds causal attribution to such descriptions
+(e.g.\ attribution of an extreme-precipitation event to a Pacific
+oscillation pattern via TCDA contrast). \citet{kim2026topological}'s
+machinery extends naturally here when the outcome of interest is a
+gridded field rather than a vector.
+
+\subsubsection*{D3. Industry applications: healthcare, finance, climate.}
+Sub-domain D3 collects the application-driven contributions that fall
+outside the cleaner D1/D2 modalities. Healthcare TCDA includes
+topological biomarkers of disease progression and treatment response
+\citep{kovacev2016using,cang2018integration,iqbal2025classification,
+soares2020sars,kim2018topological}, where \citet{kim2026topological}
+exhibit the SARS-CoV-2 CT-scan application and the GEOM-Drugs molecular
+graph application. Finance TCDA includes topological early-warning
+indicators for systemic risk \citep{gidea2018topological,
+ismail2022early}, where the causal content is the attribution of a
+regime change to a triggering market factor. Climate TCDA includes
+topological characterisations of extreme-event clusters
+\citep{cisewski2014nonparametric,strommen2025topological}, where the
+causal content is the attribution of regime change to forcing. In each
+case the TCDA tuple specialises predictably; the open methodological
+problem is the calibration of $\widehat\Cc_n$ under realistic
+non-stationarity.
+
+\subsection{Reading the framework}\label{sec:reading}
+
+\Cref{fig:taxonomy} is intended to be read in two ways. \emph{Vertically},
+each domain A--D represents a different way to fix the TCDA tuple: A
+fixes $\Tc$ and $\Cc$ to representational roles; B fixes them to
+robustness roles; C inverts the direction by asking what
+$\Cc$ \emph{means} given $\Tc$; D specialises $\Mc$ and $G$ to
+particular data modalities. \emph{Horizontally}, the sub-domains within
+each row form a methodological progression: from the simplest tool
+(homology/diagram) at left to the most structural (functorial/
+stratified) at right.
+
+The framework is exhaustive in the following operational sense: every
+work we cite in this paper occupies at least one node of
+\Cref{fig:taxonomy}, and most occupy more than one---reinforcing the
+claim that the field is real but currently fragmented. The framework is
+not, however, mutually exclusive; nor is it final. \Cref{sec:literature}
+populates the taxonomy with the actual state of the literature, and
+\Cref{sec:research} returns to it to formulate the open questions and
+research avenues that each node generates.
+
+We close this section with an observation that motivates the rest of
+the paper. Each of the four domains was identified by a single seed
+work: \citet{ibeling2021topological} essentially establishes B2--B3 (the
+topology of SCMs and the meagre set of identifiable models);
+\citet{kim2026topological} essentially establishes A3--B1 (causal
+contrasts as topological functionals with stability); the statistical
+programme of \citet{lecci2014statistical} provides the inferential
+machinery that A--C all require; and the time-series framework of
+\citet{elyaagoubi2023statistical} anchors D1 and supplies the
+simulation infrastructure on which the rest of the methodology can be
+benchmarked. The TCDA programme thus begins with four seed-points and
+the conjecture, defended in the remainder of this paper, that they are
+the corners of a single coherent research domain.

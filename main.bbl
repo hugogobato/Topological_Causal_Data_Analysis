@@ -1,0 +1,1010 @@
+\begin{thebibliography}{157}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Adams et~al.(2017)Adams, Emerson, Kirby, Neville, Peterson, Shipman,
+  Chepushtanova, Hanson, Motta, and Ziegelmeier]{adams2017persistence}
+Henry Adams, Tegan Emerson, Michael Kirby, Rachel Neville, Chris Peterson,
+  Patrick Shipman, Sofya Chepushtanova, Eric Hanson, Francis Motta, and Lori
+  Ziegelmeier.
+\newblock Persistence images: A stable vector representation of persistent
+  homology.
+\newblock \emph{Journal of Machine Learning Research}, 18\penalty0
+  (8):\penalty0 1--35, 2017.
+
+\bibitem[Anonymous(2026)]{deepcausalitytopology2026}
+Anonymous.
+\newblock {deep\_causality\_topology}: A {R}ust crate for topological causal
+  modelling.
+\newblock \url{https://lib.rs/crates/deep_causality_topology}, 2026.
+
+\bibitem[Assaad et~al.(2023)Assaad, Devijver, and Gaussier]{timeseriescd2023}
+Charles~K. Assaad, Emilie Devijver, and Eric Gaussier.
+\newblock Survey and evaluation of causal discovery methods for time series.
+\newblock In \emph{Proceedings of the 31st International Joint Conference on
+  Artificial Intelligence (IJCAI)}, 2023.
+
+\bibitem[Avin et~al.(2005)Avin, Shpitser, and Pearl]{avin2005identifiability}
+Chen Avin, Ilya Shpitser, and Judea Pearl.
+\newblock Identifiability of path-specific effects.
+\newblock In \emph{Proceedings of IJCAI}, 2005.
+
+\bibitem[Axelrod and G{\'o}mez-Bombarelli(2022)]{axelrod2022geom}
+Simon Axelrod and Rafael G{\'o}mez-Bombarelli.
+\newblock {GEOM}, energy-annotated molecular conformations for property
+  prediction and molecular generation.
+\newblock \emph{Scientific Data}, 9\penalty0 (1):\penalty0 185, 2022.
+
+\bibitem[Balke and Pearl(1997)]{balke1997probabilistic}
+Alexander Balke and Judea Pearl.
+\newblock Probabilities of causation: Bounds and identification.
+\newblock \emph{Annals of Mathematics and Artificial Intelligence}, 28\penalty0
+  (1--4):\penalty0 287--313, 1997.
+
+\bibitem[Ballester et~al.(2026)Ballester, Casacuberta, and
+  Escalera]{ballester2026topological}
+Rub{\'e}n Ballester, Carles Casacuberta, and Sergio Escalera.
+\newblock \emph{Topological Data Analysis for Neural Networks}.
+\newblock SpringerBriefs in Computer Science. Springer, 2026.
+
+\bibitem[Banagl(2007)]{banagl2007topological}
+Markus Banagl.
+\newblock \emph{Topological invariants of stratified spaces}.
+\newblock Springer Monographs in Mathematics. Springer, 2007.
+
+\bibitem[Bando et~al.(2022)Bando, Kaji, and Yaguchi]{bando2022causal}
+Hideki Bando, Shizuo Kaji, and Takaharu Yaguchi.
+\newblock Causal inference for empirical dynamical systems based on persistent
+  homology.
+\newblock \emph{JSIAM Letters}, 14:\penalty0 69--72, 2022.
+
+\bibitem[Bareinboim et~al.(2020)Bareinboim, Correa, Ibeling, and
+  Icard]{bareinboim2020pearls}
+Elias Bareinboim, Juan~D. Correa, Duligur Ibeling, and Thomas Icard.
+\newblock On pearl's hierarchy and the foundations of causal inference.
+\newblock Technical Report R-60, Causal AI Lab, Columbia University, 2020.
+
+\bibitem[Barroso et~al.(2024)Barroso, Gomes, and Baxter]{barroso2024inference}
+Filipe Barroso, Diogo Gomes, and Gareth~J. Baxter.
+\newblock Inference of causal networks using a topological threshold.
+\newblock \emph{arXiv preprint arXiv:2404.14460}, 2024.
+
+\bibitem[Bassett and Bullmore(2009)]{bassett2009human}
+Danielle~S. Bassett and Edward~T. Bullmore.
+\newblock Human brain networks in health and disease.
+\newblock \emph{Current Opinion in Neurology}, 22\penalty0 (4):\penalty0
+  340--347, 2009.
+
+\bibitem[Bauer(2021)]{bauer2021ripser}
+Ulrich Bauer.
+\newblock Ripser: efficient computation of {Vietoris--Rips} persistence
+  barcodes.
+\newblock \emph{Journal of Applied and Computational Topology}, 5:\penalty0
+  391--423, 2021.
+
+\bibitem[Bauer et~al.(2013)Bauer, Ge, and Wang]{bauer2013measuring}
+Ulrich Bauer, Xiaoyin Ge, and Yusu Wang.
+\newblock Measuring distance between reeb graphs.
+\newblock \emph{arXiv preprint arXiv:1307.2839}, 2013.
+
+\bibitem[Belot(2020)]{belot2020absolutely}
+Gordon Belot.
+\newblock Absolutely no free lunches!
+\newblock \emph{Theoretical Computer Science}, 845:\penalty0 159--180, 2020.
+
+\bibitem[Biasotti et~al.(2008)Biasotti, Giorgi, Spagnuolo, and
+  Falcidieno]{biasotti2008reeb}
+Silvia Biasotti, Daniela Giorgi, Michela Spagnuolo, and Bianca Falcidieno.
+\newblock Reeb graphs for shape analysis and applications.
+\newblock \emph{Theoretical Computer Science}, 392\penalty0 (1):\penalty0
+  5--22, 2008.
+
+\bibitem[Bongers et~al.(2021)Bongers, Forr{\'e}, Peters, and
+  Mooij]{bongers2021foundations}
+Stephan Bongers, Patrick Forr{\'e}, Jonas Peters, and Joris~M. Mooij.
+\newblock Foundations of structural causal models with cycles and latent
+  variables.
+\newblock \emph{Annals of Statistics}, 49\penalty0 (5):\penalty0 2885--2915,
+  2021.
+
+\bibitem[Bredon(1997)]{bredon1997sheaf}
+Glen~E. Bredon.
+\newblock \emph{Sheaf Theory}.
+\newblock Springer, 2 edition, 1997.
+
+\bibitem[Bruel-Gabrielsson and Carlsson(2019)]{bruel2018topological}
+Rickard Bruel-Gabrielsson and Gunnar Carlsson.
+\newblock Exposition and interpretation of the topology of neural networks.
+\newblock In \emph{2019 18th IEEE International Conference on Machine Learning
+  and Applications (ICMLA)}, pages 1069--1076, 2019.
+
+\bibitem[Bubenik(2015)]{bubenik2015statistical}
+Peter Bubenik.
+\newblock Statistical topological data analysis using persistence landscapes.
+\newblock \emph{Journal of Machine Learning Research}, 16\penalty0
+  (1):\penalty0 77--102, 2015.
+
+\bibitem[Bullmore and Sporns(2009)]{bullmore2009complex}
+Edward~T. Bullmore and Olaf Sporns.
+\newblock Complex brain networks: Graph theoretical analysis of structural and
+  functional systems.
+\newblock \emph{Nature Reviews Neuroscience}, 10\penalty0 (3):\penalty0
+  186--198, 2009.
+
+\bibitem[Cang and Wei(2018)]{cang2018integration}
+Zixuan Cang and Guo-Wei Wei.
+\newblock Integration of element-specific persistent homology and machine
+  learning for protein-ligand binding affinity prediction.
+\newblock \emph{International Journal for Numerical Methods in Biomedical
+  Engineering}, 34\penalty0 (2):\penalty0 e2914, 2018.
+
+\bibitem[Carlsson(2009)]{carlsson2009topology}
+Gunnar Carlsson.
+\newblock Topology and data.
+\newblock \emph{Bulletin of the American Mathematical Society}, 46\penalty0
+  (2):\penalty0 255--308, 2009.
+\newblock \doi{10.1090/S0273-0979-09-01249-X}.
+
+\bibitem[Carlsson(2020)]{carlsson2020topological}
+Gunnar Carlsson.
+\newblock Topological methods for data modelling.
+\newblock \emph{Nature Reviews Physics}, 2\penalty0 (12):\penalty0 697--708,
+  2020.
+
+\bibitem[Carlsson and Zomorodian(2009)]{carlsson2009theory}
+Gunnar Carlsson and Afra Zomorodian.
+\newblock The theory of multidimensional persistence.
+\newblock \emph{Discrete \& Computational Geometry}, 42\penalty0 (1):\penalty0
+  71--93, 2009.
+
+\bibitem[Carri{\`e}re et~al.(2018)Carri{\`e}re, Michel, and
+  Oudot]{carriere2018statistical}
+Mathieu Carri{\`e}re, Bertrand Michel, and Steve Oudot.
+\newblock Statistical analysis and parameter selection for {Mapper}.
+\newblock \emph{Journal of Machine Learning Research}, 19\penalty0
+  (12):\penalty0 1--39, 2018.
+
+\bibitem[Carri{\`e}re et~al.(2020)Carri{\`e}re, Cuturi, and
+  Oudot]{carriere2020perslay}
+Mathieu Carri{\`e}re, Marco Cuturi, and Steve Oudot.
+\newblock {PersLay}: A neural network layer for persistence diagrams and new
+  graph topological signatures.
+\newblock In \emph{Proceedings of the International Conference on Artificial
+  Intelligence and Statistics (AISTATS)}, pages 2786--2796, 2020.
+
+\bibitem[Chaudhuri and Dasgupta(2010)]{chaudhuri2010rates}
+Kamalika Chaudhuri and Sanjoy Dasgupta.
+\newblock Rates of convergence for the cluster tree.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, pages 343--351, 2010.
+
+\bibitem[Chazal and Michel(2021)]{chazal2021introduction}
+Fr{\'e}d{\'e}ric Chazal and Bertrand Michel.
+\newblock An introduction to topological data analysis: Fundamental and
+  practical aspects for data scientists.
+\newblock \emph{Frontiers in Artificial Intelligence}, 4:\penalty0 667963,
+  2021.
+\newblock \doi{10.3389/frai.2021.667963}.
+
+\bibitem[Chazal et~al.(2013{\natexlab{a}})Chazal, Fasy, Lecci, Rinaldo, Singh,
+  and Wasserman]{chazal2013bootstrap}
+Fr{\'e}d{\'e}ric Chazal, Brittany~Terese Fasy, Fabrizio Lecci, Alessandro
+  Rinaldo, Aarti Singh, and Larry Wasserman.
+\newblock On the bootstrap for persistence diagrams and landscapes.
+\newblock \emph{arXiv preprint arXiv:1311.0376}, 2013{\natexlab{a}}.
+
+\bibitem[Chazal et~al.(2013{\natexlab{b}})Chazal, Glisse, Labrue{\`r}e, and
+  Michel]{chazal2015optimal}
+Fr{\'e}d{\'e}ric Chazal, Marc Glisse, Catherine Labrue{\`r}e, and Bertrand
+  Michel.
+\newblock Optimal rates of convergence for persistence diagrams in topological
+  data analysis.
+\newblock \emph{arXiv preprint arXiv:1305.6239}, 2013{\natexlab{b}}.
+
+\bibitem[Chazal et~al.(2013{\natexlab{c}})Chazal, Guibas, Oudot, and
+  Skraba]{chazal2013persistence}
+Fr{\'e}d{\'e}ric Chazal, Leonidas~J. Guibas, Steve~Y. Oudot, and Primoz Skraba.
+\newblock Persistence-based clustering in {Riemannian} manifolds.
+\newblock \emph{Journal of the ACM}, 60\penalty0 (6):\penalty0 41:1--41:38,
+  2013{\natexlab{c}}.
+
+\bibitem[Chazal et~al.(2014)Chazal, Fasy, Lecci, Rinaldo, and
+  Wasserman]{chazal2014stochastic}
+Fr{\'e}d{\'e}ric Chazal, Brittany~Terese Fasy, Fabrizio Lecci, Alessandro
+  Rinaldo, and Larry Wasserman.
+\newblock Stochastic convergence of persistence landscapes and silhouettes.
+\newblock In \emph{Proceedings of the 30th Annual Symposium on Computational
+  Geometry}, pages 474--483, 2014.
+
+\bibitem[Chazal et~al.(2016)Chazal, de~Silva, Glisse, and
+  Oudot]{chazal2016structure}
+Fr{\'e}d{\'e}ric Chazal, Vin de~Silva, Marc Glisse, and Steve Oudot.
+\newblock \emph{The Structure and Stability of Persistence Modules}.
+\newblock SpringerBriefs in Mathematics. Springer, 2016.
+
+\bibitem[Chernozhukov et~al.(2018)Chernozhukov, Chetverikov, Demirer, Duflo,
+  Hansen, Newey, and Robins]{chernozhukov2018double}
+Victor Chernozhukov, Denis Chetverikov, Mert Demirer, Esther Duflo, Christian
+  Hansen, Whitney Newey, and James Robins.
+\newblock Double/debiased machine learning for treatment and structural
+  parameters.
+\newblock \emph{The Econometrics Journal}, 21\penalty0 (1):\penalty0 C1--C68,
+  2018.
+
+\bibitem[Chung et~al.(2009)Chung, Bubenik, and Kim]{chung2009persistence}
+Moo~K. Chung, Peter Bubenik, and Peter~T. Kim.
+\newblock Persistence diagrams of cortical surface data.
+\newblock In \emph{Information Processing in Medical Imaging (IPMI)}, pages
+  386--397, 2009.
+
+\bibitem[Cisewski et~al.(2014)Cisewski, Croft, Freeman, Genovese, Khandai,
+  Ozbek, and Wasserman]{cisewski2014nonparametric}
+Jessi Cisewski, Rupert A.~C. Croft, Peter~E. Freeman, Christopher~R. Genovese,
+  Nishikanta Khandai, Melih Ozbek, and Larry Wasserman.
+\newblock Nonparametric 3{D} map of the {IGM} using the {Lyman}-alpha forest.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society},
+  440\penalty0 (3):\penalty0 2599--2609, 2014.
+
+\bibitem[Cohen-Steiner et~al.(2007)Cohen-Steiner, Edelsbrunner, and
+  Harer]{cohen2007stability}
+David Cohen-Steiner, Herbert Edelsbrunner, and John Harer.
+\newblock Stability of persistence diagrams.
+\newblock \emph{Discrete \& Computational Geometry}, 37\penalty0 (1):\penalty0
+  103--120, 2007.
+
+\bibitem[Corcoran and Jones(2023)]{corcoran2023topological}
+Padraig Corcoran and Christopher~B. Jones.
+\newblock Topological data analysis for geographical information science using
+  persistent homology.
+\newblock \emph{International Journal of Geographical Information Science},
+  37\penalty0 (1):\penalty0 120--143, 2023.
+
+\bibitem[Curry(2014)]{curry2014sheaves}
+Justin Curry.
+\newblock Sheaves, cosheaves, and applications.
+\newblock \emph{arXiv preprint arXiv:1303.3255}, 2014.
+
+\bibitem[de~Silva and Ghrist(2007)]{desilva2007coverage}
+Vin de~Silva and Robert Ghrist.
+\newblock Coverage in sensor networks via persistent homology.
+\newblock \emph{Algebraic \& Geometric Topology}, 7:\penalty0 339--358, 2007.
+
+\bibitem[Dembo and Peres(1994)]{dembo1994topological}
+Amir Dembo and Yuval Peres.
+\newblock A topological criterion for hypothesis testing.
+\newblock \emph{Annals of Statistics}, 22\penalty0 (1):\penalty0 106--117,
+  1994.
+
+\bibitem[D{\l}otko(2019)]{dlotko2019ball}
+Pawe{\l} D{\l}otko.
+\newblock Ball mapper: A shape summary for topological data analysis.
+\newblock \emph{arXiv preprint arXiv:1901.07410}, 2019.
+
+\bibitem[Ecker et~al.(2024)Ecker, de~Luna, and Schelin]{ecker2024causal}
+Kreske Ecker, Xavier de~Luna, and Lina Schelin.
+\newblock Causal inference with a functional outcome.
+\newblock \emph{Journal of the Royal Statistical Society Series C}, 73\penalty0
+  (1):\penalty0 221--240, 2024.
+
+\bibitem[Edelsbrunner and Harer(2008)]{edelsbrunner2008persistent}
+Herbert Edelsbrunner and John Harer.
+\newblock Persistent homology---a survey.
+\newblock \emph{Contemporary Mathematics}, 453:\penalty0 257--282, 2008.
+\newblock \doi{10.1090/conm/453/08802}.
+
+\bibitem[Edelsbrunner and Harer(2010)]{edelsbrunner2010computational}
+Herbert Edelsbrunner and John Harer.
+\newblock \emph{Computational Topology: An Introduction}.
+\newblock American Mathematical Society, 2010.
+\newblock ISBN 9780821849255.
+
+\bibitem[Edelsbrunner et~al.(2002)Edelsbrunner, Letscher, and
+  Zomorodian]{edelsbrunner2002topological}
+Herbert Edelsbrunner, David Letscher, and Afra Zomorodian.
+\newblock Topological persistence and simplification.
+\newblock \emph{Discrete \& Computational Geometry}, 28\penalty0 (4):\penalty0
+  511--533, 2002.
+
+\bibitem[El-Yaagoubi et~al.(2023{\natexlab{a}})El-Yaagoubi, Chung, and
+  Ombao]{elyaagoubi2023statistical}
+Anass~B. El-Yaagoubi, Moo~K. Chung, and Hernando Ombao.
+\newblock Statistical inference for dependence networks in topological data
+  analysis.
+\newblock \emph{Frontiers in Artificial Intelligence}, 6:\penalty0 1293504,
+  2023{\natexlab{a}}.
+\newblock \doi{10.3389/frai.2023.1293504}.
+
+\bibitem[El-Yaagoubi et~al.(2023{\natexlab{b}})El-Yaagoubi, Chung, and
+  Ombao]{elyaagoubi2023topological}
+Anass~B. El-Yaagoubi, Moo~K. Chung, and Hernando Ombao.
+\newblock Topological data analysis for multivariate time series data.
+\newblock \emph{Entropy}, 25\penalty0 (11):\penalty0 1509, 2023{\natexlab{b}}.
+\newblock \doi{10.3390/e25111509}.
+
+\bibitem[Farzam et~al.(2025)Farzam, Aloui, Tarokh, and
+  Sapiro]{farzam2025topology}
+Amirhossein Farzam, Ahmed Aloui, Vahid Tarokh, and Guillermo Sapiro.
+\newblock Topology-aware robust representation balancing for estimating causal
+  effects.
+\newblock In \emph{NeurIPS High-dimensional Learning Dynamics Workshop}, 2025.
+
+\bibitem[Fasy et~al.(2014)Fasy, Lecci, Rinaldo, Wasserman, Balakrishnan, and
+  Singh]{fasy2014confidence}
+Brittany~Terese Fasy, Fabrizio Lecci, Alessandro Rinaldo, Larry Wasserman,
+  Sivaraman Balakrishnan, and Aarti Singh.
+\newblock Confidence sets for persistence diagrams.
+\newblock \emph{Annals of Statistics}, 42\penalty0 (6):\penalty0 2301--2339,
+  2014.
+
+\bibitem[Fathian et~al.(2022)Fathian, Jamali, and Raoufy]{fathian2022trend}
+Ali Fathian, Yousef Jamali, and Mohammad~Reza Raoufy.
+\newblock The trend of disruption in the functional brain network topology of
+  {A}lzheimer's disease.
+\newblock \emph{Scientific Reports}, 12:\penalty0 14998, 2022.
+
+\bibitem[Friston(2011)]{friston2011functional}
+Karl~J. Friston.
+\newblock Functional and effective connectivity: A review.
+\newblock \emph{Brain Connectivity}, 1\penalty0 (1):\penalty0 13--36, 2011.
+
+\bibitem[Galles and Pearl(1998)]{galles1998axiomatic}
+David Galles and Judea Pearl.
+\newblock An axiomatic characterization of causal counterfactuals.
+\newblock \emph{Foundations of Science}, 3\penalty0 (1):\penalty0 151--182,
+  1998.
+
+\bibitem[Genin(2018)]{genin2018topology}
+Konstantin Genin.
+\newblock \emph{The Topology of Statistical Inquiry}.
+\newblock PhD thesis, Carnegie Mellon University, 2018.
+
+\bibitem[Genin(2021)]{genin2021statistical}
+Konstantin Genin.
+\newblock Statistical undecidability in linear, non-{G}aussian models in the
+  presence of latent confounders.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2021.
+
+\bibitem[Genin and Kelly(2017)]{genin2017topology}
+Konstantin Genin and Kevin Kelly.
+\newblock The topology of statistical verifiability.
+\newblock In \emph{Proceedings of TARK}, pages 236--250, 2017.
+
+\bibitem[Genin and Mayo-Wilson(2020)]{genin2020statistical}
+Konstantin Genin and Conor Mayo-Wilson.
+\newblock Statistical decidability in linear, non-{G}aussian models.
+\newblock In \emph{NeurIPS Workshop on Causal Discovery \& Causality-Inspired
+  Machine Learning}, 2020.
+
+\bibitem[Gholizadeh and Zadrozny(2018)]{gholizadeh2018short}
+Shafie Gholizadeh and Wlodek Zadrozny.
+\newblock A short survey of topological data analysis in time series and
+  systems analysis.
+\newblock \emph{arXiv preprint}, 2018.
+\newblock arXiv:1809.10745.
+
+\bibitem[Ghrist(2008)]{ghrist2008barcodes}
+Robert Ghrist.
+\newblock Barcodes: The persistent topology of data.
+\newblock \emph{Bulletin of the American Mathematical Society}, 45\penalty0
+  (1):\penalty0 61--75, 2008.
+\newblock \doi{10.1090/S0273-0979-07-01191-3}.
+
+\bibitem[Gidea and Katz(2018)]{gidea2018topological}
+Marian Gidea and Yuri Katz.
+\newblock Topological data analysis of financial time series: landscapes of
+  crashes.
+\newblock \emph{Physica A: Statistical Mechanics and its Applications},
+  491:\penalty0 820--834, 2018.
+
+\bibitem[Gorrostieta et~al.(2018)Gorrostieta, Ombao, and von
+  Sachs]{gorrostieta2018time}
+Cristina Gorrostieta, Hernando Ombao, and Rainer von Sachs.
+\newblock Time-dependent dual frequency coherence in multivariate
+  non-stationary time series.
+\newblock \emph{Journal of Time Series Analysis}, 40\penalty0 (1):\penalty0
+  3--22, 2018.
+
+\bibitem[Guan(2025)]{guan2025causal}
+Yu~Guan.
+\newblock Causal inferences and representation of causal machine learning.
+\newblock \emph{Proceedings of the ACM on Human-Computer Interaction},
+  9\penalty0 (CSCW1):\penalty0 1--25, 2025.
+
+\bibitem[Hajij et~al.(2023)Hajij, Zamzmi, Papamarkou, Miolane,
+  et~al.]{hajij2023topological}
+Mustafa Hajij, Ghada Zamzmi, Theodore Papamarkou, Nina Miolane, et~al.
+\newblock Topological deep learning: Going beyond graph data.
+\newblock \emph{arXiv preprint arXiv:2206.00606}, 2023.
+
+\bibitem[Harnack et~al.(2017)Harnack, Laminski, Sch{\"u}lke, and
+  Pawelzik]{harnack2017causal}
+Daniel Harnack, Erik Laminski, Marcel Sch{\"u}lke, and Klaus Pawelzik.
+\newblock Topological causality in dynamical systems.
+\newblock \emph{Physical Review Letters}, 119\penalty0 (9):\penalty0 098301,
+  2017.
+
+\bibitem[Hatcher(2002)]{hatcher2002algebraic}
+Allen Hatcher.
+\newblock \emph{Algebraic Topology}.
+\newblock Cambridge University Press, 2002.
+\newblock ISBN 9780521795401.
+
+\bibitem[Hausmann(2016)]{hausmann2016vietoris}
+Jean-Claude Hausmann.
+\newblock On the {V}ietoris--{R}ips complexes and a cohomology theory for
+  metric spaces.
+\newblock \emph{Annals of Mathematics Studies}, 2016.
+
+\bibitem[Henry et~al.(2020)Henry, Duffy, Rudolph, Nebel, Mostofsky, and
+  Cohen]{henry2020bridging}
+Teague~R. Henry, Karen~A. Duffy, Marc~D. Rudolph, Mary~Beth Nebel, Stewart~H.
+  Mostofsky, and Jessica~R. Cohen.
+\newblock Bridging global and local topology in whole-brain networks using the
+  network statistic jackknife.
+\newblock \emph{Network Neuroscience}, 4\penalty0 (1):\penalty0 70--88, 2020.
+
+\bibitem[Hughes and Weinberger(2004)]{hughes2004stratified}
+Bruce Hughes and Shmuel Weinberger.
+\newblock \emph{Surgery and stratified spaces}.
+\newblock Annals of Mathematics Studies. Princeton University Press, 2004.
+
+\bibitem[Ibeling and Icard(2019)]{ibeling2019open}
+Duligur Ibeling and Thomas Icard.
+\newblock On open-universe causal reasoning.
+\newblock In \emph{Proceedings of UAI}, 2019.
+
+\bibitem[Ibeling and Icard(2020)]{ibeling2020probabilistic}
+Duligur Ibeling and Thomas Icard.
+\newblock Probabilistic reasoning across the causal hierarchy.
+\newblock In \emph{Proceedings of AAAI}, 2020.
+
+\bibitem[Ibeling and Icard(2021)]{ibeling2021topological}
+Duligur Ibeling and Thomas Icard.
+\newblock A topological perspective on causal inference.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, volume~34, 2021.
+
+\bibitem[Imbens and Rubin(2015)]{imbens2015causal}
+Guido~W. Imbens and Donald~B. Rubin.
+\newblock \emph{Causal Inference for Statistics, Social, and Biomedical
+  Sciences: An Introduction}.
+\newblock Cambridge University Press, 2015.
+
+\bibitem[Iqbal et~al.(2025)Iqbal, Ahmed, Qaiser, Qureshi, and
+  Rajpoot]{iqbal2025classification}
+Sohail Iqbal, Hafiz~Fareed Ahmed, Talha Qaiser, Muhammad~Imran Qureshi, and
+  Nasir Rajpoot.
+\newblock Classification of {COVID-19} via homology of {CT}-scan.
+\newblock \emph{Computers in Biology and Medicine}, 193:\penalty0 110226, 2025.
+
+\bibitem[Ismail et~al.(2020)Ismail, Hussain, and Noorani]{ismail2022early}
+Mohd~Sabri Ismail, Saiful~Izzuan Hussain, and Mohd Salmi~Md Noorani.
+\newblock Detecting early warning signals of major financial crashes in
+  {Bitcoin} using persistent homology.
+\newblock \emph{IEEE Access}, 8:\penalty0 202042--202057, 2020.
+
+\bibitem[Jiang et~al.(2024)Jiang, Ling, Hu, and Zhou]{nocurl2024}
+Xinhe Jiang, Zhuangyan Ling, Xiao Hu, and Zhong Zhou.
+\newblock {NOCURL}: A network optimization algorithm incorporating causal
+  discovery via {H}odge decomposition.
+\newblock \emph{arXiv preprint arXiv:2402.07020}, 2024.
+
+\bibitem[Kaczynski et~al.(2004)Kaczynski, Mischaikow, and
+  Mrozek]{kaczynski2004computational}
+Tomasz Kaczynski, Konstantin Mischaikow, and Marian Mrozek.
+\newblock \emph{Computational homology}, volume 157 of \emph{Applied
+  Mathematical Sciences}.
+\newblock Springer, 2004.
+
+\bibitem[Kasson et~al.(2007)Kasson, Zomorodian, Park, Singhal, Guibas, and
+  Pande]{kasson2007persistent}
+Peter~M. Kasson, Afra Zomorodian, Sanghyun Park, Nina Singhal, Leonidas~J.
+  Guibas, and Vijay~S. Pande.
+\newblock Persistent voids: A new structural metric for membrane fusion.
+\newblock \emph{Bioinformatics}, 23\penalty0 (14):\penalty0 1753--1759, 2007.
+
+\bibitem[Kennedy(2016)]{kennedy2016semiparametric}
+Edward~H. Kennedy.
+\newblock Semiparametric theory and empirical processes in causal inference.
+\newblock \emph{Statistical Causal Inferences and Their Applications in Public
+  Health Research}, pages 141--167, 2016.
+
+\bibitem[Kennedy(2023)]{kennedy2023towards}
+Edward~H. Kennedy.
+\newblock Towards optimal doubly robust estimation of heterogeneous causal
+  effects.
+\newblock \emph{Electronic Journal of Statistics}, 17\penalty0 (2):\penalty0
+  3008--3049, 2023.
+
+\bibitem[Kennedy(2024)]{kennedy2024semiparametric}
+Edward~H. Kennedy.
+\newblock Semiparametric doubly robust targeted double machine learning: A
+  review.
+\newblock \emph{Handbook of Statistical Methods for Precision Medicine}, pages
+  207--236, 2024.
+
+\bibitem[Kim and Lee(2026)]{kim2026topological}
+Kwangho Kim and Hajin Lee.
+\newblock Topological causal effects.
+\newblock \emph{arXiv preprint arXiv:2603.02289}, 2026.
+
+\bibitem[Kim et~al.(2018{\natexlab{a}})Kim, Kim, and Rinaldo]{kim2018time}
+Kwangho Kim, Jisu Kim, and Alessandro Rinaldo.
+\newblock Time series featurization via topological data analysis.
+\newblock \emph{arXiv preprint arXiv:1812.02987}, 2018{\natexlab{a}}.
+
+\bibitem[Kim et~al.(2020)Kim, Kim, Zaheer, Kim, Chazal, and
+  Wasserman]{kim2020pllay}
+Kwangho Kim, Jisu Kim, Manzil Zaheer, Joon Kim, Fr{\'e}d{\'e}ric Chazal, and
+  Larry Wasserman.
+\newblock {PLLay}: Efficient topological layer based on persistence landscapes.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, volume~33, pages 15965--15977, 2020.
+
+\bibitem[Kim et~al.(2018{\natexlab{b}})Kim, Richards, and
+  Sangalli]{kim2018topological}
+Peter~T. Kim, Donald Richards, and Laura~M. Sangalli.
+\newblock Topological data analysis in medical imaging.
+\newblock \emph{Computational Biology and Medicine}, 100:\penalty0 97--116,
+  2018{\natexlab{b}}.
+
+\bibitem[Kovacev-Nikolic et~al.(2016)Kovacev-Nikolic, Bubenik, Nikoli{\'c}, and
+  Heo]{kovacev2016using}
+Violeta Kovacev-Nikolic, Peter Bubenik, Dragan Nikoli{\'c}, and Giseon Heo.
+\newblock Using persistent homology and dynamical distances to analyze protein
+  binding.
+\newblock \emph{Statistical Applications in Genetics and Molecular Biology},
+  15\penalty0 (1):\penalty0 19--38, 2016.
+
+\bibitem[Krasnovsky(2025)]{krasnovsky2025causal}
+Anton Krasnovsky.
+\newblock Causal emergence and topological coarse-graining.
+\newblock \emph{arXiv preprint arXiv:2504.10210}, 2025.
+
+\bibitem[Kurisu et~al.(2024)Kurisu, Hu, Otsu, and Vuong]{kurisu2024geodesic}
+Daisuke Kurisu, Yifei Hu, Taisuke Otsu, and Quang-Hung Vuong.
+\newblock Geodesic causal inference.
+\newblock \emph{arXiv preprint arXiv:2406.19604}, 2024.
+
+\bibitem[Lecci(2014)]{lecci2014statistical}
+Fabrizio Lecci.
+\newblock \emph{Statistical Inference for Topological Data Analysis}.
+\newblock PhD thesis, Department of Statistics, Carnegie Mellon University,
+  2014.
+\newblock PhD Thesis Proposal.
+
+\bibitem[Lee et~al.(2019)Lee, Correa, and Bareinboim]{lee2019general}
+Sanghack Lee, Juan Correa, and Elias Bareinboim.
+\newblock General identifiability with arbitrary surrogate experiments.
+\newblock In \emph{Proceedings of UAI}, 2019.
+
+\bibitem[Lesnick and Wright(2015)]{lesnick2015interactive}
+Michael Lesnick and Matthew Wright.
+\newblock Interactive visualization of 2-{D} persistence modules.
+\newblock \emph{arXiv preprint arXiv:1512.00180}, 2015.
+
+\bibitem[Leykam and Angelakis(2023)]{leykam2023topological}
+Daniel Leykam and Dimitris~G. Angelakis.
+\newblock Topological data analysis and machine learning.
+\newblock \emph{Advances in Physics: X}, 8\penalty0 (1):\penalty0 2202331,
+  2023.
+
+\bibitem[Liebl and Reimherr(2023)]{liebl2023fast}
+Dominik Liebl and Matthew Reimherr.
+\newblock Fast and fair simultaneous confidence bands for functional
+  parameters.
+\newblock \emph{Journal of the Royal Statistical Society Series B}, 85\penalty0
+  (3):\penalty0 842--868, 2023.
+
+\bibitem[Ma(2025)]{ma2025causal}
+Mengjie Ma.
+\newblock Causal inference as topological reconstruction in deep manifolds.
+\newblock Online essay, 2025.
+
+\bibitem[Madukpe et~al.(2026)Madukpe, Ugoala, and Zulkepli]{madukpe2026mapper}
+V.~N. Madukpe, B.~C. Ugoala, and N.~F.~S. Zulkepli.
+\newblock A comprehensive review of the mapper algorithm and its applications
+  across various fields (2007--2025).
+\newblock \emph{Journal of Data Science and Analytics}, 2026.
+
+\bibitem[Mahadevan(2021)]{mahadevan2021causal}
+Sridhar Mahadevan.
+\newblock Causal homotopy.
+\newblock \emph{arXiv preprint arXiv:2112.01847}, 2021.
+
+\bibitem[Mahadevan(2022)]{mahadevan2022universal}
+Sridhar Mahadevan.
+\newblock Universal causality.
+\newblock \emph{arXiv preprint arXiv:2207.04937}, 2022.
+
+\bibitem[Mahadevan(2025)]{mahadevan2025sheaf}
+Sridhar Mahadevan.
+\newblock Sheaf and topos-theoretic causal models.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2025.
+
+\bibitem[Maroulas et~al.(2020)Maroulas, Nasrin, and
+  Oballe]{maroulas2020bayesian}
+Vasileios Maroulas, Farzana Nasrin, and Christopher Oballe.
+\newblock A {Bayesian} framework for persistent homology.
+\newblock \emph{SIAM Journal on Mathematics of Data Science}, 2\penalty0
+  (1):\penalty0 48--74, 2020.
+
+\bibitem[Meek(1995)]{meek1995strong}
+Christopher Meek.
+\newblock Strong completeness and faithfulness in {B}ayesian networks.
+\newblock In \emph{Proceedings of UAI}, pages 411--418, 1995.
+
+\bibitem[Mileyko et~al.(2011)Mileyko, Mukherjee, and
+  Harer]{mileyko2011probability}
+Yuriy Mileyko, Sayan Mukherjee, and John Harer.
+\newblock Probability measures on the space of persistence diagrams.
+\newblock \emph{Inverse Problems}, 27\penalty0 (12):\penalty0 124007, 2011.
+
+\bibitem[Morozov et~al.(2013)Morozov, Beketayev, and
+  Weber]{morozov2013interleaving}
+Dmitriy Morozov, Kenes Beketayev, and Gunther Weber.
+\newblock Interleaving distance between merge trees.
+\newblock In \emph{Workshop on Topological Methods in Data Analysis and
+  Visualization (TopoInVis)}, 2013.
+
+\bibitem[Muldoon et~al.(2016)Muldoon, Bridgeford, and
+  Bassett]{muldoon2016small}
+Sarah~F. Muldoon, Eric~W. Bridgeford, and Danielle~S. Bassett.
+\newblock Small-world propensity and weighted brain networks.
+\newblock \emph{Scientific Reports}, 6:\penalty0 22057, 2016.
+
+\bibitem[Munch and Wang(2016)]{munch2016convergence}
+Elizabeth Munch and Bei Wang.
+\newblock Convergence between categorical representations of {Reeb} space and
+  {Mapper}.
+\newblock In \emph{32nd International Symposium on Computational Geometry (SoCG
+  2016)}, volume~51 of \emph{LIPIcs}, pages 53:1--53:16, 2016.
+
+\bibitem[Munkres(1984)]{munkres1984elements}
+James~R. Munkres.
+\newblock \emph{Elements of Algebraic Topology}.
+\newblock Addison-Wesley, 1984.
+
+\bibitem[Newey and Robins(2018)]{newey2018cross}
+Whitney~K. Newey and James~R. Robins.
+\newblock Cross-fitting and fast remainder rates for semiparametric estimation.
+\newblock \emph{arXiv preprint arXiv:1801.09138}, 2018.
+
+\bibitem[Nigmetov and Morozov(2024)]{nigmetov2022topological}
+Arnur Nigmetov and Dmitriy Morozov.
+\newblock Topological optimization with big steps.
+\newblock \emph{Discrete \& Computational Geometry}, 2024.
+\newblock Earlier preprint: arXiv:2203.16748, 2022.
+
+\bibitem[Ombao and Pinto(2022)]{ombao2022spectral}
+Hernando Ombao and Marco Pinto.
+\newblock Spectral dependence.
+\newblock \emph{Econometrics and Statistics}, 2022.
+
+\bibitem[Otter et~al.(2017)Otter, Porter, Tillmann, Grindrod, and
+  Harrington]{otter2017roadmap}
+Nina Otter, Mason~A. Porter, Ulrike Tillmann, Peter Grindrod, and Heather~A.
+  Harrington.
+\newblock A roadmap for the computation of persistent homology.
+\newblock \emph{EPJ Data Science}, 6\penalty0 (1):\penalty0 17, 2017.
+
+\bibitem[Oxtoby(1971)]{oxtoby1971measure}
+John~C. Oxtoby.
+\newblock \emph{Measure and Category}.
+\newblock Springer, 1971.
+
+\bibitem[Pachauri et~al.(2011)Pachauri, Hinrichs, Chung, Johnson, and
+  Singh]{pachauri2011topology}
+Deepti Pachauri, Chris Hinrichs, Moo~K. Chung, Sterling~C. Johnson, and Vikas
+  Singh.
+\newblock Topology-based kernels with application to inference problems in
+  {A}lzheimer's disease.
+\newblock \emph{IEEE Transactions on Medical Imaging}, 30\penalty0
+  (10):\penalty0 1760--1770, 2011.
+
+\bibitem[Papamarkou et~al.(2024)Papamarkou, Birdal, Bronstein, Carlsson, Curry,
+  Gao, Hajij, Kwitt, Li{\`o}, Di~Lorenzo, et~al.]{papamarkou2024position}
+Theodore Papamarkou, Tolga Birdal, Michael~M. Bronstein, Gunnar Carlsson,
+  Justin Curry, Yue Gao, Mustafa Hajij, Roland Kwitt, Pietro Li{\`o}, Paolo
+  Di~Lorenzo, et~al.
+\newblock Position: Topological deep learning is the new frontier for
+  relational learning.
+\newblock \emph{Proceedings of the International Conference on Machine Learning
+  (ICML)}, 2024.
+
+\bibitem[Pearl(1995)]{pearl1995causal}
+Judea Pearl.
+\newblock Causal diagrams for empirical research.
+\newblock \emph{Biometrika}, 82\penalty0 (4):\penalty0 669--710, 1995.
+
+\bibitem[Pearl(2009)]{pearl2009causality}
+Judea Pearl.
+\newblock \emph{Causality: Models, Reasoning, and Inference}.
+\newblock Cambridge University Press, 2 edition, 2009.
+
+\bibitem[Pearl and Bareinboim(2014)]{pearl2014external}
+Judea Pearl and Elias Bareinboim.
+\newblock External validity: From do-calculus to transportability across
+  populations.
+\newblock \emph{Statistical Science}, 29\penalty0 (4):\penalty0 579--595, 2014.
+
+\bibitem[Pearl and Mackenzie(2018)]{pearl2018book}
+Judea Pearl and Dana Mackenzie.
+\newblock \emph{The Book of Why: The New Science of Cause and Effect}.
+\newblock Basic Books, 2018.
+
+\bibitem[Peters et~al.(2014)Peters, Mooij, Janzing, and
+  Sch{\"o}lkopf]{peters2014causal}
+Jonas Peters, Joris~M. Mooij, Dominik Janzing, and Bernhard Sch{\"o}lkopf.
+\newblock Causal discovery with continuous additive noise models.
+\newblock \emph{Journal of Machine Learning Research}, 15\penalty0
+  (1):\penalty0 2009--2053, 2014.
+
+\bibitem[Peters et~al.(2017)Peters, Janzing, and
+  Sch{\"o}lkopf]{peters2017elements}
+Jonas Peters, Dominik Janzing, and Bernhard Sch{\"o}lkopf.
+\newblock \emph{Elements of Causal Inference: Foundations and Learning
+  Algorithms}.
+\newblock MIT Press, 2017.
+
+\bibitem[Peyr{\'e} and Cuturi(2019)]{peyre2019computational}
+Gabriel Peyr{\'e} and Marco Cuturi.
+\newblock Computational optimal transport: With applications to data science.
+\newblock \emph{Foundations and Trends in Machine Learning}, 11\penalty0
+  (5--6):\penalty0 355--607, 2019.
+
+\bibitem[Robins and Greenland(1989)]{robins1989probability}
+James Robins and Sander Greenland.
+\newblock The probability of causation under a stochastic model for individual
+  risk.
+\newblock \emph{Biometrics}, 45\penalty0 (4):\penalty0 1125--1138, 1989.
+
+\bibitem[Robinson and Turner(2017)]{robinson2014hypothesis}
+Andrew Robinson and Katharine Turner.
+\newblock Hypothesis testing for topological data analysis.
+\newblock \emph{Journal of Applied and Computational Topology}, 1:\penalty0
+  241--261, 2017.
+
+\bibitem[Robinson(2014)]{robinson2014topological}
+Michael Robinson.
+\newblock \emph{Topological Signal Processing}.
+\newblock Springer, 2014.
+
+\bibitem[Rolland et~al.(2022)Rolland, Cevher, Kleindessner, Russell, Janzing,
+  Sch{\"o}lkopf, and Locatello]{rolland2022score}
+Paul Rolland, Volkan Cevher, Matth{\"a}us Kleindessner, Chris Russell, Dominik
+  Janzing, Bernhard Sch{\"o}lkopf, and Francesco Locatello.
+\newblock Score matching enables causal discovery of nonlinear additive noise
+  models.
+\newblock In \emph{Proceedings of the 39th International Conference on Machine
+  Learning (ICML)}, pages 18741--18753, 2022.
+
+\bibitem[Rubin(1974)]{rubin1974estimating}
+Donald~B. Rubin.
+\newblock Estimating causal effects of treatments in randomized and
+  nonrandomized studies.
+\newblock \emph{Journal of Educational Psychology}, 66\penalty0 (5):\penalty0
+  688--701, 1974.
+
+\bibitem[Rubin(2005)]{rubin2005causal}
+Donald~B. Rubin.
+\newblock Causal inference using potential outcomes: Design, modeling,
+  decisions.
+\newblock \emph{Journal of the American Statistical Association}, 100\penalty0
+  (469):\penalty0 322--330, 2005.
+
+\bibitem[Saki and Faghihi(2026)]{saki2026beyond}
+Amir Saki and Usef Faghihi.
+\newblock Beyond means: Topological causal effects under persistent-homology
+  ignorability.
+\newblock \emph{arXiv preprint arXiv:2603.14169}, 2026.
+
+\bibitem[Shimizu et~al.(2006)Shimizu, Hoyer, Hyv{\"a}rinen, and
+  Kerminen]{shimizu2006lingam}
+Shohei Shimizu, Patrik~O. Hoyer, Aapo Hyv{\"a}rinen, and Antti Kerminen.
+\newblock A linear non-{G}aussian acyclic model for causal discovery.
+\newblock \emph{Journal of Machine Learning Research}, 7:\penalty0 2003--2030,
+  2006.
+
+\bibitem[Singh et~al.(2007)Singh, M{\'e}moli, and Carlsson]{singh2007mapper}
+Gurjeet Singh, Facundo M{\'e}moli, and Gunnar Carlsson.
+\newblock Topological methods for the analysis of high dimensional data sets
+  and 3d object recognition.
+\newblock In \emph{Eurographics Symposium on Point-Based Graphics}, 2007.
+
+\bibitem[Sizemore et~al.(2018)Sizemore, Giusti, Kahn, Vettel, Betzel, and
+  Bassett]{sizemore2018cliques}
+Ann~E. Sizemore, Chad Giusti, Ari Kahn, Jean~M. Vettel, Richard~F. Betzel, and
+  Danielle~S. Bassett.
+\newblock Cliques and cavities in the human connectome.
+\newblock \emph{Journal of Computational Neuroscience}, 44\penalty0
+  (1):\penalty0 115--145, 2018.
+
+\bibitem[Sizemore et~al.(2019)Sizemore, Giusti, and
+  Bassett]{sizemore2019importance}
+Ann~E. Sizemore, Chad Giusti, and Danielle~S. Bassett.
+\newblock The importance of the whole: Topological data analysis for the
+  network neuroscientist.
+\newblock \emph{Network Neuroscience}, 3\penalty0 (3):\penalty0 656--673, 2019.
+
+\bibitem[Smith and Daoutidis(2025)]{smith2025harnessing}
+Alex Smith and Prodromos Daoutidis.
+\newblock Harnessing topology and causal discovery for particulate gel control.
+\newblock In \emph{Proceedings of the 2025 IEEE Conference on Decision and
+  Control (CDC)}, 2025.
+
+\bibitem[Smith et~al.(2025)Smith, Limkul, and Daoutidis]{smith2025multiscale}
+Alex Smith, Patiwet Limkul, and Prodromos Daoutidis.
+\newblock Multi-scale causality in active matter.
+\newblock \emph{Computers \& Chemical Engineering}, 197:\penalty0 109052, 2025.
+
+\bibitem[Soares et~al.(2020)Soares, Angelov, Biaso, Froes, and
+  Abe]{soares2020sars}
+Eduardo Soares, Plamen Angelov, Sarah Biaso, Michele~Higa Froes, and
+  Daniel~Kanda Abe.
+\newblock {SARS-CoV-2} {CT}-scan dataset.
+\newblock \emph{medRxiv}, page 2020.04, 2020.
+
+\bibitem[Sousbie(2011)]{sousbie2011persistent}
+Thierry Sousbie.
+\newblock The persistent cosmic web and its filamentary structure -- {I}.
+  {T}heory and implementation.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society},
+  414\penalty0 (1):\penalty0 350--383, 2011.
+
+\bibitem[Spirtes et~al.(2001)Spirtes, Glymour, and
+  Scheines]{spirtes2001causation}
+Peter Spirtes, Clark Glymour, and Richard Scheines.
+\newblock \emph{Causation, Prediction, and Search}.
+\newblock MIT Press, 2 edition, 2001.
+
+\bibitem[Spivak(2014)]{spivak2014category}
+David~I. Spivak.
+\newblock \emph{Category Theory for the Sciences}.
+\newblock MIT Press, 2014.
+
+\bibitem[Sporns(2013)]{sporns2013structure}
+Olaf Sporns.
+\newblock Structure and function of complex brain networks.
+\newblock \emph{Dialogues in Clinical Neuroscience}, 15\penalty0 (3):\penalty0
+  247--262, 2013.
+
+\bibitem[Strommen et~al.(2023)Strommen, Chantry, Dorrington, and
+  Otter]{strommen2025topological}
+Kristian Strommen, Matthew Chantry, Joshua Dorrington, and Nina Otter.
+\newblock A topological perspective on weather regimes.
+\newblock \emph{Climate Dynamics}, 2023.
+\newblock Earlier version: arXiv:2104.03196.
+
+\bibitem[Tauzin et~al.(2021)Tauzin, Lupo, Tunstall, P{\'e}rez, Caorsi,
+  Medina-Mardones, Dassatti, and Hess]{tauzin2021giotto}
+Guillaume Tauzin, Umberto Lupo, Lewis Tunstall, Julian~Burella P{\'e}rez,
+  Matteo Caorsi, Anibal~M. Medina-Mardones, Alberto Dassatti, and Kathryn Hess.
+\newblock giotto-tda: A topological data analysis toolkit for machine learning
+  and data exploration.
+\newblock \emph{Journal of Machine Learning Research}, 22\penalty0
+  (39):\penalty0 1--6, 2021.
+
+\bibitem[Testa et~al.(2025)Testa, Boschi, Chiaromonte, Kennedy, and
+  Reimherr]{testa2025doubly}
+Lorenzo Testa, Tobia Boschi, Francesca Chiaromonte, Edward~H. Kennedy, and
+  Matthew Reimherr.
+\newblock Doubly-robust functional average treatment effect estimation.
+\newblock \emph{arXiv preprint arXiv:2501.06024}, 2025.
+
+\bibitem[{The GUDHI Project}(2021)]{gudhi2021}
+{The GUDHI Project}.
+\newblock {GUDHI} user and reference manual.
+\newblock \url{https://gudhi.inria.fr/doc/3.4.1/}, 2021.
+
+\bibitem[Tian and Pearl(2000)]{tian2000probabilities}
+Jin Tian and Judea Pearl.
+\newblock Probabilities of causation: Bounds and identification.
+\newblock \emph{Annals of Mathematics and Artificial Intelligence}, 28\penalty0
+  (1):\penalty0 287--313, 2000.
+
+\bibitem[Tian and Pearl(2002)]{tian2002general}
+Jin Tian and Judea Pearl.
+\newblock A general identification condition for causal effects.
+\newblock In \emph{Proceedings of AAAI}, 2002.
+
+\bibitem[Tran et~al.(2024)Tran, Nguyen, Duong, and
+  Nguyen]{tran2024constraining}
+Quang-Duy Tran, Phong Nguyen, Bao Duong, and Thin Nguyen.
+\newblock Constraining acyclicity of differentiable {B}ayesian structure
+  learning with topological ordering.
+\newblock \emph{Knowledge and Information Systems}, 66:\penalty0 5605--5630,
+  2024.
+
+\bibitem[Turner et~al.(2014)Turner, Mileyko, Mukherjee, and
+  Harer]{turner2014frechet}
+Katharine Turner, Yuriy Mileyko, Sayan Mukherjee, and John Harer.
+\newblock Fr{\'e}chet means for distributions of persistence diagrams.
+\newblock \emph{Discrete \& Computational Geometry}, 52\penalty0 (1):\penalty0
+  44--70, 2014.
+
+\bibitem[Uhler et~al.(2013)Uhler, Raskutti, B{\"u}hlmann, and
+  Yu]{uhler2013geometry}
+Caroline Uhler, Garvesh Raskutti, Peter B{\"u}hlmann, and Bin Yu.
+\newblock Geometry of the faithfulness assumption in causal inference.
+\newblock \emph{Annals of Statistics}, 41\penalty0 (2):\penalty0 436--463,
+  2013.
+
+\bibitem[Umeda(2017)]{umeda2017time}
+Yuhei Umeda.
+\newblock Time series classification via topological data analysis.
+\newblock \emph{Transactions of the Japanese Society for Artificial
+  Intelligence}, 32\penalty0 (3):\penalty0 D--G72\_1--12, 2017.
+
+\bibitem[van~de Weygaert et~al.(2011)van~de Weygaert, Vegter, Edelsbrunner,
+  Jones, Pranav, Park, Hellwing, Eldering, Kruithof, and
+  Bos]{vandeweygaert2011alpha}
+Rien van~de Weygaert, Gert Vegter, Herbert Edelsbrunner, Bernard J.~T. Jones,
+  Pratyush Pranav, Changbom Park, Wojciech~A. Hellwing, Bob Eldering, Nico
+  Kruithof, and E.~G. P.~Patrick Bos.
+\newblock Alpha, {B}etti and the megaparsec universe: On the topology of the
+  cosmic web.
+\newblock \emph{Transactions on Computational Science XIV}, pages 60--101,
+  2011.
+
+\bibitem[Villani(2009)]{villani2009optimal}
+C{\'e}dric Villani.
+\newblock \emph{Optimal Transport: Old and New}.
+\newblock Springer, 2009.
+
+\bibitem[Vowels et~al.(2022)Vowels, Camgoz, and Bowden]{causaldisco2023survey}
+Matthew~J. Vowels, Necati~Cihan Camgoz, and Richard Bowden.
+\newblock {D'ya} like {DAG}s? a survey on structure learning and causal
+  discovery.
+\newblock \emph{ACM Computing Surveys}, 55\penalty0 (4):\penalty0 1--36, 2022.
+
+\bibitem[Wasserman(2018)]{wasserman2018topological}
+Larry Wasserman.
+\newblock Topological data analysis.
+\newblock \emph{Annual Review of Statistics and Its Application}, 5:\penalty0
+  501--532, 2018.
+\newblock \doi{10.1146/annurev-statistics-031017-100045}.
+
+\bibitem[Willig et~al.(2025)Willig, Zec{\v{e}}vi{\'c}, Dhami, and
+  Kersting]{willig2025alexandroff}
+Moritz Willig, Matej Zec{\v{e}}vi{\'c}, Devendra~Singh Dhami, and Kristian
+  Kersting.
+\newblock Causality from a topological perspective: an {Alexandroff} approach.
+\newblock \emph{arXiv preprint}, 2025.
+\newblock arXiv:2501.13886.
+
+\bibitem[Wu and Xie(2026)]{wu2026optimization}
+Renjie Wu and Hao Xie.
+\newblock Optimization-free topological sort for causal discovery via the
+  {S}chur complement of score {J}acobians.
+\newblock \emph{arXiv preprint arXiv:2604.25295}, 2026.
+
+\bibitem[Xu et~al.(2025)Xu, Mameche, and Vreeken]{xu2025information}
+Shaohan Xu, Sahar Mameche, and Jilles Vreeken.
+\newblock Information-theoretic causal discovery in topological order
+  ({TOPIC}).
+\newblock In \emph{Proceedings of the 28th International Conference on
+  Artificial Intelligence and Statistics (AISTATS)}, 2025.
+
+\bibitem[Xu et~al.(2021)Xu, Drougard, and Roy]{xu2021topological}
+Xiaofan Xu, Nicolas Drougard, and Raphaelle~N. Roy.
+\newblock Topological data analysis as a new tool for {EEG} processing.
+\newblock \emph{Frontiers in Neuroscience}, 15:\penalty0 761703, 2021.
+
+\bibitem[Zomorodian and Carlsson(2005)]{zomorodian2005computing}
+Afra Zomorodian and Gunnar Carlsson.
+\newblock Computing persistent homology.
+\newblock \emph{Discrete \& Computational Geometry}, 33\penalty0 (2):\penalty0
+  249--274, 2005.
+
+\bibitem[Zomorodian(2005)]{zomorodian2005topology}
+Afra~J. Zomorodian.
+\newblock \emph{Topology for Computing}.
+\newblock Cambridge University Press, 2005.
+
+\end{thebibliography}

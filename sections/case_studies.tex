@@ -1,0 +1,481 @@
+\section{Case Studies and Proof-of-Concept Synergies}\label{sec:case_studies}
+
+The case studies in this section are intended to demonstrate that the
+TCDA tuple of \Cref{def:tcda} is not an empty abstraction: in each of
+five concrete settings we can write down the four components
+$(\Mc, G, \Tc, \Cc)$ explicitly, locate the example in the taxonomy of
+\Cref{fig:taxonomy}, and indicate which parts are already established in
+the literature versus which constitute the gaps formalised in
+\Cref{sec:research}. The five cases were chosen to (i)~cover all four
+top-level domains A--D of the taxonomy, (ii)~engage each of the four
+seed works of the field---\citet{ibeling2021topological,
+kim2026topological,lecci2014statistical,elyaagoubi2023statistical}---in
+at least one case study, and (iii)~span what we expect to be the most
+active sites of near-term TCDA research: biomedical imaging and
+molecular structure (\Cref{sec:cs_tate}), multivariate brain time series
+(\Cref{sec:cs_cycles}), latent-variable confounding diagnostics
+(\Cref{sec:cs_confounding}), Mapper-based causal abstraction with
+calibrated uncertainty (\Cref{sec:cs_mapper}), and spatiotemporal
+climate attribution (\Cref{sec:cs_climate}). \Cref{tab:cs_summary}
+summarises the mapping back to the taxonomy.
+
+\subsection{Case Study 1: Topological average treatment effects on
+biomedical imaging and molecular structure}\label{sec:cs_tate}
+
+\paragraph{Setting.}
+Modern biomedical imaging and computational chemistry deliver
+non-Euclidean, high-dimensional outcome data---cubical CT volumes,
+volumetric MR scans, three-dimensional molecular point clouds---on
+which the classical ATE of \cref{eq:ate} is ill-posed because the
+outcome is not a scalar but a shape \citep{soares2020sars,
+axelrod2022geom,iqbal2025classification,carlsson2020topological}. The
+treatment effect of interest is a contrast between two shape
+distributions, not between two means. The first complete TCDA solution
+to this problem is the topological average treatment effect of
+\citet{kim2026topological}.
+
+\paragraph{TCDA instantiation.}
+We instantiate \Cref{def:tcda} as follows. (i)~$\Mc$ is the space of
+imaging or molecular outcomes, equipped with a natural ambient metric:
+the Hausdorff or Wasserstein distance on $\R^3$ point clouds for
+molecular data, the $L^\infty$ pixel distance for cubical images.
+(ii)~$G$ is a small ``treatment-to-outcome'' DAG with a binary
+treatment $A \in \{0,1\}$ (e.g.\ COVID-positive versus
+COVID-negative; ligand-bound versus apo conformation), pre-treatment
+covariates $X$ (age, sex, scanner protocol, molecular descriptors),
+and the shape-valued outcome $Y \in \Mc$. (iii)~$\Tc$ is composition of
+two stable functors: persistent homology
+$\PHk{k}$---cubical for images \citep{kaczynski2004computational},
+Vietoris--Rips for molecular point clouds---followed by the power-
+weighted silhouette $\varphi(\cdot; D, r)$ of \cref{eq:silhouette}.
+By \Cref{lem:silhouette_stability}, $\Tc$ is Lipschitz from
+$(\mathcal{P}(\Mc), W_1)$ into $L^\infty(T)$. (iv)~$\Cc$ is the
+\emph{topological average treatment effect}
+\begin{equation}
+  \TATE \;=\; \E\bigl[\varphi(\cdot;\,\Tc(Y^1),r)\bigr]
+              \;-\; \E\bigl[\varphi(\cdot;\,\Tc(Y^0),r)\bigr],
+  \label{eq:tate_silhouette}
+\end{equation}
+together with the Wasserstein contrast
+$W_1(\Dgmk{k}(P^1),\Dgmk{k}(P^0))$ on the underlying diagrams.
+
+\paragraph{Estimation and inference.}
+Under the standard identifying assumptions (C1)--(C3) of
+\Cref{sec:prelim_ci}, \citet{kim2026topological} construct a doubly-
+robust augmented inverse-probability-weighting estimator for
+\cref{eq:tate_silhouette} in which the outcome nuisance is a
+function-on-vector regression of $\varphi(\cdot; \Tc(Y), r)$ on
+$(X,A)$ and the propensity nuisance is $\widehat\pi(x) = \widehat\Prob(A=1\mid X = x)$.
+Under product-rate nuisance conditions the estimator achieves a
+$\sqrt n$ functional rate in $L^\infty(T)$ and admits a tight
+weak-convergence limit, from which a level-$\alpha$ test of
+$H_0 : W_1(\Dgmk{k}(P^1),\Dgmk{k}(P^0)) = 0$ is read off. The
+statistical scaffolding inherits directly from
+\citet{lecci2014statistical}'s programme of confidence sets and
+bootstrap procedures for persistence diagrams, landscapes, and
+silhouettes; without this scaffolding, the TCDA estimator would deliver
+a point estimate but no uncertainty.
+
+\paragraph{Stability.}
+The estimator inherits the quantitative robustness of persistent
+homology via \Cref{prop:stability-transfer}: a Hausdorff perturbation
+of the support of $P^a$ translates into an $L^\infty$ perturbation of
+the estimated silhouette TATE, with an explicit constant tracking the
+silhouette weight $r$. This is the concrete payoff of Domain B1:
+where classical AIPW estimators are sensitive to imaging artefacts and
+scanner drift, the topological AIPW estimator is provably robust to
+small Hausdorff perturbations of the support.
+
+\paragraph{Why this case study matters and what remains open.}
+The case study completely populates one ``corner'' of the TCDA
+taxonomy---sub-domains A3 and B1, with applications in D3---and is the
+clearest existence proof that the framework is non-vacuous: a
+non-Euclidean outcome that previously admitted only descriptive TDA
+now admits a calibrated, doubly-robust causal estimator. Remaining
+gaps targeted in \Cref{sec:research} include the scaling of
+$\PHk{k}$ to volumetric three-dimensional inputs, transportability of
+the estimator across imaging protocols (a positivity issue), and the
+extension of the construction to non-binary or continuous treatments.
+
+\subsection{Case Study 2: Cycle-based causal discovery in
+multivariate dependence networks}\label{sec:cs_cycles}
+
+\paragraph{Setting.}
+Multivariate time-series data---neural recordings, financial returns,
+climate indices---admit a natural \emph{dependence network} whose edges
+are weighted by pairwise statistical dependence (mutual information,
+partial coherence, transfer entropy). Causal questions on these
+networks concern the presence and direction of feedback loops:
+re-entrant cortical loops in EEG \citep{sizemore2018cliques,
+elyaagoubi2023statistical}, contagion cycles in financial markets
+\citep{gidea2018topological,ismail2022early}, oceanic--atmospheric
+teleconnections in climate \citep{strommen2025topological}. Persistent
+homology of the dependence network in homology degree~$1$ is the
+natural detector of such loops.
+
+\paragraph{TCDA instantiation.}
+We set (i)~$\Mc$ = the space of multivariate windowed time series in
+$\R^d$ with the supremum-distance topology; (ii)~$G$ = a directed
+Granger or transfer-entropy graph encoding lagged causal influence
+among the $d$ variables; (iii)~$\Tc$ = the composition ``windowed
+dependence network'' $\to$ ``filtration by edge weight'' $\to$
+$\PHk{1}$, optionally smoothed by the silhouette of
+\cref{eq:silhouette}; (iv)~$\Cc$ = a hypothesis test on the number of
+persistent $1$-cycles in $\Dgmk{1}$, or---more ambitiously---a recovery
+test for the cycle structure of $G$ from $\Dgmk{1}$. The construction
+is exactly the one analysed in \citet{elyaagoubi2023statistical}, whose
+mixture of latent AR(2) processes allows researchers to \emph{prescribe}
+the number of cycles in the network and so to evaluate $\Tc$-based
+discovery procedures against ground truth.
+
+\paragraph{Inference and benchmark.}
+\citet{elyaagoubi2023statistical} construct simulation-based confidence
+regions for $\PHk{1}$ of the dependence network and use them to test
+hypotheses about cycle count. The companion work
+\citet{elyaagoubi2023topological} extends the construction to
+asymmetric dependence and so to genuinely directed Granger graphs. The
+case study realises sub-domains A1 (PH for causal structure learning),
+C1 (Betti numbers as causal explanation), and D1 (time-series
+causality) of \Cref{sec:framework} in a single, fully executable
+pipeline. \citet{bando2022causal,harnack2017causal,gholizadeh2018short,
+krasnovsky2025causal} pursue closely related strategies for dynamical
+causal links via PH of Takens embeddings, providing a complementary
+source of empirical evidence.
+
+\paragraph{From a cycle to a causal mechanism.}
+Sub-domain C1 raises the harder question: when does a persistent
+$1$-cycle deserve the label ``causal feedback loop'' rather than the
+weaker label ``cyclic correlation pattern''? The dependence-network
+construction does not, on its own, supply directionality. A natural
+answer, partial but concrete, is provided by \Cref{prop:identifiability}
+specialised to the dependence-network functor $\Tc$: if the assignment
+$G \mapsto \Tc(\mathcal{P}_G)$ is injective on a class of admissible
+graphs (e.g.\ acyclic Granger graphs with non-Gaussian innovations,
+in which case classical identifiability via the LiNGAM family applies
+\citep{shimizu2006lingam}), then $\PHk{1}$-based discovery is
+identifying. Where this injectivity condition fails---e.g.\ for two
+distinct cyclic graphs that yield the same windowed dependence
+network---the $1$-cycle is a \emph{joint} causal pattern of an
+equivalence class of graphs, and downstream identification requires
+auxiliary assumptions. The simulation framework of
+\citet{elyaagoubi2023statistical} makes both successful and unsuccessful
+cases controllable in the laboratory, and we list the
+characterisation of injectivity as an explicit open avenue in
+\Cref{sec:research}.
+
+\paragraph{Why this case study matters and what remains open.}
+The case study shows that an existing TDA benchmark is essentially a
+TCDA benchmark in waiting: equipping the dependence-network filtration
+with an explicit causal graph $G$ converts the topological cycle
+detector into a topological causal-discovery procedure, with calibrated
+uncertainty inherited from \citet{lecci2014statistical}'s programme.
+The remaining methodological gap is the formal identifiability theory
+that would convert the construction from a benchmark-validated heuristic
+into a procedure with deductive guarantees on real (non-simulated)
+multivariate time series.
+
+\subsection{Case Study 3: Confounding diagnostics via persistent
+residual topology}\label{sec:cs_confounding}
+
+\paragraph{Setting.}
+Suppose an analyst posits a causal graph $G$ over an observed set of
+variables and fits the corresponding SCM. Under correct specification
+the residuals are independent of the predicted endogenous variables
+and---crucially for TCDA---their joint support carries no topological
+information beyond Euclidean noise. When an unobserved confounder
+$U$ acts on two or more observed variables along an unobserved orbit,
+the residual support inherits a persistent low-dimensional topology
+that no orientation of edges within $G$ can explain. This observation
+is the basis of \emph{topological confounding diagnostics}
+(sub-domain B2 of \Cref{sec:framework}) and connects, via
+\citet{ibeling2021topological}, to the topological no-free-lunch
+theorem of the field.
+
+\paragraph{TCDA instantiation.}
+(i)~$\Mc$ = the residual space of a fitted SCM, viewed as a point cloud
+in $\R^{|V|}$; (ii)~$G$ = the analyst's hypothesised graph, treated as
+a null hypothesis; (iii)~$\Tc$ = $\PHk{1}$ of the Vietoris--Rips
+filtration of the residual cloud, with bootstrap confidence sets
+\citep{fasy2014confidence,chazal2013bootstrap}; (iv)~$\Cc$ = a test of
+the null hypothesis ``the persistent $1$-classes of $\Tc$ have
+lifetimes consistent with white-noise residuals.''
+
+\paragraph{Worked example: the circular confounder.}
+Let $U$ be uniformly distributed on the unit circle $S^1$ and define
+$X = \cos U + \epsilon_X$ and $Y = \sin U + \epsilon_Y$ with
+$\epsilon_X, \epsilon_Y$ small, independent, mean-zero noise. An
+analyst who assumes no edge $X \to Y$ and no confounder will correctly
+estimate $\widehat{\ATE}(X \to Y) \approx 0$, since on average $X$
+carries no information about $Y$. The same analyst, however, will
+discover a persistent $1$-cycle in $\Dgmk{1}$ of the $(X,Y)$ residuals
+whose lifetime exceeds any plausible noise band, signalling the action
+of $U$. Formally:
+
+\begin{proposition}[Topological confounding signature]
+\label{prop:confounding_signature}
+Let $U$ be a continuous random variable supported on a topological
+space $\mathcal{U}$ with non-trivial $H_1(\mathcal{U};\R) \neq 0$, and
+let $X_v = f_v(U,\epsilon_v)$ for $v \in V$ with $f_v$ continuous and
+$\epsilon_v$ Gaussian and independent of $U$. Suppose the analyst's
+hypothesised graph $G$ omits $U$ and is otherwise correct. Then the
+limit support of the joint residuals admits a continuous surjection
+onto $\mathcal{U}$, and the persistent $\PHk{1}$ of any sufficiently
+fine Vietoris--Rips filtration of the residuals contains at least one
+class whose expected lifetime is bounded away from zero uniformly in
+the noise scale.
+\end{proposition}
+
+\begin{proof}[Sketch]
+By the continuous-mapping theorem and the assumed continuity of each
+$f_v$, the image of $U$ under $v \mapsto X_v$ is a continuous
+surjection $\mathcal{U} \to \mathrm{supp}(P^{X})$. The corresponding
+homology map $H_1(\mathcal{U}) \to H_1(\mathrm{supp}(P^X))$ is
+non-trivial whenever the $(f_v)$ collectively are not homotopic to a
+constant, which is generic. The stability theorem
+(\cref{eq:stability}) ensures that the corresponding cycle persists in
+the empirical $\PHk{1}$ of finite samples, with lifetime bounded below
+by the homological diameter of $\mathcal{U}$. Full details, including
+the rate at which the lifetime concentrates, follow the stability
+arguments of \citet{cohen2007stability,chazal2016structure}.
+\end{proof}
+
+\paragraph{Discussion: detection is not identification.}
+\Cref{prop:confounding_signature} is one-sided: a persistent residual
+$1$-cycle is consistent with confounding but does not, on its own,
+recover $U$ or even identify the variables it acts on. This asymmetry
+is exactly the content of the topological causal hierarchy theorem of
+\citet{ibeling2021topological}: the set of SCMs admitting
+assumption-free identification of $P(y\mid \doop(x))$ is topologically
+meagre, so almost any SCM carries residual topological structure that
+\emph{flags} confounding but cannot \emph{certify} its absence. The
+sheaf-theoretic programme of \citet{mahadevan2021causal,
+mahadevan2022universal,mahadevan2025sheaf} provides a complementary
+reading in which the residual cycle is interpreted as a non-trivial
+class in a sheaf-cohomology obstruction to identification; this is
+the natural home of sub-domain B3.
+
+\paragraph{Why this case study matters and what remains open.}
+The case study converts an existing TDA descriptor---persistent
+$1$-cycles of a point cloud---into a diagnostic that is logically
+linked to a causal property (residual confounding) via
+\Cref{prop:confounding_signature}, and shows that the limits of the
+diagnostic are precisely those identified in
+\citet{ibeling2021topological}'s meagre-set theorem. Operationalising
+the test on real data---calibrating the lifetime threshold against
+noise, controlling for nuisance topology induced by sampling, and
+extending to higher-dimensional confounders with $H_k(\mathcal{U}) \neq 0$
+for $k \ge 2$---are the principal methodological gaps.
+
+\subsection{Case Study 4: Mapper-based causal abstraction with
+calibrated uncertainty}\label{sec:cs_mapper}
+
+\paragraph{Setting.}
+Many causal questions in medicine and the social sciences concern
+\emph{regimes}: disease subtypes, treatment-responder strata, market
+phases. Regimes are typically not pre-specified by covariates but emerge
+from the geometry of the data. The Mapper algorithm
+\citep{singh2007mapper,carriere2018statistical,dlotko2019ball,
+madukpe2026mapper} produces a topological abstraction of a
+high-dimensional data set into a simplicial complex whose nodes are
+clusters of level sets of a chosen filter $f$; we propose that Mapper
+abstractions are the natural carrier of a regime-conditional causal
+estimand, and that \citet{lecci2014statistical}'s bootstrap-confidence
+programme delivers the calibrated uncertainty that regulated industries
+require.
+
+\paragraph{TCDA instantiation.}
+(i)~$\Mc$ = a high-dimensional feature space of patient (or asset)
+descriptors. (ii)~$G$ = a coarse-grained DAG over Mapper nodes
+representing regimes and edges representing admissible transitions or
+treatment effects between regimes; we assume $G$ is acyclic for
+identification, while permitting cycles inside the data Mapper graph
+itself. (iii)~$\Tc = \Map_f$ with a filter $f$ chosen to align with the
+causal mechanism (disease severity, time-to-event, an exposure score).
+(iv)~$\Cc$ = a stratum-conditional ATE, defined for each Mapper node
+$\alpha$ by
+\begin{equation}
+  \CATE(\alpha) \;=\; \E\bigl[\,Y^1 - Y^0 \;\big|\; X \in \alpha\,\bigr],
+  \label{eq:cate_mapper}
+\end{equation}
+together with its uncertainty.
+
+\paragraph{Bootstrap confidence sets for the abstraction.}
+The statistical-TDA programme of \citet{lecci2014statistical} supplies
+the inferential scaffolding for $\Tc$ via the bottleneck bootstrap of
+\citet{fasy2014confidence,chazal2013bootstrap}: a confidence band
+$\mathcal{B}_n^{1-\alpha}$ around the empirical persistence diagram of
+the Mapper complex covers the population diagram with probability at
+least $1 - \alpha$. Translating $\mathcal{B}_n^{1-\alpha}$ into
+uncertainty for \cref{eq:cate_mapper} proceeds in two stages. First,
+we bootstrap the Mapper graph to obtain a posterior over regime
+boundaries, propagating the cluster-membership uncertainty to each
+patient or asset. Second, we use the resulting node-level posterior
+weights as inputs to a regime-conditional AIPW estimator. The
+combination delivers, for each Mapper node $\alpha$, a point estimate
+$\widehat\CATE(\alpha)$ and a confidence interval that accounts for
+both the topological (regime-assignment) and statistical
+(treatment-effect) sources of uncertainty.
+
+\paragraph{Connection to stratified-space causal heterogeneity.}
+The Mapper output is a stratified topological abstraction: nodes are
+$0$-strata, edges are $1$-strata, and higher simplices encode
+higher-order regime overlaps. The theory of stratified spaces
+\citep{hughes2004stratified,banagl2007topological,chazal2013persistence}
+is exactly the right language for causal effects that vary across such
+strata---sub-domain C3 of \Cref{sec:framework}. The bootstrap pipeline
+sketched above is therefore a concrete instantiation of Domains A2,
+B1, and C3 simultaneously.
+
+\paragraph{Why this case study matters and what remains open.}
+The case study addresses a critique frequently levelled at
+Mapper-based causal claims in healthcare and finance: the abstraction
+is descriptive, not inferential, and conveys no notion of statistical
+confidence. \citet{lecci2014statistical}'s programme dissolves the
+critique, provided the abstraction is treated as a TCDA functor. The
+open methodological question is the design of filter functions $f$
+that are simultaneously (i)~causally informative---i.e.\ aligned with
+the mechanism of interest---and (ii)~statistically well-behaved under
+the bootstrap. We list this as a research avenue in \Cref{sec:research}.
+
+\subsection{Case Study 5: Spatiotemporal causal attribution via
+cubical persistent homology}\label{sec:cs_climate}
+
+\paragraph{Setting.}
+Climate-event attribution asks whether a specific extreme event would
+have occurred in a counterfactual climate without anthropogenic
+forcing. Conventional attribution operates on scalar summaries of the
+event (return period, intensity) and so is blind to the spatial
+structure of the extreme. Cubical persistent homology of the climate
+field captures that structure---the number of connected hot regions,
+the topology of pressure ridges, the persistence of low-pressure
+cells---and so naturally supports a topological notion of attribution
+\citep{strommen2025topological,smith2025multiscale,smith2025harnessing}.
+
+\paragraph{TCDA instantiation.}
+(i)~$\Mc$ = the space of gridded scalar fields on $\R^2 \times [0,T]$
+(daily precipitation, surface temperature, geopotential height), with
+the $L^\infty$ pixel-wise distance. (ii)~$G$ = a coarse climate causal
+graph linking forcing (anthropogenic emissions, sea-surface
+temperature anomalies, modes of variability) to the spatial event
+field; the binary attribution treatment is ``factual climate'' versus
+``counterfactual climate'' produced by a model ensemble.
+(iii)~$\Tc$ = cubical $\PHk{k}$ for $k \in \{0,1\}$ of the sublevel
+sets, with optional silhouette smoothing. (iv)~$\Cc$ = a
+counterfactual contrast between persistence diagrams,
+\begin{equation}
+  \Cc_{\mathrm{attr}}
+  \;=\; W_1\!\bigl(\Dgmk{k}(P^{\text{fact}}),
+                   \Dgmk{k}(P^{\text{cf}})\bigr),
+  \label{eq:climate_contrast}
+\end{equation}
+or its silhouette functional analogue analogous to
+\cref{eq:tate_silhouette}.
+
+\paragraph{The descriptive precedent and the causal upgrade.}
+The cosmology literature \citep{sousbie2011persistent,
+vandeweygaert2011alpha,cisewski2014nonparametric} provides the mature
+descriptive template: persistence diagrams of cosmological density
+fields characterise the cosmic web, and bootstrap confidence sets
+on those diagrams supply calibrated descriptive uncertainty. The TCDA
+upgrade is straightforward in principle: replace cosmology's
+``observed universe vs.\ simulated universe'' contrast by climate's
+``factual climate vs.\ counterfactual climate'' contrast, and apply
+the AIPW machinery of \citet{kim2026topological} treating each ensemble
+member as a sample from the relevant interventional distribution. The
+stability transfer of \Cref{prop:stability-transfer} controls the
+sensitivity of \cref{eq:climate_contrast} to grid resolution and to
+the small Hausdorff-scale perturbations that arise from regridding,
+bias correction, and interpolation.
+
+\paragraph{Why this case study matters and what remains open.}
+The case study realises sub-domains D2 (spatiotemporal causality) and
+B1 (stability of causal estimates) of \Cref{sec:framework} on a
+high-impact application. The principal remaining gap is identifiability
+of \cref{eq:climate_contrast} under unobserved natural variability:
+a coupled-model ensemble approximates the counterfactual distribution
+but does not eliminate the latent low-frequency oscillations that act
+as confounders. \Cref{prop:confounding_signature} suggests a built-in
+diagnostic: a persistent $1$-cycle in the residual climate field
+\emph{after} adjustment for the assumed forcing covariates would
+flag that some mode of variability has not been accounted for, and so
+the attribution estimate carries the residual topology of the
+unidentified causal structure. Climate TCDA is therefore both a
+showcase application and a stress test of the framework: its
+methodological success will depend on whether the diagnostics of
+sub-domain B2 can be deployed in concert with the estimators of
+sub-domains A3 and B1.
+
+\subsection{Synthesis: case studies and the taxonomy}\label{sec:cs_synthesis}
+
+\Cref{tab:cs_summary} collects the case studies of this section, the
+seed and bridge works that anchor each, and the taxonomy nodes of
+\Cref{fig:taxonomy} that the case study populates.
+
+\begin{table}[t]
+\centering
+\caption{Case studies and their place in the TCDA taxonomy of
+\Cref{fig:taxonomy}. Each case study instantiates the TCDA tuple
+$(\Mc, G, \Tc, \Cc)$ of \Cref{def:tcda} in a specific applied or
+theoretical setting, engages one or more of the four seed works of
+the field, and populates one or more sub-domains of the taxonomy.}
+\label{tab:cs_summary}
+\begin{tabular}{@{}lp{0.36\linewidth}p{0.28\linewidth}p{0.16\linewidth}@{}}
+\toprule
+\S & Case study & Seed and bridge works & Taxonomy node(s) \\
+\midrule
+\ref{sec:cs_tate}        & Topological ATE on biomedical imaging
+                         & \citet{kim2026topological,
+                                  lecci2014statistical,
+                                  soares2020sars,axelrod2022geom}
+                         & A3, B1, D3 \\
+\ref{sec:cs_cycles}      & Cycle-based discovery in dependence networks
+                         & \citet{elyaagoubi2023statistical,
+                                  elyaagoubi2023topological,
+                                  bando2022causal}
+                         & A1, C1, D1 \\
+\ref{sec:cs_confounding} & Confounding diagnostics via residual PH
+                         & \citet{ibeling2021topological,
+                                  mahadevan2025sheaf,
+                                  fasy2014confidence}
+                         & B2, B3 \\
+\ref{sec:cs_mapper}      & Mapper abstractions with calibrated uncertainty
+                         & \citet{lecci2014statistical,
+                                  singh2007mapper,
+                                  carriere2018statistical}
+                         & A2, B1, C3 \\
+\ref{sec:cs_climate}     & Spatiotemporal climate attribution
+                         & \citet{kim2026topological,
+                                  sousbie2011persistent,
+                                  strommen2025topological}
+                         & D2, B1, B2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three observations emerge from the synthesis. First, every cell of the
+TCDA tuple $(\Mc, G, \Tc, \Cc)$ is exercised non-trivially in at least
+one case study: $\Mc$ ranges over image spaces, time-series spaces,
+residual spaces, feature spaces, and climate-field spaces; $G$ ranges
+from simple treatment-to-outcome DAGs through dependence networks to
+coarse-grained regime graphs; $\Tc$ ranges over $\PHk{k}$ in
+Vietoris--Rips, cubical, dependence-network, and Mapper forms; and
+$\Cc$ ranges over Wasserstein contrasts, silhouette ATEs, hypothesis
+tests, and stratum-conditional CATEs. The expressive scope of
+\Cref{def:tcda} is therefore borne out empirically.
+
+Second, the four seed works each anchor at least one case study, but no
+single seed work anchors more than two: the field is not the work of any
+one author or group, and a serious TCDA programme must draw on all four
+threads in parallel. The relative position of the seed works in the
+case-study landscape---\citet{kim2026topological} as the estimator
+champion, \citet{ibeling2021topological} as the no-free-lunch theorist,
+\citet{lecci2014statistical} as the statistical infrastructure, and
+\citet{elyaagoubi2023statistical} as the benchmark architect---is
+exactly the four-cornered division of labour anticipated in
+\Cref{sec:framework}.
+
+Third, every case study identifies a concrete remaining gap that we
+take up explicitly in \Cref{sec:research}: scaling, transportability,
+identifiability, filter design, and identification under unobserved
+variability. The case studies are therefore not endpoints but launch
+pads, and the agenda of \Cref{sec:research} is calibrated against them.

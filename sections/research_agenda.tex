@@ -1,0 +1,485 @@
+\section{Research Agenda and Open Questions}\label{sec:research}
+
+We close the technical part of the paper with a structured research
+agenda. The agenda is calibrated against the gaps identified in
+\Cref{sec:lit_gaps} and against the methodological openings left by the
+case studies of \Cref{sec:case_studies}, and is organised along five
+branches: theoretical open questions (\Cref{sec:research_theory}),
+methodological research avenues (\Cref{sec:research_method}),
+computational and algorithmic challenges
+(\Cref{sec:research_compute}), domain-specific opportunities
+(\Cref{sec:research_domains}), and industry- and implementation-facing
+problems (\Cref{sec:research_industry}). Eleven formal Open Questions,
+fourteen Research Avenues, and four Computational Challenges are
+distributed across these branches; \Cref{fig:research_mindmap}
+summarises the overall structure, and each item is formulated to be
+specific enough to underwrite a self-contained research project or
+grant proposal.
+
+\subsection{Theoretical open questions}\label{sec:research_theory}
+
+The theoretical core of TCDA is the formal study of the four-tuple
+$(\Mc, G, \Tc, \Cc)$ of \Cref{def:tcda} and of the conditions under
+which its components interact coherently. The questions below organise
+the agenda along the algebraic, categorical, statistical, and
+interpretive axes of that interaction.
+
+\begin{question}[Causal persistent modules]\label{q:causal-modules}
+Let $(P_t)_{t \ge 0}$ be a one-parameter family of interventional
+distributions induced by a continuously varying intervention $\doop(x_t)$
+on an SCM $\Mc$. Define a \emph{causal persistent module}
+$M^{\Cc}_\bullet$ as the persistent homology of $(P_t)_{t \ge 0}$ with
+respect to a $\Cc$-graded filtration, so that birth and death scales
+encode the strength and duration of causal effects. Does
+$M^{\Cc}_\bullet$ admit a Crawley--Boevey-type decomposition into
+interval modules indexed by causal effects, and if so, do the resulting
+intervals coincide with classically identified causal estimands?
+\end{question}
+
+A positive answer would give an algebraic invariant of an SCM whose
+indecomposables are causal effects, in direct analogy with the way the
+indecomposables of an ordinary persistent module are barcode intervals.
+The question is open at every level: existence, uniqueness, stability,
+and computability.
+
+\begin{question}[Functorial adjoints for TCDA]\label{q:adjoints}
+Let $\Tc : \mathbf{SCM} \to \mathbf{Pers}$ be a topological functor in
+the sense of \Cref{def:tcda}. Does $\Tc$ admit a left or right adjoint
+$\Tc^\sharp : \mathbf{Pers} \to \mathbf{SCM}$, and if so, what causal
+quantities does the unit
+$\eta : \mathrm{id} \Rightarrow \Tc^\sharp \circ \Tc$ or the counit
+$\epsilon : \Tc \circ \Tc^\sharp \Rightarrow \mathrm{id}$ compute?
+\end{question}
+
+Adjoints, if they exist, would systematically convert TDA-level data
+into the SCM that ``best explains'' it, providing a categorical
+foundation for inverse problems in causal discovery. The question
+sharpens the sheaf-theoretic programme of \citet{mahadevan2021causal,
+mahadevan2022universal,mahadevan2025sheaf} and ties it to the
+functorial-data-analysis tradition of \citet{spivak2014category,
+curry2014sheaves,hajij2023topological}.
+
+\begin{question}[Causal stability theorem]\label{q:causal-stability}
+Let $\Mc_1, \Mc_2$ be SCMs in the weak Ibeling--Icard topology on
+$\mathfrak{M}$ and let $\Tc = \PHk{k}$. Suppose
+$\dB\bigl(\Tc(p^{\Mc_1}), \Tc(p^{\Mc_2})\bigr) < \epsilon$. What is the
+tightest upper bound, as a function of $\epsilon$ and $G$, on
+\[
+\sup_{x,y} \bigl\lVert P_{\Mc_1}(y \mid \doop(x))
+                    - P_{\Mc_2}(y \mid \doop(x)) \bigr\rVert_{\mathrm{TV}}\,?
+\]
+\end{question}
+
+This is the quantitative completion of \Cref{prop:stability-transfer}:
+the proposition shows that any Lipschitz causal functional inherits
+robustness from bottleneck stability, but it leaves open the explicit
+bound for the central object of Pearl's framework---the interventional
+distribution itself. A positive answer would bridge the sheaf
+programme \citep{mahadevan2025sheaf} and the AIPW programme
+\citep{kim2026topological,chernozhukov2018double} by giving the
+``other half'' of the dictionary: not just that diagrams perturb under
+data perturbation, but that do-effects perturb under diagram
+perturbation.
+
+\begin{question}[Identifiability of $G$ from a topological functor]
+\label{q:tcda-identifiability}
+For a fixed admissible topological functor $\Tc$ and a class
+$\mathcal{G}$ of DAGs, characterise necessary and sufficient
+conditions for the assignment $G \mapsto \Tc(\mathcal{P}_G)$ to be
+injective on $\mathcal{G}$. In particular: for which classes
+$\mathcal{G}$ is $\Tc = \PHk{1}$ of the windowed dependence network of
+\citet{elyaagoubi2023statistical} identifying?
+\end{question}
+
+\Cref{prop:identifiability} reduces TCDA identifiability to an
+injectivity question; \Cref{q:tcda-identifiability} asks for the
+algebraic characterisation of that injectivity. The classical
+identifiability results for linear non-Gaussian models
+\citep{shimizu2006lingam} and for score-based topological orderings
+\citep{rolland2022score,tran2024constraining,xu2025information,
+nocurl2024,wu2026optimization} are the natural touchstones.
+
+\begin{question}[Causal semantics for persistent cycles]
+\label{q:cycle-semantics}
+Develop a calculus for assigning a causal label
+(\emph{feedback}, \emph{confounding}, \emph{mediation}, \emph{spurious})
+to a persistent $1$-cycle in $\Dgmk{1}(\Tc(X))$. Specifically, give
+sufficient observational and interventional tests that distinguish a
+cycle generated by a directed feedback loop in $G$ from a cycle
+generated by an unobserved low-dimensional confounder.
+\end{question}
+
+This is the formal language whose absence is identified as a gap in
+\Cref{sec:lit_gaps}. \Cref{prop:confounding_signature} supplies a
+one-sided test (residual cycle signals possible confounding); the
+question asks for the analogous tests for the other three cases and
+for the cohomological-charge calculus that would tie them together.
+
+\begin{question}[Persistent cohomology for mediation]
+\label{q:cohomology-mediation}
+Let $A \to M \to Y$ be a mediation triple with a multidimensional
+mediator $M \in \R^d$. Apply the Hodge decomposition
+\citep{desilva2007coverage,nocurl2024} to a $1$-chain on the simplicial
+complex generated by the empirical distribution of $(A, M, Y)$ and
+decompose it into gradient (acyclic), curl (cyclic), and harmonic
+(globally non-trivial) components. Does the resulting decomposition
+recover the Pearl natural direct/natural indirect effect decomposition
+\citep{pearl2009causality}, and, if so, under what regularity
+conditions on the mediator distribution?
+\end{question}
+
+A positive answer would convert mediation analysis from a parametric
+exercise to a cohomological computation; the harmonic component, in
+particular, would quantify mediation that no local mediator captures.
+
+\begin{question}[Sheaf-cohomological reading of AIPW stability]
+\label{q:sheaf-aipw}
+Re-derive the stability bound of \citet[Theorem on silhouette
+stability]{kim2026topological} as a sheaf-cohomological obstruction in
+the topos of \citet{mahadevan2025sheaf}. Identify the obstruction class
+that vanishes if and only if the AIPW estimator on $\Tc$ inherits
+$\sqrt n$ rates under product-rate nuisance conditions.
+\end{question}
+
+\Cref{q:sheaf-aipw} is the most concrete instance of the
+methodological dictionary called for in \Cref{sec:lit_gaps}: the
+categorical and the asymptotic-statistical halves of TCDA must speak
+the same language before the field can be regarded as mature.
+
+\begin{question}[Functional CLT for TCDA beyond silhouettes]
+\label{q:functional-clt}
+Establish a functional central limit theorem for AIPW-type estimators
+of $\Cc = \E[\Tc(Y^1) - \Tc(Y^0)]$ for general admissible $\Tc$,
+including persistence landscapes \citep{bubenik2015statistical},
+persistence images \citep{adams2017persistence}, and Euler
+characteristic curves. Identify the natural function space and the
+covariance structure of the limit.
+\end{question}
+
+The silhouette case is settled by \citet{kim2026topological}, but
+landscapes, images, and Euler curves carry different smoothness and
+sparsity properties and require their own central-limit machinery,
+parallel to but distinct from \citet{bubenik2015statistical}'s
+functional CLT for landscape means.
+
+\begin{question}[Positivity for non-Euclidean outcomes]
+\label{q:positivity-noneuclidean}
+Reformulate the positivity assumption (C3) of \Cref{sec:prelim_ci} for
+outcomes valued in a non-Euclidean topological space $\Mc$. Is the
+classical pointwise overlap condition
+$0 < \Prob(A = 1 \mid X) < 1$ sufficient, or is a topological
+covering condition---e.g.\ each connected component of $\mathrm{supp}\,P^X$
+intersects both treatment arms---also required for the topological
+contrasts of \cref{eq:tate_silhouette,eq:climate_contrast} to be
+identifiable?
+\end{question}
+
+Positivity violations occur silently when the outcome lives on a
+manifold or stratified space: a covariate stratum can have positive
+probability on one connected component of $\Mc$ and zero on another,
+without violating the classical scalar overlap.
+\Cref{q:positivity-noneuclidean} asks for the topological refinement
+of overlap that detects this.
+
+\begin{question}[Transportability across topological domains]
+\label{q:transportability}
+Develop a transportability theory \citep{pearl2014external,
+bareinboim2020pearls} for TCDA estimators: under what conditions on
+$\Tc$, on the imaging or measurement modality, and on the causal
+graph $G$ can $\widehat\Cc_n$ estimated on a source domain
+$(\Mc^{\mathrm{src}}, G)$ be transported to a target domain
+$(\Mc^{\mathrm{tgt}}, G)$ with bounded loss?
+\end{question}
+
+The case study of \Cref{sec:cs_tate} motivates the question: the
+SARS-CoV-2 CT-scan TATE of \citet{kim2026topological} is evaluated on
+a single scanner protocol, and the practical deployment of a TCDA
+estimator across heterogeneous clinical sites requires a
+transportability calculus.
+
+\begin{question}[Topological do-calculus]\label{q:topo-docalculus}
+Develop a topological do-calculus: a set of rewrite rules acting on
+persistence diagrams, landscapes, or silhouettes that mirror Pearl's
+three do-calculus rules and produce, in the limit, the same
+identification answers. Identify the topological analogues of the
+three Pearlian conditions (insertion/deletion of observations,
+exchanging actions and observations, and insertion/deletion of
+actions).
+\end{question}
+
+A topological do-calculus would extend the categorical work of
+\citet{mahadevan2025sheaf} into a constructive algorithmic procedure,
+and would supply the inferential engine that
+\Cref{q:tcda-identifiability} demands.
+
+\subsection{Methodological research avenues}\label{sec:research_method}
+
+The methodological agenda translates the theoretical questions of
+\Cref{sec:research_theory} into algorithms, estimators, and learning
+procedures. We enumerate five core avenues.
+
+\begin{research}[Causal Mapper]\label{r:causal-mapper}
+Design a \emph{causal} variant of the Mapper algorithm
+\citep{singh2007mapper,carriere2018statistical} whose output is not a
+simplicial complex but a partially directed mixed graph (PDMG) over
+Mapper nodes, with edge orientations inferred from local conditional
+independence tests within each cluster. Provide bootstrap-based
+confidence guarantees on the orientation of each edge, building on
+\citet{lecci2014statistical}.
+\end{research}
+
+The case study of \Cref{sec:cs_mapper} sketches the calibrated-CATE
+side of this avenue; \Cref{r:causal-mapper} asks for the algorithmic
+upgrade that recovers a graph rather than a complex.
+
+\begin{research}[Persistent causal homotopy]\label{r:causal-homotopy}
+Develop a theory of \emph{persistent causal homotopy} for time-varying
+causal systems: a two-parameter persistence framework
+\citep{carlsson2009theory,lesnick2015interactive} in which one
+direction is the topological filtration scale and the other is causal
+time, and the bigraded module encodes both the topology of cross-
+sectional dependence and its temporal evolution.
+\end{research}
+
+\citet{elyaagoubi2023statistical} provide the empirical analogue
+(windowed dependence networks); \Cref{r:causal-homotopy} promotes the
+analogue to a calibrated bigraded estimator with formal interpretation
+in terms of regime changes and causal-structure shifts.
+
+\begin{research}[Topological regularisation for neural causal models]
+\label{r:topo-regularisation}
+Use topological summaries as regularisers in deep generative causal
+models, extending \citet{xu2021topological,farzam2025topology,
+guan2025causal,ma2025causal}. The objective is a causal variational
+autoencoder whose latent space is constrained to have prescribed
+persistent homology, encouraging causally meaningful disentanglement.
+Provide identifiability guarantees and downstream causal-effect
+estimation rates.
+\end{research}
+
+\begin{research}[Multi-scale causal inference]\label{r:multiscale}
+Treat the filtration parameter $t$ of $\PHk{k}(\Filt)$ as a
+\emph{causal scale}: at fine scales the topology resolves
+micro-mechanisms; at coarse scales it resolves macro-mechanisms.
+Develop estimators of $\Cc$ as functions of $t$, with stability and
+identifiability guarantees that interpolate between the two regimes.
+\end{research}
+
+This avenue formalises an intuition long present in TDA---multi-scale
+structure is the field's defining property---in a causal language. The
+case study of \Cref{sec:cs_mapper} motivates the avenue: regime-
+conditional CATEs naturally depend on a scale.
+
+\begin{research}[Topological mediation via Hodge decomposition]
+\label{r:hodge-mediation}
+Implement the mediation decomposition of \Cref{q:cohomology-mediation}
+as an estimator: compute the empirical Hodge decomposition of a $1$-chain
+on the data simplicial complex, identify the gradient/curl/harmonic
+components, and map each to a causal estimand (direct, indirect, and
+non-local effect) with bootstrap confidence sets.
+\end{research}
+
+\subsection{Computational and algorithmic challenges}\label{sec:research_compute}
+
+Beyond statistical and mathematical theory, four computational
+problems gate the practical deployment of TCDA at the scale of modern
+scientific data.
+
+\begin{challenge}[Scalable persistent homology for causal-graph contexts]
+\label{c:scalable-ph}
+Existing persistent-homology libraries \citep{bauer2021ripser,
+gudhi2021,tauzin2021giotto} compute $\PHk{k}$ for $k \le 2$ in
+$O(n^3)$ practical time for $n \lesssim 10^5$ points. Causal-graph
+applications routinely require $n \gtrsim 10^6$ (population-level
+omics, internet-scale finance). Develop sparse, approximate, or
+distributed PH variants whose accuracy guarantees suffice for the
+stability bound of \Cref{prop:stability-transfer} to remain
+informative at the resulting noise level.
+\end{challenge}
+
+\begin{challenge}[Probabilistic persistent homology]\label{c:bayesian-ph}
+Calibrated uncertainty in TCDA requires probabilistic versions of
+$\PHk{k}$ \citep{maroulas2020bayesian,fasy2014confidence}. Develop
+Bayesian inference over persistence diagrams that scales beyond the
+small-$n$ regime currently feasible and whose posterior contracts at
+the rate established by \citet{lecci2014statistical} for the bootstrap.
+\end{challenge}
+
+\begin{challenge}[Interoperable software for TCDA]\label{c:software}
+The TDA stack (\texttt{Ripser}, \texttt{GUDHI}, \texttt{giotto-tda})
+and the causal-inference stack (\texttt{DoWhy}, \texttt{causal-learn},
+\texttt{EconML}, \texttt{CausalML}) are mutually opaque: there is no
+common data structure for a persistence diagram with attached causal-
+graph metadata, and no shared API for AIPW on a topological summary.
+Build a \texttt{tcda-py} (or analogous) library that exposes the TCDA
+tuple $(\Mc, G, \Tc, \Cc)$ as a first-class object and orchestrates
+estimation, inference, and reporting end-to-end.
+\end{challenge}
+
+\begin{challenge}[GPU-accelerated cubical persistent homology]
+\label{c:gpu-cubical}
+Volumetric medical imaging (3D MR, 4D CT) and gridded climate fields
+require cubical $\PHk{k}$ on grids of size $\gtrsim 10^9$ voxels.
+Current cubical-PH implementations are CPU-bound and intractable at
+this scale. Develop GPU-accelerated, distributed cubical PH whose
+output is bit-for-bit compatible with the AIPW pipelines of
+\citet{kim2026topological}.
+\end{challenge}
+
+\subsection{Domain-specific research opportunities}\label{sec:research_domains}
+
+We collect five domain-specific avenues. Each is anchored in a case
+study of \Cref{sec:case_studies} and stated as a substantive,
+fundable programme of work.
+
+\paragraph{Healthcare and drug discovery.}
+\begin{research}[Topological causal models for drug repurposing]
+\label{r:healthcare-repurposing}
+Use persistent homology of disease-pathway networks and protein-
+ligand binding pockets \citep{kovacev2016using,cang2018integration,
+axelrod2022geom} as the topological functor in a TCDA pipeline whose
+causal query is the predicted treatment effect of an off-label drug.
+The pipeline must produce a calibrated point estimate of efficacy
+together with a topological diagnostic for unmeasured comorbidities,
+generalising the \citet{kim2026topological} GEOM-Drugs case study.
+\end{research}
+
+\paragraph{Climate and Earth-system science.}
+\begin{research}[Topological attribution of extreme climate events]
+\label{r:climate-attribution}
+Build a fully-specified TCDA pipeline that ingests an event-based
+climate ensemble (factual + counterfactual scenarios), computes
+cubical $\PHk{0,1}$ of the spatial event field, and outputs the
+counterfactual contrast of \cref{eq:climate_contrast} with bootstrap
+confidence sets. Demonstrate on a benchmark of canonical extreme
+events (Western European heatwave 2003, Pakistan flood 2022).
+\end{research}
+
+\paragraph{Finance and macroeconomics.}
+\begin{research}[Topological causal early-warning systems]
+\label{r:finance-warning}
+Extend the topological landscape early-warning signals of
+\citet{gidea2018topological,ismail2022early,leykam2023topological}
+into a causal early-warning framework: detect not only that a regime
+shift has occurred but identify the triggering causal factor via a
+topological contrast on the underlying network of asset returns,
+following \citet{krasnovsky2025causal}.
+\end{research}
+
+\paragraph{Neuroscience.}
+\begin{research}[Whole-brain causal mapping via topological networks]
+\label{r:neuroscience-mapping}
+Synthesise the brain-network programme \citep{bullmore2009complex,
+sizemore2018cliques,sizemore2019importance,fathian2022trend} with
+the simulation-based inference of \citet{elyaagoubi2023statistical}
+to deliver whole-brain causal maps in which (i) cycles in the
+empirical $\PHk{1}$ are formally tested against null Granger graphs
+and (ii) each surviving cycle is annotated with a putative causal
+mechanism by the calculus of \Cref{q:cycle-semantics}.
+\end{research}
+
+\paragraph{Materials science.}
+\begin{research}[Topological causal structure--property relations]
+\label{r:materials-structure-property}
+Apply the TCDA tuple to materials discovery: $\Mc$ is a configuration
+space of atomic positions, $G$ encodes the causal mechanism linking
+structure to property, $\Tc = \PHk{0,1,2}$ of the
+Vietoris--Rips filtration of atomic positions
+\citep{nigmetov2022topological,leykam2023topological}, and $\Cc$ is the
+predicted change in property under a topological intervention (e.g.\
+introducing a defect). The output is a causal explanation of why a
+given microstructure produces a given macroscopic property.
+\end{research}
+
+\subsection{Industry and practical implementation}\label{sec:research_industry}
+
+The last four items in our agenda concern the translation of TCDA
+research into industrial practice. We state each as a Research Avenue
+because they require organised research programmes, not merely
+engineering.
+
+\begin{research}[Validation standards for topological causal models]
+\label{r:validation-standards}
+Develop reporting and validation standards for topological causal
+estimators in regulated industries (FDA-relevant clinical decision
+support, prudential regulators for financial early-warning systems).
+The standards must specify the minimum reportable uncertainty (the
+\citet{lecci2014statistical} bootstrap is a candidate baseline), the
+stability bound to be reported (a corollary of
+\Cref{prop:stability-transfer}), and the confounding diagnostic
+threshold (a corollary of \Cref{prop:confounding_signature}).
+\end{research}
+
+\begin{research}[Stakeholder interpretability for topological causal findings]
+\label{r:interpretability}
+Develop interpretability tools that translate topological causal
+findings---a persistence diagram, a Mapper graph, a counterfactual
+silhouette contrast---into the language of clinicians, policymakers,
+and managers. The constructive analogue of the Pearl
+``probabilities of causation'' framework
+\citep{pearl2009causality,balke1997probabilistic} is a natural
+starting point: how does ``a persistent $1$-cycle implies a 75\%
+probability of mechanism $M$'' get reported?
+\end{research}
+
+\begin{research}[Cloud-native infrastructure for large-scale TCDA]
+\label{r:infrastructure}
+Build a cloud-native compute layer that exposes the TCDA tuple
+$(\Mc, G, \Tc, \Cc)$ as a managed service, with built-in scaling for
+the GPU cubical PH of \Cref{c:gpu-cubical}, distributed Vietoris--Rips
+of \Cref{c:scalable-ph}, and interoperable wrappers for the libraries
+named in \Cref{c:software}. The deliverable is a reference
+implementation (open-source) and a managed-service blueprint
+(commercial).
+\end{research}
+
+\begin{research}[Benchmark datasets for TCDA]\label{r:benchmarks}
+Design and release a TCDA benchmark suite analogous to the
+CMU-CausalDisco and CausalBench collections
+\citep{causaldisco2023survey,timeseriescd2023} but specifically
+calibrated to topological-causal interactions: graphs with known
+homological signatures, treatment effects with known topological
+contrast, confounders with prescribed homotopy type. The simulation
+framework of \citet{elyaagoubi2023statistical} is the natural
+starting point; the suite must extend to imaging, molecular, and
+climate modalities.
+\end{research}
+
+\input{figures/research_mindmap}
+
+\subsection{Synthesis: a five-year and a ten-year horizon}
+\label{sec:research_synth}
+
+\Cref{fig:research_mindmap} aggregates the agenda. On a five-year
+horizon, the most actionable items are the \emph{computational}
+challenges of \Cref{sec:research_compute}---a working
+\texttt{tcda-py} library, GPU cubical PH, scalable Vietoris--Rips---
+together with the \emph{methodological} avenues of
+\Cref{sec:research_method} that are within reach of existing
+estimation theory: causal Mapper (\Cref{r:causal-mapper}),
+topological regularisation (\Cref{r:topo-regularisation}), and Hodge
+mediation (\Cref{r:hodge-mediation}). On a ten-year horizon, the
+field's foundational identity will be settled by the \emph{theoretical}
+questions of \Cref{sec:research_theory}: causal persistent modules
+(\Cref{q:causal-modules}), functorial adjoints
+(\Cref{q:adjoints}), a quantitative causal stability theorem
+(\Cref{q:causal-stability}), the identifiability characterisation
+(\Cref{q:tcda-identifiability}), and the sheaf-cohomological reading
+of stability (\Cref{q:sheaf-aipw}). The domain-specific opportunities
+of \Cref{sec:research_domains} and the industry items of
+\Cref{sec:research_industry} are the empirical loci where the field
+will earn its scientific standing.
+
+Two observations close the section. First, every open question and
+research avenue connects back to a gap identified in
+\Cref{sec:lit_gaps} or to a remaining limitation noted in the case
+studies of \Cref{sec:case_studies}: the agenda is not invented from
+first principles but is the systematic completion of the existing
+literature surveyed in \Cref{sec:literature}. Second, the agenda is
+deliberately inclusive in scope and parsimonious in commitments: it
+declares which problems matter without prescribing which solutions
+will succeed, and so leaves room for a community of researchers from
+both TDA and causal inference to enter the field on their own terms.
+The next section---\Cref{sec:conclusion}---returns to the overall
+vision and to the call for interdisciplinary collaboration that the
+agenda enables.

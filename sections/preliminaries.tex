@@ -1,0 +1,374 @@
+\section{Preliminaries}
+\label{sec:preliminaries}
+
+This section assembles the minimal background needed to read the rest of the
+paper. The exposition deliberately addresses two audiences in parallel:
+readers fluent in topological data analysis (TDA) who have only passing
+familiarity with formal causal inference (CI), and readers fluent in CI who
+have only passing familiarity with persistent homology. We therefore strive
+for completeness over compression and fix the notation that
+\Cref{sec:framework,sec:literature,sec:case_studies,sec:research} will reuse.
+
+\subsection{Topological data analysis}
+\label{sec:prelim_tda}
+
+TDA studies the multi-scale geometric and topological structure of data
+using tools from algebraic topology
+\citep{carlsson2009topology,edelsbrunner2010computational,
+chazal2021introduction,wasserman2018topological}. The unifying idea is
+\emph{functoriality}: a data set is mapped, in a stable and computable way,
+to an algebraic object whose invariants summarise its shape.
+
+\subsubsection{Simplicial complexes and filtrations}
+
+Let $V$ be a finite vertex set. An abstract simplicial complex on $V$ is a
+collection $K \subseteq 2^V$ closed under taking subsets: if $\sigma \in K$
+and $\tau \subseteq \sigma$, then $\tau \in K$. A simplex
+$\sigma \in K$ with $|\sigma| = k+1$ is called a $k$-simplex; the dimension
+of $K$ is the maximum dimension of its simplices. A 1-dimensional simplicial
+complex is a graph; higher-dimensional simplicial complexes admit triangles,
+tetrahedra, and so on.
+
+Given a finite point cloud $X \subset (\Xc, d)$ in a metric space and a
+scale parameter $r \ge 0$, the \emph{Vietoris--Rips complex} is
+\begin{equation}
+  \mathrm{Rips}_r(X)
+  = \bigl\{ \sigma \subseteq X : d(u,u') \le 2r \text{ for all } u, u' \in \sigma \bigr\},
+  \label{eq:rips}
+\end{equation}
+and the \emph{\v{C}ech complex} $\mathrm{\check{C}}_r(X)$ collects subsets
+whose closed $r$-balls have non-empty common intersection
+\citep{hausmann2016vietoris}. For $X \subset \R^m$ the \emph{$\alpha$-complex}
+$\mathrm{Alpha}_r(X)$ is built from intersections of Voronoi cells with
+$r$-balls and yields a homotopy-equivalent but smaller complex than
+$\mathrm{\check{C}}_r$. For image-like grid data, \emph{cubical complexes}
+play the analogous role, with elementary cubes replacing simplices.
+
+A \emph{filtration} of $K$ is a nested family
+$\Filt = \{K(t)\}_{t \in \R}$ with $K(s) \subseteq K(t)$ whenever
+$s \le t$. Increasing $r$ in \cref{eq:rips} produces a Vietoris--Rips
+filtration; sublevel sets $K(t) = f^{-1}((-\infty,t])$ of a monotone
+function $f : K \to \R$ produce a sublevel filtration. Filtrations
+expose the data's structure at multiple resolutions simultaneously.
+
+\subsubsection{Homology and persistent homology}
+
+Singular or simplicial homology assigns to each topological space (or
+simplicial complex) $X$ a graded sequence of abelian groups
+$H_k(X)$, where $H_0$ counts connected components, $H_1$ counts independent
+1-dimensional loops, $H_2$ counts enclosed voids, and so on; the rank of
+$H_k(X)$ is the $k$th \emph{Betti number} $\betti_k(X)$
+\citep{hatcher2002algebraic,munkres1984elements}. Homology is a functor: a
+continuous map $f : X \to Y$ induces a group homomorphism
+$H_k(f) : H_k(X) \to H_k(Y)$.
+
+Applied to a filtration $\Filt = \{K(t)\}$, the inclusion
+$K(s) \hookrightarrow K(t)$ induces, for every $k$, a linear map
+$H_k(K(s)) \to H_k(K(t))$. The collection
+$\PHk{k}(\Filt) = \{H_k(K(t))\}_{t \in \R}$ together with these maps is the
+\emph{$k$-th persistent homology module} of $\Filt$
+\citep{edelsbrunner2002topological,zomorodian2005computing,
+edelsbrunner2008persistent}. Over a field, any tame persistent homology
+module decomposes uniquely (up to isomorphism) into a direct sum of interval
+modules, and the corresponding intervals $[b,d) \subset \R$ form the
+\emph{persistence barcode}; equivalently one may record their endpoints as
+a multiset of points
+\begin{equation}
+  \Dgm_k(\Filt) \subset \R^2_+ := \{ (b,d) \in (\R \cup \{\infty\})^2 : b < d \},
+  \label{eq:dgm}
+\end{equation}
+the \emph{persistence diagram} in homology degree $k$
+\citep{ghrist2008barcodes,edelsbrunner2010computational}. Following standard
+convention, $\Dgm_k$ includes the diagonal $\Delta = \{(t,t) : t \in \R\}$
+with infinite multiplicity, so matchings between diagrams may send unmatched
+points to $\Delta$.
+
+\subsubsection{Distances on diagrams and the stability theorem}
+
+The two principal metrics on the space of persistence diagrams are the
+\emph{bottleneck distance} $\dB$ and the $p$-Wasserstein distance $W_p$:
+\begin{equation}
+  \dB(D, D') = \inf_{\gamma} \, \sup_{x \in D} \|x - \gamma(x)\|_\infty,
+  \qquad
+  W_p(D, D') = \Bigl( \inf_{\gamma} \sum_{x \in D} \|x - \gamma(x)\|_\infty^p \Bigr)^{1/p},
+  \label{eq:bottleneck}
+\end{equation}
+where $\gamma$ ranges over bijections $D \cup \Delta \to D' \cup \Delta$.
+The cornerstone of statistical TDA is the \emph{stability theorem}: if $f,g$
+are tame functions on a triangulable space, then
+\begin{equation}
+  \dB\bigl(\Dgm_k(f), \Dgm_k(g)\bigr) \le \|f - g\|_\infty,
+  \label{eq:stability}
+\end{equation}
+and analogous bounds hold in Wasserstein distance
+\citep{cohen2007stability,chazal2016structure}. Stability is the property
+that makes persistent homology a viable summary for noisy data and is what
+will allow us, in \Cref{sec:framework}, to lift TDA-level perturbation
+guarantees to causal-inference-level robustness statements.
+
+\subsubsection{Functional summaries: landscapes, silhouettes, Euler curves}
+
+For statistical and machine-learning use, it is convenient to embed
+$\Dgm_k$ in a Hilbert or Banach space. Three standard embeddings will
+appear repeatedly. For $p = (a,b) \in \Dgm_k$, define the tent function
+$\Lambda_p(t) = \max\{0, \min(t-a, b-t)\}$. The
+\emph{persistence landscape}
+$\{\lambda_j(t; D)\}_{j \ge 1}$ records the $j$-th largest value of
+$\{\Lambda_p(t)\}_{p \in D}$ \citep{bubenik2015statistical}. The
+\emph{power-weighted silhouette} of order $r > 0$ is
+\begin{equation}
+  \varphi(t; D, r)
+  = \frac{\sum_{p = (a,b) \in D} (b - a)^r \, \Lambda_p(t)}
+         {\sum_{p = (a,b) \in D} (b - a)^r}, \qquad t \in T \subset \R,
+  \label{eq:silhouette}
+\end{equation}
+with $T$ a fixed compact interval
+\citep{chazal2014stochastic,kim2026topological}. The \emph{persistence
+image} \citep{adams2017persistence} provides a fixed-dimensional vector
+embedding. Finally, the \emph{Euler characteristic curve} records
+$\chi(K(t)) = \sum_k (-1)^k \betti_k(K(t))$ along the filtration; though it
+discards information, it is cheap to compute and frequently appears in
+applications \citep{smith2025multiscale,smith2025harnessing}.
+
+\begin{lemma}[Silhouette Lipschitz stability; informal restatement of
+\citealp{kim2026topological}]
+\label{lem:silhouette_stability}
+Under a uniform bound on tent heights, the power-weighted silhouette
+satisfies
+$\|\varphi(\cdot; D) - \varphi(\cdot; D')\|_\infty \le c_r \, W_1(D, D')$
+for an explicit constant $c_r > 0$ depending only on $r$ and an upper bound
+on persistence lifetimes.
+\end{lemma}
+
+\Cref{lem:silhouette_stability} is the bridge by which Wasserstein
+perturbations of diagrams translate into sup-norm perturbations of
+silhouettes; \Cref{sec:framework} uses it to derive causal-stability
+statements.
+
+\subsubsection{Mapper and Reeb graphs}
+
+The Mapper algorithm
+\citep{singh2007mapper,madukpe2026mapper,dlotko2019ball} produces a
+combinatorial summary of a high-dimensional point cloud $X$. Given a
+\emph{filter} (or lens) function $f : X \to \R^d$, a cover
+$\{U_\alpha\}$ of $f(X)$, and a clustering procedure, Mapper assigns one
+node per cluster of $f^{-1}(U_\alpha)$ and connects nodes whose clusters
+intersect. The resulting simplicial complex is a discrete proxy for the
+Reeb graph of $f$, which collapses connected components of level sets to
+points
+\citep{biasotti2008reeb,bauer2013measuring,morozov2013interleaving}. Reeb
+graphs and Mapper are central in the topological abstraction of causal
+mechanisms (\Cref{sec:framework}, Domain A2).
+
+\subsection{Causal inference}
+\label{sec:prelim_ci}
+
+Causal inference seeks to quantify what would happen to an outcome under
+hypothetical interventions on a system, going beyond the associations
+captured by joint distributions
+\citep{pearl2009causality,imbens2015causal,peters2017elements,
+spirtes2001causation}. Two complementary frameworks dominate the
+methodological landscape.
+
+\subsubsection{Structural causal models}
+
+A \emph{structural causal model} (SCM) is a tuple
+$\Mc = \langle U, V, \{f_V\}_{V \in V}, P \rangle$, where $V$ is a set of
+\emph{endogenous} variables, $U$ a set of \emph{exogenous} variables,
+$f_V : \chi_{\Pa(V)} \times \chi_{U(V)} \to \chi_V$ is a measurable
+structural function determining each endogenous variable from its parents
+and exogenous noise, and $P$ is a Borel probability measure on $\chi_U$
+\citep{pearl2009causality,bongers2021foundations,
+ibeling2021topological}. Each SCM induces a unique observational
+distribution $p^\Mc \in \Prob(\chi_V)$ under recursiveness assumptions;
+under an \emph{intervention} $W := w$ on a subset $W \subseteq V$, the
+intervened SCM $\Mc_{W := w}$ holds $W = w$ fixed and otherwise leaves
+mechanisms intact, yielding an \emph{interventional} distribution
+$p^{\Mc_{W := w}}$ \citep{pearl2009causality}.
+
+\emph{Pearl's do-calculus} \citep{pearl1995causal,tian2002general,
+lee2019general} provides a complete set of rewrite rules for the
+intervention operator $\doop(\cdot)$ on a directed acyclic graph (DAG); it
+permits the algorithmic identification of interventional from
+observational distributions whenever such identification is possible. The
+\emph{causal hierarchy}---observational, interventional, counterfactual---
+organises causal queries by the strength of assumption needed to identify
+them \citep{bareinboim2020pearls,ibeling2021topological}.
+
+A \emph{causal graph} $G = (V, E)$ on the variable set $V$ encodes the
+direct-influence relation: $X \to Y \in E$ means $X \in \Pa(Y)$. We write
+$G$ for a generic causal graph and reserve $\Mc$ for SCMs whose graph
+structure is $G$. The space of all SCMs compatible with $G$ is denoted
+$\mathfrak{M}_G$; without graph restriction we write $\mathfrak{M}$. The
+topology on $\mathfrak{M}$ used in \citet{ibeling2021topological} is the
+weak topology induced by the convergence of the joint distribution over
+all interventions, and is one of the central objects in
+\Cref{sec:framework}, Domain B.
+
+\subsubsection{Potential outcomes and causal estimands}
+
+The \emph{potential outcomes} (or Neyman--Rubin) framework
+\citep{rubin1974estimating,rubin2005causal,imbens2015causal} parameterises
+causal effects directly in terms of counterfactual outcomes. For a binary
+treatment $A \in \{0,1\}$ and observed outcome $Y$, one posits
+counterfactual outcomes $Y^0, Y^1$ representing the response under each
+treatment. The \emph{average treatment effect} is
+\begin{equation}
+  \ATE = \E[Y^1 - Y^0],
+  \label{eq:ate}
+\end{equation}
+and conditioning on covariates $X$ yields the \emph{conditional average
+treatment effect} $\CATE(x) = \E[Y^1 - Y^0 \mid X = x]$. Identification of
+\cref{eq:ate} from observational data typically rests on three
+assumptions:
+\begin{enumerate}[label=(C\arabic*), leftmargin=*]
+  \item \emph{Consistency}: $Y = Y^A$ almost surely.
+  \item \emph{No unmeasured confounding} (a.k.a.\ ignorability):
+        $\{Y^0, Y^1\} \ind A \mid X$.
+  \item \emph{Positivity (overlap)}: $0 < \Prob(A = 1 \mid X) < 1$ almost surely.
+\end{enumerate}
+Under (C1)--(C3), the ATE is identified by
+$\ATE = \E[\mu_1(X) - \mu_0(X)]$ with $\mu_a(x) = \E[Y \mid X = x, A = a]$,
+and is estimable by inverse-probability weighting, outcome regression, or
+\emph{augmented inverse-probability weighting} (AIPW)
+\citep{kennedy2024semiparametric,chernozhukov2018double}. AIPW is
+\emph{doubly robust}: consistency holds if either the outcome or
+propensity model is consistent, and rate-double-robust efficiency holds
+under product-rate nuisance conditions
+\citep{kennedy2023towards,newey2018cross}.
+
+When the outcome is functional or non-Euclidean, the ATE in \cref{eq:ate}
+is no longer well defined, and one must replace the difference of means by
+a metric- or geometry-respecting estimand. Two such generalisations recur
+in this paper:
+\begin{itemize}[leftmargin=*]
+  \item the \emph{functional average treatment effect}, defined
+        pointwise in a function space and estimated via doubly-robust
+        AIPW on the function-on-scalar regression
+        \citep{ecker2024causal,testa2025doubly,liebl2023fast};
+  \item the \emph{geodesic average treatment effect}, defined in a
+        geodesic metric space and estimated via Fréchet means
+        \citep{kurisu2024geodesic}.
+\end{itemize}
+Functional ATEs on \emph{topological} summaries (such as silhouettes) are
+exactly what \citet{kim2026topological} formalise, and we will see in
+\Cref{sec:framework} that this construction is one of three founding
+pillars of the TCDA framework.
+
+\subsubsection{Causal discovery}
+
+Beyond effect estimation, \emph{causal discovery} attempts to learn the
+graph $G$ itself from data
+\citep{spirtes2001causation,peters2014causal,
+shimizu2006lingam,causaldisco2023survey}. Methods fall into three broad
+families:
+\begin{itemize}[leftmargin=*]
+  \item \emph{Constraint-based}: query conditional independencies and
+        prune candidate DAGs accordingly (PC, FCI).
+  \item \emph{Score-based}: define a regularised likelihood over DAGs and
+        search the space (GES, NOTEARS).
+  \item \emph{Functional causal models}: exploit functional asymmetries
+        such as additive non-Gaussian noise to identify the causal
+        direction
+        (LiNGAM, ANM).
+\end{itemize}
+A growing body of work uses \emph{topological orderings} of variables to
+shrink the search space
+\citep{xu2025information,tran2024constraining,wu2026optimization,
+barroso2024inference}; this line is one of the most direct existing
+bridges between TDA and CI and is taken up in \Cref{sec:framework},
+Domain A1.
+
+\subsection{Existing mathematical bridges}
+\label{sec:prelim_bridges}
+
+The interface between TDA and CI is not a void: several mathematical
+threads already connect the two communities, although they have not yet
+been unified into a single domain. We review three.
+
+\subsubsection{Topologies on causal-model spaces}
+
+Following \citet{dembo1994topological} and \citet{genin2017topology},
+open sets of the weak topology on probability distributions correspond to
+statistically \emph{verifiable} hypotheses. \citet{ibeling2021topological}
+extend this correspondence to the space of SCMs by constructing a sequence
+of topologies, one for each level of the causal hierarchy, and proving
+that the collapse set of the hierarchy is topologically meager. Earlier
+parametric results on faithfulness violations
+\citep{meek1995strong,uhler2013geometry} can be re-read in this light as
+measure-theoretic predecessors to the topological statement. We use the
+phrase ``topology of causal models'' for this line of work and adopt it
+as the foundation of \Cref{sec:framework}, Domain B.
+
+\subsubsection{Sheaf-theoretic and categorical approaches}
+
+Sheaves, originally developed for cohomology and complex geometry
+\citep{bredon1997sheaf}, have re-emerged as a language for distributed
+data, signal processing, and now causal inference
+\citep{robinson2014topological,curry2014sheaves,spivak2014category}.
+\citet{mahadevan2021causal,mahadevan2022universal,mahadevan2025sheaf}
+develop a topos-theoretic formulation of causal inference in which
+do-calculus is generalised via subobject classifiers, the space of causal
+DAGs is endowed with an Alexandroff topology, and certain identification
+results take the form of sheaf-cohomology statements. Independently, the
+categorical view of persistent homology---homology is a functor, and
+filtrations are functors from $(\R, \le)$ to the category of topological
+spaces---suggests that any \emph{functorial} causal inference procedure
+should commute, up to a controllable error, with the topological functor
+used to summarise data. This is the formal content of Domain B3
+(``functorial causal inference'') in \Cref{sec:framework}.
+
+\subsubsection{Optimal transport and Wasserstein space}
+
+Optimal transport equips spaces of probability measures with rich
+geometric structure
+\citep{villani2009optimal,peyre2019computational}. Two threads concern
+this paper. First, persistence diagrams are themselves compared via
+$W_p$-distances; many statistical guarantees for persistent homology are
+expressed in these terms
+\citep{mileyko2011probability,turner2014frechet,
+chazal2014stochastic}. Second, the Wasserstein distance offers a natural
+metric on counterfactual distributions and so on causal effect
+estimators, with stability results connecting changes in observed
+distributions to changes in identified causal quantities. The combination
+of these two threads underwrites the silhouette stability bound of
+\citet{kim2026topological}, which we will use in
+\Cref{sec:framework}.
+
+\subsection{Notation summary}
+\label{sec:notation}
+
+We collect the notation that recurs throughout the paper.
+
+\begin{center}
+\begin{tabular}{@{}lp{0.78\linewidth}@{}}
+\toprule
+Symbol & Meaning \\
+\midrule
+$(\Mc, d)$       & Topological / metric space of observations (a Polish space, in the broadest setting). \\
+$\Filt = \{K(t)\}_{t \in \R}$ & A filtration of simplicial / cubical complexes built from data. \\
+$\PHk{k}(\Filt)$ & $k$-th persistent homology module of the filtration. \\
+$\Dgm_k(\Filt)$  & $k$-th persistence diagram (multiset of birth--death pairs). \\
+$\dB, \dW, W_p$  & Bottleneck and $p$-Wasserstein distances on diagrams. \\
+$\varphi(t; D, r)$ & Power-weighted silhouette function of diagram $D$ at exponent $r$. \\
+$\Map_f, \Reeb_f$ & Mapper and Reeb-graph summaries with filter $f$. \\
+$G = (V, E)$     & Causal graph (directed acyclic, unless stated). \\
+$\Mc \in \mathfrak{M}_G$ & SCM with graph $G$; $\mathfrak{M}$ if the graph is unspecified. \\
+$p^\Mc, p^{\Mc_{W := w}}$ & Observational and interventional distributions of $\Mc$. \\
+$Y^a$             & Potential outcome under treatment $A = a$. \\
+$\ATE, \CATE, \TATE, \GATE$ & Average / conditional / topological / geodesic ATEs. \\
+$\Tc$            & A topological functor (persistent homology, Mapper, etc.) acting on data. \\
+$\Cc$            & A causal query (e.g., $\ATE$, $\doop$-expression, identifiability question). \\
+$\TCDA$          & Topological Causal Data Analysis (the proposed domain). \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+This notation is used uniformly in \Cref{sec:framework} onwards. The
+quadruple $(\Mc, G, \Tc, \Cc)$ in particular will be the carrier of the
+TCDA formalism.
+
+\medskip
+
+Equipped with these tools, we now turn to the main intellectual
+contribution of the paper.

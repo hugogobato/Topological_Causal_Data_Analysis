@@ -1,0 +1,768 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{edelsbrunner2002topological,carlsson2009topology,edelsbrunner2010computational,wasserman2018topological,chazal2021introduction}
+\citation{rubin1974estimating,pearl1995causal,pearl2009causality,imbens2015causal,peters2017elements,bareinboim2020pearls}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:introduction}{{1}{1}{Introduction}{section.1}{}}
+\newlabel{sec:introduction@cref}{{[section][1][]1}{[1][1][]1}}
+\citation{ibeling2021topological,kim2026topological,lecci2014statistical,elyaagoubi2023statistical}
+\citation{mahadevan2021causal,mahadevan2022universal,mahadevan2025sheaf}
+\citation{rolland2022score,tran2024constraining,xu2025information,nocurl2024,wu2026optimization}
+\citation{edelsbrunner2002topological,zomorodian2005computing,edelsbrunner2008persistent}
+\citation{cohen2007stability}
+\citation{chazal2016structure}
+\citation{lecci2014statistical}
+\citation{bubenik2015statistical,adams2017persistence,chazal2014stochastic}
+\citation{carlsson2009topology}
+\citation{singh2007mapper}
+\citation{spivak2014category,curry2014sheaves}
+\citation{rubin1974estimating}
+\citation{rubin2005causal,imbens2015causal}
+\citation{robins1989probability,kennedy2024semiparametric,chernozhukov2018double}
+\citation{pearl1995causal,pearl2009causality,pearl2018book}
+\citation{spirtes2001causation}
+\citation{meek1995strong}
+\citation{shimizu2006lingam,peters2014causal}
+\citation{bareinboim2020pearls,ibeling2021topological}
+\citation{ibeling2021topological}
+\citation{kim2026topological}
+\citation{elyaagoubi2023statistical}
+\citation{mahadevan2021causal,mahadevan2022universal,mahadevan2025sheaf}
+\citation{rolland2022score,tran2024constraining,xu2025information,nocurl2024,wu2026optimization}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}The parallel evolution of two fields}{2}{subsection.1.1}\protected@file@percent }
+\newlabel{sec:intro_parallel}{{1.1}{2}{The parallel evolution of two fields}{subsection.1.1}{}}
+\newlabel{sec:intro_parallel@cref}{{[subsection][1][1]1.1}{[1][2][]2}}
+\citation{kim2026topological,kurisu2024geodesic}
+\citation{ibeling2021topological}
+\citation{rolland2022score,tran2024constraining,xu2025information,nocurl2024,wu2026optimization}
+\citation{ibeling2021topological}
+\citation{oxtoby1971measure,belot2020absolutely,genin2017topology,genin2018topology}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Why topology matters for causality}{3}{subsection.1.2}\protected@file@percent }
+\newlabel{sec:intro_why}{{1.2}{3}{Why topology matters for causality}{subsection.1.2}{}}
+\newlabel{sec:intro_why@cref}{{[subsection][2][1]1.2}{[1][2][]3}}
+\@writefile{toc}{\contentsline {paragraph}{Non-Euclidean data.}{3}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Robustness through stability.}{3}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Hidden structure and confounding.}{3}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Limitations of current approaches}{3}{subsection.1.3}\protected@file@percent }
+\newlabel{sec:intro_limits}{{1.3}{3}{Limitations of current approaches}{subsection.1.3}{}}
+\newlabel{sec:intro_limits@cref}{{[subsection][3][1]1.3}{[1][3][]3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}Our contributions}{4}{subsection.1.4}\protected@file@percent }
+\newlabel{sec:intro_contributions}{{1.4}{4}{Our contributions}{subsection.1.4}{}}
+\newlabel{sec:intro_contributions@cref}{{[subsection][4][1]1.4}{[1][4][]4}}
+\@writefile{toc}{\contentsline {paragraph}{What this paper is not.}{4}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Organisation.}{4}{section*.5}\protected@file@percent }
+\citation{carlsson2009topology,edelsbrunner2010computational,chazal2021introduction,wasserman2018topological}
+\citation{hausmann2016vietoris}
+\citation{hatcher2002algebraic,munkres1984elements}
+\citation{edelsbrunner2002topological,zomorodian2005computing,edelsbrunner2008persistent}
+\citation{ghrist2008barcodes,edelsbrunner2010computational}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Preliminaries}{5}{section.2}\protected@file@percent }
+\newlabel{sec:preliminaries}{{2}{5}{Preliminaries}{section.2}{}}
+\newlabel{sec:preliminaries@cref}{{[section][2][]2}{[1][5][]5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Topological data analysis}{5}{subsection.2.1}\protected@file@percent }
+\newlabel{sec:prelim_tda}{{2.1}{5}{Topological data analysis}{subsection.2.1}{}}
+\newlabel{sec:prelim_tda@cref}{{[subsection][1][2]2.1}{[1][5][]5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}Simplicial complexes and filtrations}{5}{subsubsection.2.1.1}\protected@file@percent }
+\newlabel{eq:rips}{{1}{5}{Simplicial complexes and filtrations}{equation.2.1}{}}
+\newlabel{eq:rips@cref}{{[equation][1][]1}{[1][5][]5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Homology and persistent homology}{5}{subsubsection.2.1.2}\protected@file@percent }
+\newlabel{eq:dgm}{{2}{5}{Homology and persistent homology}{equation.2.2}{}}
+\newlabel{eq:dgm@cref}{{[equation][2][]2}{[1][5][]5}}
+\citation{cohen2007stability,chazal2016structure}
+\citation{bubenik2015statistical}
+\citation{chazal2014stochastic,kim2026topological}
+\citation{adams2017persistence}
+\citation{smith2025multiscale,smith2025harnessing}
+\citation{kim2026topological}
+\citation{singh2007mapper,madukpe2026mapper,dlotko2019ball}
+\citation{biasotti2008reeb,bauer2013measuring,morozov2013interleaving}
+\citation{pearl2009causality,imbens2015causal,peters2017elements,spirtes2001causation}
+\citation{pearl2009causality,bongers2021foundations,ibeling2021topological}
+\citation{pearl2009causality}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}Distances on diagrams and the stability theorem}{6}{subsubsection.2.1.3}\protected@file@percent }
+\newlabel{eq:bottleneck}{{3}{6}{Distances on diagrams and the stability theorem}{equation.2.3}{}}
+\newlabel{eq:bottleneck@cref}{{[equation][3][]3}{[1][6][]6}}
+\newlabel{eq:stability}{{4}{6}{Distances on diagrams and the stability theorem}{equation.2.4}{}}
+\newlabel{eq:stability@cref}{{[equation][4][]4}{[1][6][]6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.4}Functional summaries: landscapes, silhouettes, Euler curves}{6}{subsubsection.2.1.4}\protected@file@percent }
+\newlabel{eq:silhouette}{{5}{6}{Functional summaries: landscapes, silhouettes, Euler curves}{equation.2.5}{}}
+\newlabel{eq:silhouette@cref}{{[equation][5][]5}{[1][6][]6}}
+\newlabel{lem:silhouette_stability}{{2.1}{6}{Silhouette Lipschitz stability; informal restatement of \citealp {kim2026topological}}{lemma.2.1}{}}
+\newlabel{lem:silhouette_stability@cref}{{[lemma][1][2]2.1}{[1][6][]6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.5}Mapper and Reeb graphs}{6}{subsubsection.2.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Causal inference}{6}{subsection.2.2}\protected@file@percent }
+\newlabel{sec:prelim_ci}{{2.2}{6}{Causal inference}{subsection.2.2}{}}
+\newlabel{sec:prelim_ci@cref}{{[subsection][2][2]2.2}{[1][6][]6}}
+\citation{pearl1995causal,tian2002general,lee2019general}
+\citation{bareinboim2020pearls,ibeling2021topological}
+\citation{ibeling2021topological}
+\citation{rubin1974estimating,rubin2005causal,imbens2015causal}
+\citation{kennedy2024semiparametric,chernozhukov2018double}
+\citation{kennedy2023towards,newey2018cross}
+\citation{ecker2024causal,testa2025doubly,liebl2023fast}
+\citation{kurisu2024geodesic}
+\citation{kim2026topological}
+\citation{spirtes2001causation,peters2014causal,shimizu2006lingam,causaldisco2023survey}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Structural causal models}{7}{subsubsection.2.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Potential outcomes and causal estimands}{7}{subsubsection.2.2.2}\protected@file@percent }
+\newlabel{eq:ate}{{6}{7}{Potential outcomes and causal estimands}{equation.2.6}{}}
+\newlabel{eq:ate@cref}{{[equation][6][]6}{[1][7][]7}}
+\citation{xu2025information,tran2024constraining,wu2026optimization,barroso2024inference}
+\citation{dembo1994topological}
+\citation{genin2017topology}
+\citation{ibeling2021topological}
+\citation{meek1995strong,uhler2013geometry}
+\citation{bredon1997sheaf}
+\citation{robinson2014topological,curry2014sheaves,spivak2014category}
+\citation{mahadevan2021causal,mahadevan2022universal,mahadevan2025sheaf}
+\citation{villani2009optimal,peyre2019computational}
+\citation{mileyko2011probability,turner2014frechet,chazal2014stochastic}
+\citation{kim2026topological}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Causal discovery}{8}{subsubsection.2.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Existing mathematical bridges}{8}{subsection.2.3}\protected@file@percent }
+\newlabel{sec:prelim_bridges}{{2.3}{8}{Existing mathematical bridges}{subsection.2.3}{}}
+\newlabel{sec:prelim_bridges@cref}{{[subsection][3][2]2.3}{[1][8][]8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Topologies on causal-model spaces}{8}{subsubsection.2.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Sheaf-theoretic and categorical approaches}{8}{subsubsection.2.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}Optimal transport and Wasserstein space}{8}{subsubsection.2.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Notation summary}{9}{subsection.2.4}\protected@file@percent }
+\newlabel{sec:notation}{{2.4}{9}{Notation summary}{subsection.2.4}{}}
+\newlabel{sec:notation@cref}{{[subsection][4][2]2.4}{[1][9][]9}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}The TCDA Framework}{9}{section.3}\protected@file@percent }
+\newlabel{sec:framework}{{3}{9}{The TCDA Framework}{section.3}{}}
+\newlabel{sec:framework@cref}{{[section][3][]3}{[1][9][]9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Formal definition of a TCDA problem}{9}{subsection.3.1}\protected@file@percent }
+\newlabel{sec:formal-tcda}{{3.1}{9}{Formal definition of a TCDA problem}{subsection.3.1}{}}
+\newlabel{sec:formal-tcda@cref}{{[subsection][1][3]3.1}{[1][9][]9}}
+\citation{kim2026topological}
+\citation{ibeling2021topological}
+\citation{kim2026topological}
+\citation{elyaagoubi2023statistical}
+\citation{lecci2014statistical}
+\citation{munch2016convergence,carriere2018statistical}
+\citation{elyaagoubi2023statistical,sizemore2018cliques}
+\newlabel{def:tcda}{{3.1}{10}{TCDA problem}{definition.3.1}{}}
+\newlabel{def:tcda@cref}{{[definition][1][3]3.1}{[1][9][]10}}
+\@writefile{toc}{\contentsline {paragraph}{Requirements on $\mathcal  {T}$.}{10}{section*.7}\protected@file@percent }
+\citation{bauer2021ripser,otter2017roadmap,tauzin2021giotto}
+\citation{cohen2007stability,chazal2016structure}
+\citation{kim2026topological}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The proposed TCDA taxonomy. Four orthogonal domains, each with three sub-domains, organise the field. Domain A concerns \emph  {representation}: how topology summarises the structure of causal data. Domain B concerns \emph  {robustness}: how topological stability controls the sensitivity of causal estimates to perturbations. Domain C concerns \emph  {interpretation}: which causal stories are encoded by topological features. Domain D concerns \emph  {methodology and applications} in concrete data modalities. The taxonomy is intended to be exhaustive (every existing TCDA contribution we are aware of fits in at least one node) but not mutually exclusive (many works contribute to several sub-domains simultaneously).}}{11}{figure.caption.6}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:taxonomy}{{1}{11}{The proposed TCDA taxonomy. Four orthogonal domains, each with three sub-domains, organise the field. Domain A concerns \emph {representation}: how topology summarises the structure of causal data. Domain B concerns \emph {robustness}: how topological stability controls the sensitivity of causal estimates to perturbations. Domain C concerns \emph {interpretation}: which causal stories are encoded by topological features. Domain D concerns \emph {methodology and applications} in concrete data modalities. The taxonomy is intended to be exhaustive (every existing TCDA contribution we are aware of fits in at least one node) but not mutually exclusive (many works contribute to several sub-domains simultaneously)}{figure.caption.6}{}}
+\newlabel{fig:taxonomy@cref}{{[figure][1][]1}{[1][10][]11}}
+\newlabel{prop:stability-transfer}{{3.1}{11}{Stability transfer}{proposition.3.1}{}}
+\newlabel{prop:stability-transfer@cref}{{[proposition][1][3]3.1}{[1][11][]11}}
+\citation{tran2024constraining}
+\citation{xu2025information}
+\citation{nocurl2024}
+\citation{tran2024constraining}
+\citation{xu2025information}
+\citation{nocurl2024}
+\citation{wu2026optimization}
+\citation{rolland2022score}
+\citation{elyaagoubi2023statistical}
+\citation{elyaagoubi2023statistical}
+\citation{singh2007mapper,carriere2018statistical}
+\citation{biasotti2008reeb,morozov2013interleaving}
+\citation{dlotko2019ball}
+\citation{lecci2014statistical}
+\newlabel{prop:identifiability}{{3.2}{12}{Identifiability from a topological functor}{proposition.3.2}{}}
+\newlabel{prop:identifiability@cref}{{[proposition][2][3]3.2}{[1][12][]12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Domain A: Topological Causal Representation}{12}{subsection.3.2}\protected@file@percent }
+\newlabel{sec:domain-A}{{3.2}{12}{Domain A: Topological Causal Representation}{subsection.3.2}{}}
+\newlabel{sec:domain-A@cref}{{[subsection][2][3]3.2}{[1][12][]12}}
+\citation{kim2026topological}
+\citation{kurisu2024geodesic}
+\citation{kim2026topological}
+\citation{farzam2025topology}
+\citation{bubenik2015statistical}
+\citation{lecci2014statistical}
+\citation{bruel2018topological,nigmetov2022topological}
+\citation{ibeling2021topological}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Domain B: Topological Robustness in Causal Inference}{13}{subsection.3.3}\protected@file@percent }
+\newlabel{sec:domain-B}{{3.3}{13}{Domain B: Topological Robustness in Causal Inference}{subsection.3.3}{}}
+\newlabel{sec:domain-B@cref}{{[subsection][3][3]3.3}{[1][13][]13}}
+\citation{mahadevan2025sheaf,mahadevan2021causal,mahadevan2022universal}
+\citation{willig2025alexandroff}
+\citation{sizemore2018cliques,fathian2022trend,elyaagoubi2023statistical}
+\citation{kovacev2016using,cang2018integration}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Functorial picture of a TCDA query. The horizontal arrows apply a topological functor $\mathcal  {T}$ (e.g.\ $\mathrm  {PH}_{k}$, $\mathrm  {Reeb}$, $\mathrm  {Map}$) to two interventional distributions. The left vertical arrow $\mathrm  {do}(x)\!\to \!\mathrm  {do}(x')$ acts at the level of the causal model; the right vertical arrow $\Phi _{\mathcal  {C}}$ acts at the level of topological summaries. A TCDA solution requires either that the diagram \emph  {commutes} -- so that the topological summary of a causal contrast equals the causal contrast of topological summaries -- or that the failure to commute is itself a quantifiable, interpretable causal object. Stability of $\mathcal  {T}$ (cf.\ \Cref  {eq:stability}) makes the right vertical arrow Lipschitz with respect to bottleneck distance; hence under commuting the left vertical arrow inherits a Lipschitz bound in the same metric.}}{14}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:functorial}{{2}{14}{Functorial picture of a TCDA query. The horizontal arrows apply a topological functor $\Tc $ (e.g.\ $\PHk {k}$, $\Reeb $, $\Map $) to two interventional distributions. The left vertical arrow $\doop (x)\!\to \!\doop (x')$ acts at the level of the causal model; the right vertical arrow $\Phi _{\Cc }$ acts at the level of topological summaries. A TCDA solution requires either that the diagram \emph {commutes} -- so that the topological summary of a causal contrast equals the causal contrast of topological summaries -- or that the failure to commute is itself a quantifiable, interpretable causal object. Stability of $\Tc $ (cf.\ \Cref {eq:stability}) makes the right vertical arrow Lipschitz with respect to bottleneck distance; hence under commuting the left vertical arrow inherits a Lipschitz bound in the same metric}{figure.caption.14}{}}
+\newlabel{fig:functorial@cref}{{[figure][2][]2}{[1][14][]14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Domain C: Causal Interpretation of Topological Features}{14}{subsection.3.4}\protected@file@percent }
+\newlabel{sec:domain-C}{{3.4}{14}{Domain C: Causal Interpretation of Topological Features}{subsection.3.4}{}}
+\newlabel{sec:domain-C@cref}{{[subsection][4][3]3.4}{[1][14][]14}}
+\citation{nocurl2024,desilva2007coverage}
+\citation{hughes2004stratified,banagl2007topological}
+\citation{lecci2014statistical}
+\citation{chazal2013persistence}
+\citation{bando2022causal}
+\citation{harnack2017causal,gholizadeh2018short}
+\citation{elyaagoubi2023statistical}
+\citation{kaczynski2004computational}
+\citation{sousbie2011persistent,vandeweygaert2011alpha,cisewski2014nonparametric}
+\citation{kim2026topological}
+\citation{kovacev2016using,cang2018integration,iqbal2025classification,soares2020sars,kim2018topological}
+\citation{kim2026topological}
+\citation{gidea2018topological,ismail2022early}
+\citation{cisewski2014nonparametric,strommen2025topological}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Domain D: Methodology and Applications}{15}{subsection.3.5}\protected@file@percent }
+\newlabel{sec:domain-D}{{3.5}{15}{Domain D: Methodology and Applications}{subsection.3.5}{}}
+\newlabel{sec:domain-D@cref}{{[subsection][5][3]3.5}{[1][15][]15}}
+\citation{ibeling2021topological}
+\citation{kim2026topological}
+\citation{lecci2014statistical}
+\citation{elyaagoubi2023statistical}
+\citation{edelsbrunner2002topological,carlsson2009topology,cohen2007stability,lecci2014statistical,adams2017persistence}
+\citation{pearl2009causality,imbens2015causal,chernozhukov2018double}
+\citation{ibeling2021topological}
+\citation{mahadevan2025sheaf}
+\citation{kim2026topological}
+\citation{elyaagoubi2023statistical}
+\citation{tran2024constraining,xu2025information,nocurl2024,wu2026optimization}
+\citation{edelsbrunner2002topological,carlsson2009topology,cohen2007stability,lecci2014statistical,adams2017persistence}
+\citation{pearl2009causality,imbens2015causal,chernozhukov2018double}
+\citation{ibeling2021topological}
+\citation{mahadevan2025sheaf}
+\citation{kim2026topological}
+\citation{elyaagoubi2023statistical}
+\citation{tran2024constraining,xu2025information,nocurl2024,wu2026optimization}
+\citation{lecci2014statistical}
+\citation{edelsbrunner2002topological,zomorodian2005topology,zomorodian2005computing}
+\citation{fasy2014confidence,chazal2013bootstrap}
+\citation{chaudhuri2010rates,chazal2015optimal}
+\citation{bubenik2015statistical,chazal2014stochastic,lecci2014statistical}
+\citation{mileyko2011probability,turner2014frechet}
+\citation{lecci2014statistical}
+\citation{adams2017persistence}
+\citation{carriere2020perslay}
+\citation{kim2020pllay}
+\citation{chazal2014stochastic}
+\citation{kim2026topological}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Reading the framework}{16}{subsection.3.6}\protected@file@percent }
+\newlabel{sec:reading}{{3.6}{16}{Reading the framework}{subsection.3.6}{}}
+\newlabel{sec:reading@cref}{{[subsection][6][3]3.6}{[1][16][]16}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}The State of TCDA: A Structured Literature Review}{16}{section.4}\protected@file@percent }
+\newlabel{sec:literature}{{4}{16}{The State of TCDA: A Structured Literature Review}{section.4}{}}
+\newlabel{sec:literature@cref}{{[section][4][]4}{[1][16][]16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Early connections (2015--2019)}{16}{subsection.4.1}\protected@file@percent }
+\newlabel{sec:lit_early}{{4.1}{16}{Early connections (2015--2019)}{subsection.4.1}{}}
+\newlabel{sec:lit_early@cref}{{[subsection][1][4]4.1}{[1][16][]16}}
+\citation{bullmore2009complex,sporns2013structure,bassett2009human}
+\citation{sizemore2018cliques,sizemore2019importance}
+\citation{sizemore2018cliques}
+\citation{muldoon2016small}
+\citation{fathian2022trend,gorrostieta2018time}
+\citation{friston2011functional}
+\citation{chung2009persistence,pachauri2011topology}
+\citation{umeda2017time,kim2018time}
+\citation{gholizadeh2018short}
+\citation{cohen2007stability,chazal2016structure}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Parallel development of TDA (upper band, blue) and causal inference (lower band, teal) with emerging bridges (violet) in the 2020s. Until $\sim $2020 the two communities developed largely independently---TDA building from persistence and stability towards a statistical-inference programme \citep  {edelsbrunner2002topological, carlsson2009topology,cohen2007stability,lecci2014statistical, adams2017persistence}, while causal inference matured under the Pearl and Rubin programmes and absorbed double-machine-learning \citep  {pearl2009causality,imbens2015causal,chernozhukov2018double}. The bridge papers of 2021--2026---topology on the space of SCMs \citep  {ibeling2021topological}, sheaf-theoretic causal calculi \citep  {mahadevan2025sheaf}, topological treatment effects \citep  {kim2026topological}, simulation-based TDA inference for multivariate time series \citep  {elyaagoubi2023statistical}, and topological-ordering algorithms for causal discovery \citep  {tran2024constraining,xu2025information,nocurl2024, wu2026optimization}---together delineate the TCDA programme.}}{17}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:timeline}{{3}{17}{Parallel development of TDA (upper band, blue) and causal inference (lower band, teal) with emerging bridges (violet) in the 2020s. Until $\sim $2020 the two communities developed largely independently---TDA building from persistence and stability towards a statistical-inference programme \citep {edelsbrunner2002topological, carlsson2009topology,cohen2007stability,lecci2014statistical, adams2017persistence}, while causal inference matured under the Pearl and Rubin programmes and absorbed double-machine-learning \citep {pearl2009causality,imbens2015causal,chernozhukov2018double}. The bridge papers of 2021--2026---topology on the space of SCMs \citep {ibeling2021topological}, sheaf-theoretic causal calculi \citep {mahadevan2025sheaf}, topological treatment effects \citep {kim2026topological}, simulation-based TDA inference for multivariate time series \citep {elyaagoubi2023statistical}, and topological-ordering algorithms for causal discovery \citep {tran2024constraining,xu2025information,nocurl2024, wu2026optimization}---together delineate the TCDA programme}{figure.caption.21}{}}
+\newlabel{fig:timeline@cref}{{[figure][3][]3}{[1][16][]17}}
+\@writefile{toc}{\contentsline {paragraph}{Statistical TDA matures.}{17}{section*.22}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Topological brain networks: causal-adjacent but not causal.}{17}{section*.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{TDA for time series and dynamical systems.}{17}{section*.24}\protected@file@percent }
+\citation{spivak2014category,curry2014sheaves,robinson2014topological,robinson2014hypothesis}
+\citation{pearl1995causal,pearl2009causality}
+\citation{galles1998axiomatic}
+\citation{henry2020bridging}
+\citation{pearl1995causal,pearl2009causality,pearl2018book}
+\citation{rubin1974estimating,rubin2005causal,imbens2015causal}
+\citation{spirtes2001causation,meek1995strong,peters2014causal,shimizu2006lingam}
+\citation{tian2000probabilities,tian2002general,avin2005identifiability}
+\citation{robins1989probability,chernozhukov2018double,kennedy2016semiparametric}
+\citation{kim2026topological}
+\citation{ibeling2021topological}
+\citation{oxtoby1971measure,belot2020absolutely}
+\citation{dembo1994topological,genin2017topology,genin2018topology,genin2020statistical,genin2021statistical}
+\citation{ibeling2021topological}
+\citation{ibeling2019open,ibeling2020probabilistic}
+\citation{mahadevan2021causal,mahadevan2022universal,mahadevan2025sheaf}
+\citation{spivak2014category,curry2014sheaves,hajij2023topological,papamarkou2024position}
+\citation{willig2025alexandroff}
+\@writefile{toc}{\contentsline {paragraph}{Categorical and sheaf-theoretic preludes.}{18}{section*.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Causal-inference foundations that TCDA will inherit.}{18}{section*.26}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Methodological advances (2020--2023)}{18}{subsection.4.2}\protected@file@percent }
+\newlabel{sec:lit_method}{{4.2}{18}{Methodological advances (2020--2023)}{subsection.4.2}{}}
+\newlabel{sec:lit_method@cref}{{[subsection][2][4]4.2}{[1][18][]18}}
+\@writefile{toc}{\contentsline {paragraph}{The topology of SCMs.}{18}{section*.27}\protected@file@percent }
+\citation{rolland2022score}
+\citation{tran2024constraining}
+\citation{xu2025information}
+\citation{nocurl2024}
+\citation{wu2026optimization}
+\citation{rolland2022score}
+\citation{desilva2007coverage}
+\citation{kim2026topological}
+\citation{soares2020sars}
+\citation{axelrod2022geom}
+\citation{saki2026beyond}
+\citation{ballester2026topological}
+\citation{deepcausalitytopology2026}
+\citation{kurisu2024geodesic}
+\citation{elyaagoubi2023statistical}
+\citation{elyaagoubi2023topological}
+\citation{carriere2020perslay}
+\citation{kim2020pllay}
+\citation{hajij2023topological}
+\citation{papamarkou2024position}
+\citation{farzam2025topology}
+\citation{xu2021topological}
+\citation{guan2025causal}
+\citation{ma2025causal}
+\@writefile{toc}{\contentsline {paragraph}{Sheaf and topos foundations.}{19}{section*.28}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Topology-based causal discovery: ordering algorithms.}{19}{section*.29}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Treatment effects as topological functionals.}{19}{section*.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Simulation-based inference and dependence networks.}{19}{section*.31}\protected@file@percent }
+\citation{kasson2007persistent,chung2009persistence}
+\citation{kovacev2016using,cang2018integration}
+\citation{kim2026topological}
+\citation{axelrod2022geom}
+\citation{soares2020sars,iqbal2025classification}
+\citation{kim2026topological}
+\citation{iqbal2025classification}
+\citation{kim2018topological,carlsson2020topological,corcoran2023topological}
+\citation{bullmore2009complex,bassett2009human,sporns2013structure,muldoon2016small,sizemore2018cliques,sizemore2019importance,fathian2022trend}
+\citation{ombao2022spectral,gorrostieta2018time}
+\citation{elyaagoubi2023statistical}
+\citation{sousbie2011persistent,vandeweygaert2011alpha,cisewski2014nonparametric}
+\citation{strommen2025topological,smith2025multiscale,smith2025harnessing}
+\citation{gidea2018topological,ismail2022early}
+\citation{leykam2023topological}
+\@writefile{toc}{\contentsline {paragraph}{Topological deep learning and topological regularisation.}{20}{section*.32}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Application-driven work (2020--present)}{20}{subsection.4.3}\protected@file@percent }
+\newlabel{sec:lit_app}{{4.3}{20}{Application-driven work (2020--present)}{subsection.4.3}{}}
+\newlabel{sec:lit_app@cref}{{[subsection][3][4]4.3}{[1][20][]20}}
+\@writefile{toc}{\contentsline {paragraph}{Healthcare, drug discovery, and biomedicine.}{20}{section*.33}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Neuroscience and cognitive science.}{20}{section*.34}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Climate, cosmology, and Earth science.}{20}{section*.35}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Finance and economics.}{20}{section*.36}\protected@file@percent }
+\citation{bando2022causal}
+\citation{harnack2017causal,gholizadeh2018short}
+\citation{krasnovsky2025causal}
+\citation{nigmetov2022topological}
+\citation{leykam2023topological}
+\citation{ibeling2021topological}
+\citation{kim2026topological}
+\citation{mahadevan2025sheaf}
+\citation{elyaagoubi2023statistical}
+\citation{bauer2021ripser}
+\citation{gudhi2021}
+\citation{tauzin2021giotto}
+\citation{causaldisco2023survey,timeseriescd2023}
+\citation{elyaagoubi2023statistical}
+\citation{mahadevan2021causal,mahadevan2022universal,mahadevan2025sheaf}
+\citation{kim2026topological}
+\citation{sizemore2018cliques,elyaagoubi2023statistical}
+\citation{gidea2018topological,ismail2022early}
+\@writefile{toc}{\contentsline {paragraph}{Time-series and dynamical-system causality.}{21}{section*.37}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Materials and physical sciences.}{21}{section*.38}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Gaps in the current literature}{21}{subsection.4.4}\protected@file@percent }
+\newlabel{sec:lit_gaps}{{4.4}{21}{Gaps in the current literature}{subsection.4.4}{}}
+\newlabel{sec:lit_gaps@cref}{{[subsection][4][4]4.4}{[1][21][]21}}
+\@writefile{toc}{\contentsline {paragraph}{Absence of a unified framework.}{21}{section*.39}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Computational and software fragmentation.}{21}{section*.40}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Missing benchmark datasets.}{21}{section*.41}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Theoretical disconnect between functorial and methodological threads.}{21}{section*.42}\protected@file@percent }
+\citation{ibeling2021topological,kim2026topological,lecci2014statistical,elyaagoubi2023statistical}
+\citation{soares2020sars,axelrod2022geom,iqbal2025classification,carlsson2020topological}
+\citation{kim2026topological}
+\citation{kaczynski2004computational}
+\citation{kim2026topological}
+\citation{lecci2014statistical}
+\@writefile{toc}{\contentsline {paragraph}{Absence of formal causal interpretation for topological features.}{22}{section*.43}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Case Studies and Proof-of-Concept Synergies}{22}{section.5}\protected@file@percent }
+\newlabel{sec:case_studies}{{5}{22}{Case Studies and Proof-of-Concept Synergies}{section.5}{}}
+\newlabel{sec:case_studies@cref}{{[section][5][]5}{[1][22][]22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Case Study 1: Topological average treatment effects on biomedical imaging and molecular structure}{22}{subsection.5.1}\protected@file@percent }
+\newlabel{sec:cs_tate}{{5.1}{22}{Case Study 1: Topological average treatment effects on biomedical imaging and molecular structure}{subsection.5.1}{}}
+\newlabel{sec:cs_tate@cref}{{[subsection][1][5]5.1}{[1][22][]22}}
+\@writefile{toc}{\contentsline {paragraph}{Setting.}{22}{section*.44}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{TCDA instantiation.}{22}{section*.45}\protected@file@percent }
+\newlabel{eq:tate_silhouette}{{7}{22}{TCDA instantiation}{equation.5.7}{}}
+\newlabel{eq:tate_silhouette@cref}{{[equation][7][]7}{[1][22][]22}}
+\citation{sizemore2018cliques,elyaagoubi2023statistical}
+\citation{gidea2018topological,ismail2022early}
+\citation{strommen2025topological}
+\citation{elyaagoubi2023statistical}
+\citation{elyaagoubi2023statistical}
+\citation{elyaagoubi2023topological}
+\citation{bando2022causal,harnack2017causal,gholizadeh2018short,krasnovsky2025causal}
+\@writefile{toc}{\contentsline {paragraph}{Estimation and inference.}{23}{section*.46}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Stability.}{23}{section*.47}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Why this case study matters and what remains open.}{23}{section*.48}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Case Study 2: Cycle-based causal discovery in multivariate dependence networks}{23}{subsection.5.2}\protected@file@percent }
+\newlabel{sec:cs_cycles}{{5.2}{23}{Case Study 2: Cycle-based causal discovery in multivariate dependence networks}{subsection.5.2}{}}
+\newlabel{sec:cs_cycles@cref}{{[subsection][2][5]5.2}{[1][23][]23}}
+\@writefile{toc}{\contentsline {paragraph}{Setting.}{23}{section*.49}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{TCDA instantiation.}{23}{section*.50}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Inference and benchmark.}{23}{section*.51}\protected@file@percent }
+\citation{shimizu2006lingam}
+\citation{elyaagoubi2023statistical}
+\citation{lecci2014statistical}
+\citation{ibeling2021topological}
+\citation{fasy2014confidence,chazal2013bootstrap}
+\@writefile{toc}{\contentsline {paragraph}{From a cycle to a causal mechanism.}{24}{section*.52}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Why this case study matters and what remains open.}{24}{section*.53}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Case Study 3: Confounding diagnostics via persistent residual topology}{24}{subsection.5.3}\protected@file@percent }
+\newlabel{sec:cs_confounding}{{5.3}{24}{Case Study 3: Confounding diagnostics via persistent residual topology}{subsection.5.3}{}}
+\newlabel{sec:cs_confounding@cref}{{[subsection][3][5]5.3}{[1][24][]24}}
+\@writefile{toc}{\contentsline {paragraph}{Setting.}{24}{section*.54}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{TCDA instantiation.}{24}{section*.55}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Worked example: the circular confounder.}{24}{section*.56}\protected@file@percent }
+\citation{cohen2007stability,chazal2016structure}
+\citation{ibeling2021topological}
+\citation{mahadevan2021causal,mahadevan2022universal,mahadevan2025sheaf}
+\citation{ibeling2021topological}
+\citation{singh2007mapper,carriere2018statistical,dlotko2019ball,madukpe2026mapper}
+\citation{lecci2014statistical}
+\newlabel{prop:confounding_signature}{{5.1}{25}{Topological confounding signature}{proposition.5.1}{}}
+\newlabel{prop:confounding_signature@cref}{{[proposition][1][5]5.1}{[1][24][]25}}
+\@writefile{toc}{\contentsline {paragraph}{Discussion: detection is not identification.}{25}{section*.57}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Why this case study matters and what remains open.}{25}{section*.58}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Case Study 4: Mapper-based causal abstraction with calibrated uncertainty}{25}{subsection.5.4}\protected@file@percent }
+\newlabel{sec:cs_mapper}{{5.4}{25}{Case Study 4: Mapper-based causal abstraction with calibrated uncertainty}{subsection.5.4}{}}
+\newlabel{sec:cs_mapper@cref}{{[subsection][4][5]5.4}{[1][25][]25}}
+\@writefile{toc}{\contentsline {paragraph}{Setting.}{25}{section*.59}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{TCDA instantiation.}{25}{section*.60}\protected@file@percent }
+\newlabel{eq:cate_mapper}{{8}{25}{TCDA instantiation}{equation.5.8}{}}
+\newlabel{eq:cate_mapper@cref}{{[equation][8][]8}{[1][25][]25}}
+\citation{lecci2014statistical}
+\citation{fasy2014confidence,chazal2013bootstrap}
+\citation{hughes2004stratified,banagl2007topological,chazal2013persistence}
+\citation{lecci2014statistical}
+\citation{strommen2025topological,smith2025multiscale,smith2025harnessing}
+\citation{sousbie2011persistent,vandeweygaert2011alpha,cisewski2014nonparametric}
+\citation{kim2026topological}
+\@writefile{toc}{\contentsline {paragraph}{Bootstrap confidence sets for the abstraction.}{26}{section*.61}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Connection to stratified-space causal heterogeneity.}{26}{section*.62}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Why this case study matters and what remains open.}{26}{section*.63}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Case Study 5: Spatiotemporal causal attribution via cubical persistent homology}{26}{subsection.5.5}\protected@file@percent }
+\newlabel{sec:cs_climate}{{5.5}{26}{Case Study 5: Spatiotemporal causal attribution via cubical persistent homology}{subsection.5.5}{}}
+\newlabel{sec:cs_climate@cref}{{[subsection][5][5]5.5}{[1][26][]26}}
+\@writefile{toc}{\contentsline {paragraph}{Setting.}{26}{section*.64}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{TCDA instantiation.}{26}{section*.65}\protected@file@percent }
+\newlabel{eq:climate_contrast}{{9}{26}{TCDA instantiation}{equation.5.9}{}}
+\newlabel{eq:climate_contrast@cref}{{[equation][9][]9}{[1][26][]26}}
+\citation{kim2026topological,lecci2014statistical,soares2020sars,axelrod2022geom}
+\citation{elyaagoubi2023statistical,elyaagoubi2023topological,bando2022causal}
+\citation{ibeling2021topological,mahadevan2025sheaf,fasy2014confidence}
+\citation{lecci2014statistical,singh2007mapper,carriere2018statistical}
+\citation{kim2026topological,sousbie2011persistent,strommen2025topological}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Case studies and their place in the TCDA taxonomy of \Cref  {fig:taxonomy}. Each case study instantiates the TCDA tuple $(\mathcal  {M}, G, \mathcal  {T}, \mathcal  {C})$ of \Cref  {def:tcda} in a specific applied or theoretical setting, engages one or more of the four seed works of the field, and populates one or more sub-domains of the taxonomy.}}{27}{table.caption.68}\protected@file@percent }
+\newlabel{tab:cs_summary}{{1}{27}{Case studies and their place in the TCDA taxonomy of \Cref {fig:taxonomy}. Each case study instantiates the TCDA tuple $(\Mc , G, \Tc , \Cc )$ of \Cref {def:tcda} in a specific applied or theoretical setting, engages one or more of the four seed works of the field, and populates one or more sub-domains of the taxonomy}{table.caption.68}{}}
+\newlabel{tab:cs_summary@cref}{{[table][1][]1}{[1][27][]27}}
+\@writefile{toc}{\contentsline {paragraph}{The descriptive precedent and the causal upgrade.}{27}{section*.66}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Why this case study matters and what remains open.}{27}{section*.67}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Synthesis: case studies and the taxonomy}{27}{subsection.5.6}\protected@file@percent }
+\newlabel{sec:cs_synthesis}{{5.6}{27}{Synthesis: case studies and the taxonomy}{subsection.5.6}{}}
+\newlabel{sec:cs_synthesis@cref}{{[subsection][6][5]5.6}{[1][27][]27}}
+\citation{kim2026topological}
+\citation{ibeling2021topological}
+\citation{lecci2014statistical}
+\citation{elyaagoubi2023statistical}
+\citation{mahadevan2021causal,mahadevan2022universal,mahadevan2025sheaf}
+\citation{spivak2014category,curry2014sheaves,hajij2023topological}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Research Agenda and Open Questions}{28}{section.6}\protected@file@percent }
+\newlabel{sec:research}{{6}{28}{Research Agenda and Open Questions}{section.6}{}}
+\newlabel{sec:research@cref}{{[section][6][]6}{[1][28][]28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Theoretical open questions}{28}{subsection.6.1}\protected@file@percent }
+\newlabel{sec:research_theory}{{6.1}{28}{Theoretical open questions}{subsection.6.1}{}}
+\newlabel{sec:research_theory@cref}{{[subsection][1][6]6.1}{[1][28][]28}}
+\newlabel{q:causal-modules}{{6.1}{28}{Causal persistent modules}{question.6.1}{}}
+\newlabel{q:causal-modules@cref}{{[question][1][6]6.1}{[1][28][]28}}
+\newlabel{q:adjoints}{{6.2}{28}{Functorial adjoints for TCDA}{question.6.2}{}}
+\newlabel{q:adjoints@cref}{{[question][2][6]6.2}{[1][28][]28}}
+\citation{mahadevan2025sheaf}
+\citation{kim2026topological,chernozhukov2018double}
+\citation{elyaagoubi2023statistical}
+\citation{shimizu2006lingam}
+\citation{rolland2022score,tran2024constraining,xu2025information,nocurl2024,wu2026optimization}
+\citation{desilva2007coverage,nocurl2024}
+\citation{pearl2009causality}
+\citation{kim2026topological}
+\citation{mahadevan2025sheaf}
+\citation{bubenik2015statistical}
+\citation{adams2017persistence}
+\newlabel{q:causal-stability}{{6.3}{29}{Causal stability theorem}{question.6.3}{}}
+\newlabel{q:causal-stability@cref}{{[question][3][6]6.3}{[1][29][]29}}
+\newlabel{q:tcda-identifiability}{{6.4}{29}{Identifiability of $G$ from a topological functor}{question.6.4}{}}
+\newlabel{q:tcda-identifiability@cref}{{[question][4][6]6.4}{[1][29][]29}}
+\newlabel{q:cycle-semantics}{{6.5}{29}{Causal semantics for persistent cycles}{question.6.5}{}}
+\newlabel{q:cycle-semantics@cref}{{[question][5][6]6.5}{[1][29][]29}}
+\newlabel{q:cohomology-mediation}{{6.6}{29}{Persistent cohomology for mediation}{question.6.6}{}}
+\newlabel{q:cohomology-mediation@cref}{{[question][6][6]6.6}{[1][29][]29}}
+\newlabel{q:sheaf-aipw}{{6.7}{29}{Sheaf-cohomological reading of AIPW stability}{question.6.7}{}}
+\newlabel{q:sheaf-aipw@cref}{{[question][7][6]6.7}{[1][29][]29}}
+\citation{kim2026topological}
+\citation{bubenik2015statistical}
+\citation{pearl2014external,bareinboim2020pearls}
+\citation{kim2026topological}
+\citation{mahadevan2025sheaf}
+\citation{singh2007mapper,carriere2018statistical}
+\citation{lecci2014statistical}
+\citation{carlsson2009theory,lesnick2015interactive}
+\newlabel{q:functional-clt}{{6.8}{30}{Functional CLT for TCDA beyond silhouettes}{question.6.8}{}}
+\newlabel{q:functional-clt@cref}{{[question][8][6]6.8}{[1][29][]30}}
+\newlabel{q:positivity-noneuclidean}{{6.9}{30}{Positivity for non-Euclidean outcomes}{question.6.9}{}}
+\newlabel{q:positivity-noneuclidean@cref}{{[question][9][6]6.9}{[1][30][]30}}
+\newlabel{q:transportability}{{6.10}{30}{Transportability across topological domains}{question.6.10}{}}
+\newlabel{q:transportability@cref}{{[question][10][6]6.10}{[1][30][]30}}
+\newlabel{q:topo-docalculus}{{6.11}{30}{Topological do-calculus}{question.6.11}{}}
+\newlabel{q:topo-docalculus@cref}{{[question][11][6]6.11}{[1][30][]30}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Methodological research avenues}{30}{subsection.6.2}\protected@file@percent }
+\newlabel{sec:research_method}{{6.2}{30}{Methodological research avenues}{subsection.6.2}{}}
+\newlabel{sec:research_method@cref}{{[subsection][2][6]6.2}{[1][30][]30}}
+\newlabel{r:causal-mapper}{{6.1}{30}{Causal Mapper}{research.6.1}{}}
+\newlabel{r:causal-mapper@cref}{{[research][1][6]6.1}{[1][30][]30}}
+\citation{elyaagoubi2023statistical}
+\citation{xu2021topological,farzam2025topology,guan2025causal,ma2025causal}
+\citation{bauer2021ripser,gudhi2021,tauzin2021giotto}
+\citation{maroulas2020bayesian,fasy2014confidence}
+\citation{lecci2014statistical}
+\citation{kim2026topological}
+\newlabel{r:causal-homotopy}{{6.2}{31}{Persistent causal homotopy}{research.6.2}{}}
+\newlabel{r:causal-homotopy@cref}{{[research][2][6]6.2}{[1][30][]31}}
+\newlabel{r:topo-regularisation}{{6.3}{31}{Topological regularisation for neural causal models}{research.6.3}{}}
+\newlabel{r:topo-regularisation@cref}{{[research][3][6]6.3}{[1][31][]31}}
+\newlabel{r:multiscale}{{6.4}{31}{Multi-scale causal inference}{research.6.4}{}}
+\newlabel{r:multiscale@cref}{{[research][4][6]6.4}{[1][31][]31}}
+\newlabel{r:hodge-mediation}{{6.5}{31}{Topological mediation via Hodge decomposition}{research.6.5}{}}
+\newlabel{r:hodge-mediation@cref}{{[research][5][6]6.5}{[1][31][]31}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Computational and algorithmic challenges}{31}{subsection.6.3}\protected@file@percent }
+\newlabel{sec:research_compute}{{6.3}{31}{Computational and algorithmic challenges}{subsection.6.3}{}}
+\newlabel{sec:research_compute@cref}{{[subsection][3][6]6.3}{[1][31][]31}}
+\newlabel{c:scalable-ph}{{6.1}{31}{Scalable persistent homology for causal-graph contexts}{challenge.6.1}{}}
+\newlabel{c:scalable-ph@cref}{{[challenge][1][6]6.1}{[1][31][]31}}
+\newlabel{c:bayesian-ph}{{6.2}{31}{Probabilistic persistent homology}{challenge.6.2}{}}
+\newlabel{c:bayesian-ph@cref}{{[challenge][2][6]6.2}{[1][31][]31}}
+\newlabel{c:software}{{6.3}{31}{Interoperable software for TCDA}{challenge.6.3}{}}
+\newlabel{c:software@cref}{{[challenge][3][6]6.3}{[1][31][]31}}
+\citation{kovacev2016using,cang2018integration,axelrod2022geom}
+\citation{kim2026topological}
+\citation{gidea2018topological,ismail2022early,leykam2023topological}
+\citation{krasnovsky2025causal}
+\citation{bullmore2009complex,sizemore2018cliques,sizemore2019importance,fathian2022trend}
+\citation{elyaagoubi2023statistical}
+\citation{nigmetov2022topological,leykam2023topological}
+\newlabel{c:gpu-cubical}{{6.4}{32}{GPU-accelerated cubical persistent homology}{challenge.6.4}{}}
+\newlabel{c:gpu-cubical@cref}{{[challenge][4][6]6.4}{[1][31][]32}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Domain-specific research opportunities}{32}{subsection.6.4}\protected@file@percent }
+\newlabel{sec:research_domains}{{6.4}{32}{Domain-specific research opportunities}{subsection.6.4}{}}
+\newlabel{sec:research_domains@cref}{{[subsection][4][6]6.4}{[1][32][]32}}
+\@writefile{toc}{\contentsline {paragraph}{Healthcare and drug discovery.}{32}{section*.69}\protected@file@percent }
+\newlabel{r:healthcare-repurposing}{{6.6}{32}{Topological causal models for drug repurposing}{research.6.6}{}}
+\newlabel{r:healthcare-repurposing@cref}{{[research][6][6]6.6}{[1][32][]32}}
+\@writefile{toc}{\contentsline {paragraph}{Climate and Earth-system science.}{32}{section*.70}\protected@file@percent }
+\newlabel{r:climate-attribution}{{6.7}{32}{Topological attribution of extreme climate events}{research.6.7}{}}
+\newlabel{r:climate-attribution@cref}{{[research][7][6]6.7}{[1][32][]32}}
+\@writefile{toc}{\contentsline {paragraph}{Finance and macroeconomics.}{32}{section*.71}\protected@file@percent }
+\newlabel{r:finance-warning}{{6.8}{32}{Topological causal early-warning systems}{research.6.8}{}}
+\newlabel{r:finance-warning@cref}{{[research][8][6]6.8}{[1][32][]32}}
+\@writefile{toc}{\contentsline {paragraph}{Neuroscience.}{32}{section*.72}\protected@file@percent }
+\newlabel{r:neuroscience-mapping}{{6.9}{32}{Whole-brain causal mapping via topological networks}{research.6.9}{}}
+\newlabel{r:neuroscience-mapping@cref}{{[research][9][6]6.9}{[1][32][]32}}
+\@writefile{toc}{\contentsline {paragraph}{Materials science.}{32}{section*.73}\protected@file@percent }
+\newlabel{r:materials-structure-property}{{6.10}{32}{Topological causal structure--property relations}{research.6.10}{}}
+\newlabel{r:materials-structure-property@cref}{{[research][10][6]6.10}{[1][32][]32}}
+\citation{lecci2014statistical}
+\citation{pearl2009causality,balke1997probabilistic}
+\citation{causaldisco2023survey,timeseriescd2023}
+\citation{elyaagoubi2023statistical}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Industry and practical implementation}{33}{subsection.6.5}\protected@file@percent }
+\newlabel{sec:research_industry}{{6.5}{33}{Industry and practical implementation}{subsection.6.5}{}}
+\newlabel{sec:research_industry@cref}{{[subsection][5][6]6.5}{[1][32][]33}}
+\newlabel{r:validation-standards}{{6.11}{33}{Validation standards for topological causal models}{research.6.11}{}}
+\newlabel{r:validation-standards@cref}{{[research][11][6]6.11}{[1][33][]33}}
+\newlabel{r:interpretability}{{6.12}{33}{Stakeholder interpretability for topological causal findings}{research.6.12}{}}
+\newlabel{r:interpretability@cref}{{[research][12][6]6.12}{[1][33][]33}}
+\newlabel{r:infrastructure}{{6.13}{33}{Cloud-native infrastructure for large-scale TCDA}{research.6.13}{}}
+\newlabel{r:infrastructure@cref}{{[research][13][6]6.13}{[1][33][]33}}
+\newlabel{r:benchmarks}{{6.14}{33}{Benchmark datasets for TCDA}{research.6.14}{}}
+\newlabel{r:benchmarks@cref}{{[research][14][6]6.14}{[1][33][]33}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6}Synthesis: a five-year and a ten-year horizon}{33}{subsection.6.6}\protected@file@percent }
+\newlabel{sec:research_synth}{{6.6}{33}{Synthesis: a five-year and a ten-year horizon}{subsection.6.6}{}}
+\newlabel{sec:research_synth@cref}{{[subsection][6][6]6.6}{[1][33][]33}}
+\citation{ibeling2021topological}
+\citation{kim2026topological}
+\citation{lecci2014statistical}
+\citation{elyaagoubi2023statistical}
+\citation{ibeling2021topological}
+\citation{kim2026topological}
+\citation{lecci2014statistical}
+\citation{elyaagoubi2023statistical}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Mind-map of the TCDA research agenda. The agenda has five branches---theoretical (\Cref  {sec:research_theory}), methodological (\Cref  {sec:research_method}), computational (\Cref  {sec:research_compute}), domain-specific (\Cref  {sec:research_domains}), and industry-facing (\Cref  {sec:research_industry})---comprising eleven formal Open Questions (Q1--Q11), fourteen Research Avenues (R1--R14), and four Computational Challenges (C1--C4). Each leaf is keyed to the formal statement in the body of \Cref  {sec:research}; together the leaves populate every domain of the TCDA taxonomy (\Cref  {fig:taxonomy}) with at least one concrete, grant-scale open problem.}}{34}{figure.caption.74}\protected@file@percent }
+\newlabel{fig:research_mindmap}{{4}{34}{Mind-map of the TCDA research agenda. The agenda has five branches---theoretical (\Cref {sec:research_theory}), methodological (\Cref {sec:research_method}), computational (\Cref {sec:research_compute}), domain-specific (\Cref {sec:research_domains}), and industry-facing (\Cref {sec:research_industry})---comprising eleven formal Open Questions (Q1--Q11), fourteen Research Avenues (R1--R14), and four Computational Challenges (C1--C4). Each leaf is keyed to the formal statement in the body of \Cref {sec:research}; together the leaves populate every domain of the TCDA taxonomy (\Cref {fig:taxonomy}) with at least one concrete, grant-scale open problem}{figure.caption.74}{}}
+\newlabel{fig:research_mindmap@cref}{{[figure][4][]4}{[1][33][]34}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{34}{section.7}\protected@file@percent }
+\newlabel{sec:conclusion}{{7}{34}{Conclusion}{section.7}{}}
+\newlabel{sec:conclusion@cref}{{[section][7][]7}{[1][33][]34}}
+\@writefile{toc}{\contentsline {paragraph}{The four cornerstones of the field.}{34}{section*.75}\protected@file@percent }
+\bibstyle{plainnat}
+\bibdata{bibliography}
+\bibcite{adams2017persistence}{{1}{2017}{{Adams et~al.}}{{Adams, Emerson, Kirby, Neville, Peterson, Shipman, Chepushtanova, Hanson, Motta, and Ziegelmeier}}}
+\bibcite{deepcausalitytopology2026}{{2}{2026}{{Anonymous}}{{}}}
+\bibcite{timeseriescd2023}{{3}{2023}{{Assaad et~al.}}{{Assaad, Devijver, and Gaussier}}}
+\@writefile{toc}{\contentsline {paragraph}{What we have not done.}{35}{section*.76}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{A call for interdisciplinary collaboration.}{35}{section*.77}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Closing.}{35}{section*.78}\protected@file@percent }
+\bibcite{avin2005identifiability}{{4}{2005}{{Avin et~al.}}{{Avin, Shpitser, and Pearl}}}
+\bibcite{axelrod2022geom}{{5}{2022}{{Axelrod and G{\'o}mez-Bombarelli}}{{}}}
+\bibcite{balke1997probabilistic}{{6}{1997}{{Balke and Pearl}}{{}}}
+\bibcite{ballester2026topological}{{7}{2026}{{Ballester et~al.}}{{Ballester, Casacuberta, and Escalera}}}
+\bibcite{banagl2007topological}{{8}{2007}{{Banagl}}{{}}}
+\bibcite{bando2022causal}{{9}{2022}{{Bando et~al.}}{{Bando, Kaji, and Yaguchi}}}
+\bibcite{bareinboim2020pearls}{{10}{2020}{{Bareinboim et~al.}}{{Bareinboim, Correa, Ibeling, and Icard}}}
+\bibcite{barroso2024inference}{{11}{2024}{{Barroso et~al.}}{{Barroso, Gomes, and Baxter}}}
+\bibcite{bassett2009human}{{12}{2009}{{Bassett and Bullmore}}{{}}}
+\bibcite{bauer2021ripser}{{13}{2021}{{Bauer}}{{}}}
+\bibcite{bauer2013measuring}{{14}{2013}{{Bauer et~al.}}{{Bauer, Ge, and Wang}}}
+\bibcite{belot2020absolutely}{{15}{2020}{{Belot}}{{}}}
+\bibcite{biasotti2008reeb}{{16}{2008}{{Biasotti et~al.}}{{Biasotti, Giorgi, Spagnuolo, and Falcidieno}}}
+\bibcite{bongers2021foundations}{{17}{2021}{{Bongers et~al.}}{{Bongers, Forr{\'e}, Peters, and Mooij}}}
+\bibcite{bredon1997sheaf}{{18}{1997}{{Bredon}}{{}}}
+\bibcite{bruel2018topological}{{19}{2019}{{Bruel-Gabrielsson and Carlsson}}{{}}}
+\bibcite{bubenik2015statistical}{{20}{2015}{{Bubenik}}{{}}}
+\bibcite{bullmore2009complex}{{21}{2009}{{Bullmore and Sporns}}{{}}}
+\bibcite{cang2018integration}{{22}{2018}{{Cang and Wei}}{{}}}
+\bibcite{carlsson2009topology}{{23}{2009}{{Carlsson}}{{}}}
+\bibcite{carlsson2020topological}{{24}{2020}{{Carlsson}}{{}}}
+\bibcite{carlsson2009theory}{{25}{2009}{{Carlsson and Zomorodian}}{{}}}
+\bibcite{carriere2018statistical}{{26}{2018}{{Carri{\`e}re et~al.}}{{Carri{\`e}re, Michel, and Oudot}}}
+\bibcite{carriere2020perslay}{{27}{2020}{{Carri{\`e}re et~al.}}{{Carri{\`e}re, Cuturi, and Oudot}}}
+\bibcite{chaudhuri2010rates}{{28}{2010}{{Chaudhuri and Dasgupta}}{{}}}
+\bibcite{chazal2021introduction}{{29}{2021}{{Chazal and Michel}}{{}}}
+\bibcite{chazal2013bootstrap}{{30}{2013{}}{{Chazal et~al.}}{{Chazal, Fasy, Lecci, Rinaldo, Singh, and Wasserman}}}
+\bibcite{chazal2015optimal}{{31}{2013{}}{{Chazal et~al.}}{{Chazal, Glisse, Labrue{\`r}e, and Michel}}}
+\bibcite{chazal2013persistence}{{32}{2013{}}{{Chazal et~al.}}{{Chazal, Guibas, Oudot, and Skraba}}}
+\bibcite{chazal2014stochastic}{{33}{2014}{{Chazal et~al.}}{{Chazal, Fasy, Lecci, Rinaldo, and Wasserman}}}
+\bibcite{chazal2016structure}{{34}{2016}{{Chazal et~al.}}{{Chazal, de~Silva, Glisse, and Oudot}}}
+\bibcite{chernozhukov2018double}{{35}{2018}{{Chernozhukov et~al.}}{{Chernozhukov, Chetverikov, Demirer, Duflo, Hansen, Newey, and Robins}}}
+\bibcite{chung2009persistence}{{36}{2009}{{Chung et~al.}}{{Chung, Bubenik, and Kim}}}
+\bibcite{cisewski2014nonparametric}{{37}{2014}{{Cisewski et~al.}}{{Cisewski, Croft, Freeman, Genovese, Khandai, Ozbek, and Wasserman}}}
+\bibcite{cohen2007stability}{{38}{2007}{{Cohen-Steiner et~al.}}{{Cohen-Steiner, Edelsbrunner, and Harer}}}
+\bibcite{corcoran2023topological}{{39}{2023}{{Corcoran and Jones}}{{}}}
+\bibcite{curry2014sheaves}{{40}{2014}{{Curry}}{{}}}
+\bibcite{desilva2007coverage}{{41}{2007}{{de~Silva and Ghrist}}{{}}}
+\bibcite{dembo1994topological}{{42}{1994}{{Dembo and Peres}}{{}}}
+\bibcite{dlotko2019ball}{{43}{2019}{{D{\l }otko}}{{}}}
+\bibcite{ecker2024causal}{{44}{2024}{{Ecker et~al.}}{{Ecker, de~Luna, and Schelin}}}
+\bibcite{edelsbrunner2008persistent}{{45}{2008}{{Edelsbrunner and Harer}}{{}}}
+\bibcite{edelsbrunner2010computational}{{46}{2010}{{Edelsbrunner and Harer}}{{}}}
+\bibcite{edelsbrunner2002topological}{{47}{2002}{{Edelsbrunner et~al.}}{{Edelsbrunner, Letscher, and Zomorodian}}}
+\bibcite{elyaagoubi2023statistical}{{48}{2023{}}{{El-Yaagoubi et~al.}}{{El-Yaagoubi, Chung, and Ombao}}}
+\bibcite{elyaagoubi2023topological}{{49}{2023{}}{{El-Yaagoubi et~al.}}{{El-Yaagoubi, Chung, and Ombao}}}
+\bibcite{farzam2025topology}{{50}{2025}{{Farzam et~al.}}{{Farzam, Aloui, Tarokh, and Sapiro}}}
+\bibcite{fasy2014confidence}{{51}{2014}{{Fasy et~al.}}{{Fasy, Lecci, Rinaldo, Wasserman, Balakrishnan, and Singh}}}
+\bibcite{fathian2022trend}{{52}{2022}{{Fathian et~al.}}{{Fathian, Jamali, and Raoufy}}}
+\bibcite{friston2011functional}{{53}{2011}{{Friston}}{{}}}
+\bibcite{galles1998axiomatic}{{54}{1998}{{Galles and Pearl}}{{}}}
+\bibcite{genin2018topology}{{55}{2018}{{Genin}}{{}}}
+\bibcite{genin2021statistical}{{56}{2021}{{Genin}}{{}}}
+\bibcite{genin2017topology}{{57}{2017}{{Genin and Kelly}}{{}}}
+\bibcite{genin2020statistical}{{58}{2020}{{Genin and Mayo-Wilson}}{{}}}
+\bibcite{gholizadeh2018short}{{59}{2018}{{Gholizadeh and Zadrozny}}{{}}}
+\bibcite{ghrist2008barcodes}{{60}{2008}{{Ghrist}}{{}}}
+\bibcite{gidea2018topological}{{61}{2018}{{Gidea and Katz}}{{}}}
+\bibcite{gorrostieta2018time}{{62}{2018}{{Gorrostieta et~al.}}{{Gorrostieta, Ombao, and von Sachs}}}
+\bibcite{guan2025causal}{{63}{2025}{{Guan}}{{}}}
+\bibcite{hajij2023topological}{{64}{2023}{{Hajij et~al.}}{{Hajij, Zamzmi, Papamarkou, Miolane, et~al.}}}
+\bibcite{harnack2017causal}{{65}{2017}{{Harnack et~al.}}{{Harnack, Laminski, Sch{\"u}lke, and Pawelzik}}}
+\bibcite{hatcher2002algebraic}{{66}{2002}{{Hatcher}}{{}}}
+\bibcite{hausmann2016vietoris}{{67}{2016}{{Hausmann}}{{}}}
+\bibcite{henry2020bridging}{{68}{2020}{{Henry et~al.}}{{Henry, Duffy, Rudolph, Nebel, Mostofsky, and Cohen}}}
+\bibcite{hughes2004stratified}{{69}{2004}{{Hughes and Weinberger}}{{}}}
+\bibcite{ibeling2019open}{{70}{2019}{{Ibeling and Icard}}{{}}}
+\bibcite{ibeling2020probabilistic}{{71}{2020}{{Ibeling and Icard}}{{}}}
+\bibcite{ibeling2021topological}{{72}{2021}{{Ibeling and Icard}}{{}}}
+\bibcite{imbens2015causal}{{73}{2015}{{Imbens and Rubin}}{{}}}
+\bibcite{iqbal2025classification}{{74}{2025}{{Iqbal et~al.}}{{Iqbal, Ahmed, Qaiser, Qureshi, and Rajpoot}}}
+\bibcite{ismail2022early}{{75}{2020}{{Ismail et~al.}}{{Ismail, Hussain, and Noorani}}}
+\bibcite{nocurl2024}{{76}{2024}{{Jiang et~al.}}{{Jiang, Ling, Hu, and Zhou}}}
+\bibcite{kaczynski2004computational}{{77}{2004}{{Kaczynski et~al.}}{{Kaczynski, Mischaikow, and Mrozek}}}
+\bibcite{kasson2007persistent}{{78}{2007}{{Kasson et~al.}}{{Kasson, Zomorodian, Park, Singhal, Guibas, and Pande}}}
+\bibcite{kennedy2016semiparametric}{{79}{2016}{{Kennedy}}{{}}}
+\bibcite{kennedy2023towards}{{80}{2023}{{Kennedy}}{{}}}
+\bibcite{kennedy2024semiparametric}{{81}{2024}{{Kennedy}}{{}}}
+\bibcite{kim2026topological}{{82}{2026}{{Kim and Lee}}{{}}}
+\bibcite{kim2018time}{{83}{2018{}}{{Kim et~al.}}{{Kim, Kim, and Rinaldo}}}
+\bibcite{kim2020pllay}{{84}{2020}{{Kim et~al.}}{{Kim, Kim, Zaheer, Kim, Chazal, and Wasserman}}}
+\bibcite{kim2018topological}{{85}{2018{}}{{Kim et~al.}}{{Kim, Richards, and Sangalli}}}
+\bibcite{kovacev2016using}{{86}{2016}{{Kovacev-Nikolic et~al.}}{{Kovacev-Nikolic, Bubenik, Nikoli{\'c}, and Heo}}}
+\bibcite{krasnovsky2025causal}{{87}{2025}{{Krasnovsky}}{{}}}
+\bibcite{kurisu2024geodesic}{{88}{2024}{{Kurisu et~al.}}{{Kurisu, Hu, Otsu, and Vuong}}}
+\bibcite{lecci2014statistical}{{89}{2014}{{Lecci}}{{}}}
+\bibcite{lee2019general}{{90}{2019}{{Lee et~al.}}{{Lee, Correa, and Bareinboim}}}
+\bibcite{lesnick2015interactive}{{91}{2015}{{Lesnick and Wright}}{{}}}
+\bibcite{leykam2023topological}{{92}{2023}{{Leykam and Angelakis}}{{}}}
+\bibcite{liebl2023fast}{{93}{2023}{{Liebl and Reimherr}}{{}}}
+\bibcite{ma2025causal}{{94}{2025}{{Ma}}{{}}}
+\bibcite{madukpe2026mapper}{{95}{2026}{{Madukpe et~al.}}{{Madukpe, Ugoala, and Zulkepli}}}
+\bibcite{mahadevan2021causal}{{96}{2021}{{Mahadevan}}{{}}}
+\bibcite{mahadevan2022universal}{{97}{2022}{{Mahadevan}}{{}}}
+\bibcite{mahadevan2025sheaf}{{98}{2025}{{Mahadevan}}{{}}}
+\bibcite{maroulas2020bayesian}{{99}{2020}{{Maroulas et~al.}}{{Maroulas, Nasrin, and Oballe}}}
+\bibcite{meek1995strong}{{100}{1995}{{Meek}}{{}}}
+\bibcite{mileyko2011probability}{{101}{2011}{{Mileyko et~al.}}{{Mileyko, Mukherjee, and Harer}}}
+\bibcite{morozov2013interleaving}{{102}{2013}{{Morozov et~al.}}{{Morozov, Beketayev, and Weber}}}
+\bibcite{muldoon2016small}{{103}{2016}{{Muldoon et~al.}}{{Muldoon, Bridgeford, and Bassett}}}
+\bibcite{munch2016convergence}{{104}{2016}{{Munch and Wang}}{{}}}
+\bibcite{munkres1984elements}{{105}{1984}{{Munkres}}{{}}}
+\bibcite{newey2018cross}{{106}{2018}{{Newey and Robins}}{{}}}
+\bibcite{nigmetov2022topological}{{107}{2024}{{Nigmetov and Morozov}}{{}}}
+\bibcite{ombao2022spectral}{{108}{2022}{{Ombao and Pinto}}{{}}}
+\bibcite{otter2017roadmap}{{109}{2017}{{Otter et~al.}}{{Otter, Porter, Tillmann, Grindrod, and Harrington}}}
+\bibcite{oxtoby1971measure}{{110}{1971}{{Oxtoby}}{{}}}
+\bibcite{pachauri2011topology}{{111}{2011}{{Pachauri et~al.}}{{Pachauri, Hinrichs, Chung, Johnson, and Singh}}}
+\bibcite{papamarkou2024position}{{112}{2024}{{Papamarkou et~al.}}{{Papamarkou, Birdal, Bronstein, Carlsson, Curry, Gao, Hajij, Kwitt, Li{\`o}, Di~Lorenzo, et~al.}}}
+\bibcite{pearl1995causal}{{113}{1995}{{Pearl}}{{}}}
+\bibcite{pearl2009causality}{{114}{2009}{{Pearl}}{{}}}
+\bibcite{pearl2014external}{{115}{2014}{{Pearl and Bareinboim}}{{}}}
+\bibcite{pearl2018book}{{116}{2018}{{Pearl and Mackenzie}}{{}}}
+\bibcite{peters2014causal}{{117}{2014}{{Peters et~al.}}{{Peters, Mooij, Janzing, and Sch{\"o}lkopf}}}
+\bibcite{peters2017elements}{{118}{2017}{{Peters et~al.}}{{Peters, Janzing, and Sch{\"o}lkopf}}}
+\bibcite{peyre2019computational}{{119}{2019}{{Peyr{\'e} and Cuturi}}{{}}}
+\bibcite{robins1989probability}{{120}{1989}{{Robins and Greenland}}{{}}}
+\bibcite{robinson2014hypothesis}{{121}{2017}{{Robinson and Turner}}{{}}}
+\bibcite{robinson2014topological}{{122}{2014}{{Robinson}}{{}}}
+\bibcite{rolland2022score}{{123}{2022}{{Rolland et~al.}}{{Rolland, Cevher, Kleindessner, Russell, Janzing, Sch{\"o}lkopf, and Locatello}}}
+\bibcite{rubin1974estimating}{{124}{1974}{{Rubin}}{{}}}
+\bibcite{rubin2005causal}{{125}{2005}{{Rubin}}{{}}}
+\bibcite{saki2026beyond}{{126}{2026}{{Saki and Faghihi}}{{}}}
+\bibcite{shimizu2006lingam}{{127}{2006}{{Shimizu et~al.}}{{Shimizu, Hoyer, Hyv{\"a}rinen, and Kerminen}}}
+\bibcite{singh2007mapper}{{128}{2007}{{Singh et~al.}}{{Singh, M{\'e}moli, and Carlsson}}}
+\bibcite{sizemore2018cliques}{{129}{2018}{{Sizemore et~al.}}{{Sizemore, Giusti, Kahn, Vettel, Betzel, and Bassett}}}
+\bibcite{sizemore2019importance}{{130}{2019}{{Sizemore et~al.}}{{Sizemore, Giusti, and Bassett}}}
+\bibcite{smith2025harnessing}{{131}{2025}{{Smith and Daoutidis}}{{}}}
+\bibcite{smith2025multiscale}{{132}{2025}{{Smith et~al.}}{{Smith, Limkul, and Daoutidis}}}
+\bibcite{soares2020sars}{{133}{2020}{{Soares et~al.}}{{Soares, Angelov, Biaso, Froes, and Abe}}}
+\bibcite{sousbie2011persistent}{{134}{2011}{{Sousbie}}{{}}}
+\bibcite{spirtes2001causation}{{135}{2001}{{Spirtes et~al.}}{{Spirtes, Glymour, and Scheines}}}
+\bibcite{spivak2014category}{{136}{2014}{{Spivak}}{{}}}
+\bibcite{sporns2013structure}{{137}{2013}{{Sporns}}{{}}}
+\bibcite{strommen2025topological}{{138}{2023}{{Strommen et~al.}}{{Strommen, Chantry, Dorrington, and Otter}}}
+\bibcite{tauzin2021giotto}{{139}{2021}{{Tauzin et~al.}}{{Tauzin, Lupo, Tunstall, P{\'e}rez, Caorsi, Medina-Mardones, Dassatti, and Hess}}}
+\bibcite{testa2025doubly}{{140}{2025}{{Testa et~al.}}{{Testa, Boschi, Chiaromonte, Kennedy, and Reimherr}}}
+\bibcite{gudhi2021}{{141}{2021}{{The GUDHI Project}}{{}}}
+\bibcite{tian2000probabilities}{{142}{2000}{{Tian and Pearl}}{{}}}
+\bibcite{tian2002general}{{143}{2002}{{Tian and Pearl}}{{}}}
+\bibcite{tran2024constraining}{{144}{2024}{{Tran et~al.}}{{Tran, Nguyen, Duong, and Nguyen}}}
+\bibcite{turner2014frechet}{{145}{2014}{{Turner et~al.}}{{Turner, Mileyko, Mukherjee, and Harer}}}
+\bibcite{uhler2013geometry}{{146}{2013}{{Uhler et~al.}}{{Uhler, Raskutti, B{\"u}hlmann, and Yu}}}
+\bibcite{umeda2017time}{{147}{2017}{{Umeda}}{{}}}
+\bibcite{vandeweygaert2011alpha}{{148}{2011}{{van~de Weygaert et~al.}}{{van~de Weygaert, Vegter, Edelsbrunner, Jones, Pranav, Park, Hellwing, Eldering, Kruithof, and Bos}}}
+\bibcite{villani2009optimal}{{149}{2009}{{Villani}}{{}}}
+\bibcite{causaldisco2023survey}{{150}{2022}{{Vowels et~al.}}{{Vowels, Camgoz, and Bowden}}}
+\bibcite{wasserman2018topological}{{151}{2018}{{Wasserman}}{{}}}
+\bibcite{willig2025alexandroff}{{152}{2025}{{Willig et~al.}}{{Willig, Zec{\v {e}}vi{\'c}, Dhami, and Kersting}}}
+\bibcite{wu2026optimization}{{153}{2026}{{Wu and Xie}}{{}}}
+\bibcite{xu2025information}{{154}{2025}{{Xu et~al.}}{{Xu, Mameche, and Vreeken}}}
+\bibcite{xu2021topological}{{155}{2021}{{Xu et~al.}}{{Xu, Drougard, and Roy}}}
+\bibcite{zomorodian2005computing}{{156}{2005}{{Zomorodian and Carlsson}}{{}}}
+\bibcite{zomorodian2005topology}{{157}{2005}{{Zomorodian}}{{}}}
+\gdef \@abspage@last{44}
