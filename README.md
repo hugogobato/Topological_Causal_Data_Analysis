@@ -48,15 +48,6 @@ Auxiliary files (`main.aux`, `main.bbl`, `main.log`, `main.out`, `main.blg`) are
 
 A current TeX Live distribution (2022 or later) provides all of these.
 
-## Planning artefacts
-
-Two top-level files document the editorial process and are not part of the article:
-
-- `Paper_Planning.md` — overall paper plan (target sections, contributions, audience).
-- `Planning_Phases.md` — eight-phase build order (Phase 1 scaffolding → Phase 8 final polish).
-
-The `notes/` directory contains working notes used during drafting (`notes/synthesis.md`).
-
 ## Bibliography
 
 `bibliography.bib` holds 157 entries in BibTeX format and is cited via `natbib` with the `plainnat` style.
